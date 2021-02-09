@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionProductViewModel.ListProjectSectionProductViewModel>
+@{ string tableName = "ProjectSectionProduct";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="@(tableName).Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionProduct.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ServiceProduct.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.ServiceProduct.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionProduct.ServiceProductContent', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionProduct.ServiceProductContent) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionProduct.UsedAmount', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionProduct.UsedAmount) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionProduct.EstimatesPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionProduct.EstimatesPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionProduct.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ServiceProduct.Title)">
+                                <input type="text" class="form-control txtbox" name="ServiceProduct.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionProduct.ServiceProductContent)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionProduct.ServiceProductContent">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionProduct.UsedAmount)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionProduct.UsedAmount">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionProduct.EstimatesPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionProduct.EstimatesPrice">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->
+

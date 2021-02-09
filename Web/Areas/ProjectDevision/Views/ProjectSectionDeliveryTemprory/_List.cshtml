@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionDeliveryTemproryViewModel.ListProjectSectionDeliveryTemproryViewModel>
+@{ string tableName = "ProjectSectionDeliveryTemprory";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionDeliveryTemprory.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)" style="min-width:1200px;">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionDeliveryTemprory.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Opinion.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Opinion.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Defect.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Defect.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryTemprory.ConveneDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.ConveneDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryTemprory.ConveneNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.ConveneNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryTemprory.DefectDetails', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.DefectDetails) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryTemprory.MeetingDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.MeetingDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryTemprory.PaidPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.PaidPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryTemprory.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Opinion.Title)">
+                                <input type="text" class="form-control txtbox" name="Opinion.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Defect.Title)">
+                                <input type="text" class="form-control txtbox" name="Defect.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.ConveneDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryTemprory.ConveneDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.ConveneNumber)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryTemprory.ConveneNumber">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.DefectDetails)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryTemprory.DefectDetails">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.MeetingDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryTemprory.MeetingDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryTemprory.PaidPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryTemprory.PaidPrice">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="9"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

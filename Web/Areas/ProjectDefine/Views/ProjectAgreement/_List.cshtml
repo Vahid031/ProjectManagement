@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ViewModels.ProjectDefine.ProjectAgreementViewModel.ListProjectAgreementViewModel>
+@{ string tableName = "ProjectAgreement";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="Id descending" />
+
+    <!------------- Start Table ----------------------->
+   
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)" style="min-width: 1200px;">
+                    <thead>
+                        <tr>
+                            <th style="display:none"><a onmousedown="Sort('ProjectId', '@(tableName)')">@Html.DisplayNameFor(model => model.Id) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th style="width:80px;"><a onmousedown="Sort('Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('FileCode', '@(tableName)')">@Html.DisplayNameFor(model => model.FileCode) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectTypeTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectTypeTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('StartFinantialYearTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.StartFinantialYearTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ForecastEndFinantialYearTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.ForecastEndFinantialYearTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('StateTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.StateTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('CityTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.CityTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th style="display:none"><a onmousedown="Sort('ProjectStateId', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectStateId) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            @*<th><a onmousedown="Sort('ProjectStateTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectStateTitle) <span class="sort-arrow arrow-sortable"></span></a></th>*@
+                            <th style="display:none"><a onmousedown="Sort('Color', '@(tableName)')">@Html.DisplayNameFor(model => model.Color) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.FileCode)">
+                                <input type="text" class="form-control txtbox" name="FileCode">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectTitle)">
+                                <input type="text" class="form-control txtbox" name="ProjectTitle">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectTypeTitle)">
+                                <input type="text" class="form-control txtbox" name="ProjectTypeTitle">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.StartFinantialYearTitle)">
+                                <input type="text" class="form-control txtbox" name="StartFinantialYearTitle">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ForecastEndFinantialYearTitle)">
+                                <input type="text" class="form-control txtbox" name="ForecastEndFinantialYearTitle">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.StateTitle)">
+                                <input type="text" class="form-control txtbox" name="StateTitle">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.CityTitle)">
+                                <input type="text" class="form-control txtbox" name="CityTitle">
+                            </td>
+
+                            <td style="display:none" data-th="@Html.DisplayNameFor(model => model.ProjectStateId)">
+                                <input type="text" class="form-control txtbox" name="ProjectStateId">
+                            </td>
+
+                            @*<td data-th="@Html.DisplayNameFor(model => model.ProjectStateTitle)">
+                                <input type="text" class="form-control txtbox" name="ProjectStateTitle">
+                            </td>*@
+
+                            <td style="display:none" data-th="@Html.DisplayNameFor(model => model.Color)">
+                                <input type="text" class="form-control txtbox" name="Color">
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    
+</div>
+
+<!------------- End Table ----------------------->

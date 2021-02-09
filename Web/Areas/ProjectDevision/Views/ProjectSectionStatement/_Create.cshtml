@@ -1,0 +1,102 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionStatementViewModel.CreateProjectSectionStatementViewModel
+
+<form id="frm-ProjectSectionStatement" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionStatement.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionStatement.Id, @id = "ProjectSectionStatementId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionStatement" })
+    @Html.HiddenFor(model => model.ProjectSectionStatement.ProjectSectionId)
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionStatement.TechnicalOpinionId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionStatement.TechnicalOpinionId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionStatement.TechnicalOpinionId, new SelectList(Model.Opinions, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionStatement.StatementTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionStatement.StatementTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionStatement.StatementTypeId, new SelectList(Model.StatementTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.TempFixedId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.TempFixedId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.TempFixedId, new SelectList(Model.TempFixeds, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionStatement.StatementNumberId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionStatement.StatementNumberId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionStatement.StatementNumberId, new SelectList(Model.StatementNumbers, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionStatement.ContractPrice, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionStatement.ContractPrice, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionStatement.ContractPrice, new { @class = "form-control txtbox numeric input-price" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionStatement.ContractDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionStatement.ContractDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionStatement.ContractDate, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionStatement.AdvisorPrice, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionStatement.AdvisorPrice, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionStatement.AdvisorPrice, new { @class = "form-control txtbox numeric input-price" })
+    </div>
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionStatement.ConfirmPrice, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionStatement.ConfirmPrice, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionStatement.ConfirmPrice, new { @class = "form-control txtbox numeric input-price" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowProjectSectionStatementFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل صورت وضعیت</button>
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionStatement" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionStatement" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>
+
+
+<script>
+
+    SepratePrice('#ProjectSectionStatement_ConfirmPrice');
+    SepratePrice('#ProjectSectionStatement_ContractPrice');
+    SepratePrice('#ProjectSectionStatement_AdvisorPrice');
+
+
+    // این کد برای ریموت ولیدیشن می باشد
+    $('#ProjectSectionStatement_ProjectSectionId').val(SelectedProjectSection);
+    $("#ProjectSectionStatement_StatementNumberId").change(function () {
+        $('#ProjectSectionStatement_StatementNumberId').removeData('previousValue');
+        $('#ProjectSectionStatement_StatementNumberId').valid();
+    });
+
+
+</script>

@@ -1,0 +1,242 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionComplementarityPriceViewModel.CreateProjectSectionComplementarityPriceViewModel
+
+<form id="frm-ProjectSectionComplementarityPrice" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionComplementarityPrice.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionComplementarityPrice.Id, @id = "ProjectSectionComplementarityPriceId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionComplementarityPrice" })
+    @Html.HiddenFor(model => model.ContractPrice, new { @id = "ContractPrice" })
+    @Html.HiddenFor(model => model.ComplementarityPrice, new { @id = "ComplementarityPrice" })
+    @Html.HiddenFor(model => model.TotalDPercent, new { @id = "TotalDPercent" })
+    @Html.HiddenFor(model => model.TotalIPercent, new { @id = "TotalIPercent" })
+
+ 
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionComplementarityPrice.DecreasePercent, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionComplementarityPrice.DecreasePercent, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionComplementarityPrice.DecreasePercent, new { @class = "form-control txtbox numeric", placeholder = "حداقل 25 %", id = "DPercent" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionComplementarityPrice.IncreasePercent, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionComplementarityPrice.IncreasePercent, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionComplementarityPrice.IncreasePercent, new { @class = "form-control txtbox numeric", placeholder = "حداکثر 25 %", id = "IPercent" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionComplementarityPrice.NewPrice, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionComplementarityPrice.NewPrice, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionComplementarityPrice.NewPrice, new { @class = "form-control txtbox numeric input-price numeric", id = "Price", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @*@Html.LabelFor(model => model.ProjectSectionComplementarityPrice.Number, new { @ })*@
+        <label class="label-txt">شماره نامه</label>
+        @Html.ValidationMessageFor(model => model.ProjectSectionComplementarityPrice.Number, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionComplementarityPrice.Number, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        <label class="label-txt">تاریخ نامه</label>
+        @Html.ValidationMessageFor(model => model.ProjectSectionComplementarityPrice.Date, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionComplementarityPrice.Date, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowProjectSectionComplementarityPriceFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionComplementarityPrice" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionComplementarityPrice" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>
+
+<script>
+    SepratePrice('#ProjectSectionComplementarityPrice_NewPrice');
+
+
+
+
+
+
+    //---------------
+
+
+
+    // این کد برای برداشتن کاما ، از مقدارهای عددی می باشد
+    function GetNumber(value) {
+        return value.replace(/\,/g, '');
+    }
+
+
+    // تبدیل رشته به عدد
+    function TryParseInt(str, defaultValue) {
+        var retValue = defaultValue;
+        if (str !== null) {
+            if (str.length > 0) {
+                if (!isNaN(str)) {
+                    retValue = parseInt(str);
+                }
+            }
+        }
+        return retValue;
+    }
+
+
+    // این کد برای اضافه شدن کاما می باشد
+    function SeprateNumberByValue(value) {
+        return value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    }
+
+
+   // تبدیل به عدد
+    function Numeric(item) {
+        $(item).each(function () {
+            var _this = $(this);
+            _this.val(_this.val().replace(/\D/g, ''));
+        });
+    }
+
+    // گرفتن مبلغ قرارداد و مبلغ متمم
+    // زمانی که صفحه لود می شود آخرین مبلغ نمایش داده می شود
+    var _ContractPrice = $('#ContractPrice').val();
+    var _ComplementarityPrice = $('#ComplementarityPrice').val();
+    if (_ComplementarityPrice != 0) {
+        $('#Price').val(SeprateNumberByValue(_ComplementarityPrice));
+    }
+    else {
+        $('#Price').val(SeprateNumberByValue(_ContractPrice));
+    }
+
+    // درصد کاهش
+    DPercent();
+    function DPercent() {
+        $('#DPercent').each(function () {
+            $(this).bind('keyup', function () {
+
+                Numeric('#DPercent');
+
+                // اگر مقدار تکس باکس خالی بود مبلغ محاسبه نشود
+                var DPercent = TryParseInt($(this).val(), 0);
+                if (DPercent == 0) {
+                    
+                    if (_ComplementarityPrice != 0) {
+                        $('#Price').val(SeprateNumberByValue(_ComplementarityPrice));
+                    }
+                    else {
+                        $('#Price').val(SeprateNumberByValue(_ContractPrice));
+                    }
+
+                   // $('#Price').val(SeprateNumberByValue($('#ContractPrice').val()));
+                    return;
+                }
+
+
+                var TotalDPercent = TryParseInt($('#TotalDPercent').val());
+
+                if ((TotalDPercent + DPercent) > 25){
+                    Messages('danger', 'مجموع درصد کاهش نباید از 25 % بیشتر شود');
+                    return;
+                }
+
+
+
+                //var ContractPrice = TryParseInt($('#ContractPrice').val());
+                //var total = (ContractPrice * (TotalDPercent + DPercent)) / 100;
+                //total = ContractPrice - total;
+
+
+                var ContractPrice = TryParseInt($('#ContractPrice').val());
+                var ComplementarityPrice = TryParseInt($('#ComplementarityPrice').val(), 0);
+
+
+                var total = (ContractPrice * DPercent) / 100;
+                //var temp = 0;
+
+                if (ComplementarityPrice != 0) {
+                    total = ComplementarityPrice - total;
+                }
+                else {
+                    total = ContractPrice - total;
+                }
+
+
+                $('#Price').val(SeprateNumberByValue(total));
+
+            });
+        });
+    }
+
+   
+    // درصد افزایش
+    IPercent();
+    function IPercent() {
+        $('#IPercent').each(function () {
+            $(this).bind('keyup', function () {
+
+                Numeric('#IPercent');
+
+                // اگر مقدار تکس باکس خالی بود مبلغ محاسبه نشود
+                var IPercent = TryParseInt($(this).val(), 0);
+                if (IPercent == 0) {
+
+                    if (_ComplementarityPrice != 0) {
+                        $('#Price').val(SeprateNumberByValue(_ComplementarityPrice));
+                    }
+                    else {
+                        $('#Price').val(SeprateNumberByValue(_ContractPrice));
+                    }
+
+                   // $('#Price').val(SeprateNumberByValue($('#ContractPrice').val()));
+                    return;
+                }
+
+
+                var TotalIPercent = TryParseInt($('#TotalIPercent').val());
+                if ((TotalIPercent + IPercent) > 25) {
+                    Messages('danger', 'مجموع درصد افزایش نباید از 25 % بیشتر شود');
+                    return;
+                }
+                
+
+                var ContractPrice = TryParseInt($('#ContractPrice').val());
+                var ComplementarityPrice = TryParseInt($('#ComplementarityPrice').val(), 0);
+
+
+                var total = (ContractPrice * IPercent) / 100;
+                //var temp = 0;
+                
+                if (ComplementarityPrice != 0) {
+                    total += ComplementarityPrice;
+                }
+                else {
+                    total += ContractPrice;
+                }
+                
+
+                $('#Price').val(SeprateNumberByValue(total));
+
+            });
+        });
+    }
+
+
+
+
+</script>

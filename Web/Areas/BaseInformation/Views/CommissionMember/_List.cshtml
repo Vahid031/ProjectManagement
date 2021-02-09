@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ViewModels.BaseInformation.CommissionMemberViewModel.ListCommissionMemberViewModel>
+@{ string tableName = "CommissionMember";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="@(tableName).Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('CommissionMember.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('CommissionMember.FirstName', '@(tableName)')">@Html.DisplayNameFor(model => model.CommissionMember.FirstName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('CommissionMember.LastName', '@(tableName)')">@Html.DisplayNameFor(model => model.CommissionMember.LastName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('CommissionMember.MobileNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.CommissionMember.MobileNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('CommissionMember.Post', '@(tableName)')">@Html.DisplayNameFor(model => model.CommissionMember.Post) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('CommissionMember.IsActive', '@(tableName)')">@Html.DisplayNameFor(model => model.CommissionMember.IsActive) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="CommissionMember.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.CommissionMember.FirstName)">
+                                <input type="text" class="form-control txtbox" name="CommissionMember.FirstName">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.CommissionMember.LastName)">
+                                <input type="text" class="form-control txtbox" name="CommissionMember.LastName">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.CommissionMember.MobileNumber)">
+                                <input type="text" class="form-control txtbox" name="CommissionMember.MobileNumber">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.CommissionMember.Post)">
+                                <input type="text" class="form-control txtbox" name="CommissionMember.Post">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.CommissionMember.IsActive)">
+                                <select name="CommissionMember.IsActive">
+                                    <option value="">نمایش همه</option>
+                                    <option value="true">فعال</option>
+                                    <option value="false">غیر فعال</option>
+                                </select>
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionDepositeLiberalizationViewModel.ListProjectSectionDepositeLiberalizationViewModel>
+@{ string tableName = "ProjectSectionDepositeLiberalization";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionDepositeLiberalization.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionDepositeLiberalization.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDepositeLiberalization.PaidDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.PaidDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDepositeLiberalization.TemproryPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.TemproryPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDepositeLiberalization.FixedPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.FixedPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDepositeLiberalization.Description', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.Description) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDepositeLiberalization.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.PaidDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDepositeLiberalization.PaidDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.TemproryPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDepositeLiberalization.TemproryPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.FixedPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDepositeLiberalization.FixedPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDepositeLiberalization.Description)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDepositeLiberalization.Description">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

@@ -1,0 +1,33 @@
+﻿@media only screen and (max-width: 1120px) {
+    .img {
+        margin-top: 470px !important;
+    }
+}
+
+@media only screen and (max-width: 902px) {
+    .img {
+        margin-top: 493px !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .img {
+        margin-top: 503px !important;
+    }
+
+    .section-block h1 {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 783px) {
+    .img {
+        margin-top: 507px !important;
+    }
+}
+
+@media only screen and (max-width: 587px) {
+    .img {
+        margin-top: 530px !important;
+    }
+}

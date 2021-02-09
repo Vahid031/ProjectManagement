@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ViewModels.ProjectDefine.ProjectInvestmentChapterViewModel.ListProjectInvestmentChapterViewModel>
+@{ string tableName = "ProjectInvestmentChapter";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectInvestmentChapter.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectInvestmentChapter.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('FinantialYear.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.FinantialYear.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('InvestmentChapter.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.InvestmentChapter.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('InvestmentChapterType.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.InvestmentChapterType.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectInvestmentChapter.Price', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectInvestmentChapter.Price) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectInvestmentChapter.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.FinantialYear.Title)">
+                                <input type="text" class="form-control txtbox" name="Program.FinantialYear.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.InvestmentChapter.Title)">
+                                <input type="text" class="form-control txtbox" name="InvestmentChapter.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.InvestmentChapterType.Title)">
+                                <input type="text" class="form-control txtbox" name="InvestmentChapterType.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectInvestmentChapter.Price)">
+                                <input type="text" class="form-control txtbox" name="ProjectInvestmentChapter.Price">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

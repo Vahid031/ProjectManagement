@@ -1,0 +1,35 @@
+﻿@model ViewModels.ProjectDefine.ProjectViewModel.CreateProjectViewModel
+
+<script src="~/Content/Reporting/js/plotly.min.js"></script>
+<p id="demo"></p>
+@*<input type="button" id="text" name="name" value="click" />
+    <input type="button" id="alert" name="name" value="alert" />*@
+<div id="myDiv" dir="ltr" style="width:800px; height: auto;"><!-- Plotly chart will be drawn inside this DIV --></div>
+@*<script src='~/Content/Reporting/js/jquery-1.11.2.min.js'></script>*@
+<input type="hidden" id="val" value=" " />
+<script type="text/javascript">
+    var txt;
+    document.getElementById("demo").innerHTML = '@ViewBag.FirstNum';
+    txt = $('#demo').html();
+    $("#FormContainer-Project2").on("click", "#btnSave", function (e) {
+        var Type = $('#Type').val();
+        var State = $('#State').val();
+        var Model = $('#Model').val();
+        LoadPartialView('GET', '/General/Chart/_C6Update', { type: Type, state: State, model: Model }, '#chart');
+  
+    });
+    var trace1 = {
+        x: ['@ViewBag.q0', '@ViewBag.q1', '@ViewBag.q2', '@ViewBag.q3', '@ViewBag.q4', '@ViewBag.q5', '@ViewBag.q6', '@ViewBag.q7', '@ViewBag.q8', '@ViewBag.q9', '@ViewBag.q10', '@ViewBag.q11', '@ViewBag.q12', '@ViewBag.q13', '@ViewBag.q14', '@ViewBag.q15', '@ViewBag.q16', '@ViewBag.q17', '@ViewBag.q18', '@ViewBag.q19', '@ViewBag.q20', '@ViewBag.q21', '@ViewBag.q22', '@ViewBag.q23', '@ViewBag.q24', '@ViewBag.q25', '@ViewBag.q26', '@ViewBag.q27', '@ViewBag.q28', '@ViewBag.q29'],
+        y: [@ViewBag.SecoundNumber],
+        name: 'استانی',
+        type: 'bar'
+    };
+
+    var data = [trace1];
+
+    var layout = { barmode: 'group' };
+
+    Plotly.newPlot('myDiv', data, layout);
+
+  
+</script>

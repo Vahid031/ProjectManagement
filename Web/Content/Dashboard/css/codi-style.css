@@ -1,0 +1,420 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  /*color: #ffffff;
+  background: #001426 url("../img/bg-pattern.png");*/
+}
+
+a {
+  color: #196a74;
+  text-decoration: none;
+}
+.cd-background-wrapper{
+    height:610px !important;
+
+}
+/* -------------------------------- 
+
+xnugget info 
+
+-------------------------------- */
+.cd-nugget-info {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  bottom: 0;
+  left: 0;
+  margin-top: 2em;
+}
+.cd-nugget-info a {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  color: #ffffff;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  background: #196a74;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  padding: .4em 1.4em;
+}
+.no-touch .cd-nugget-info a:hover {
+  opacity: .8;
+}
+.cd-nugget-info span {
+  vertical-align: middle;
+  display: inline-block;
+}
+.cd-nugget-info span svg {
+  display: block;
+}
+.cd-nugget-info .cd-nugget-info-arrow {
+  fill: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+  .cd-nugget-info {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
+    z-index: 20;
+    width: 200px;
+    height: 60px;
+  }
+  .cd-nugget-info a {
+    display: block;
+    padding: 0;
+    height: 100%;
+    line-height: 60px;
+  }
+}
+
+/* -------------------------------- 
+
+xcarbonads 
+
+-------------------------------- */
+#carbonads-container,
+#ui8ads-container {
+  position: fixed;
+  bottom: 40px;
+  left: 5%;
+  width: 180px;
+  display: none;
+  z-index: 10;
+}
+#carbonads-container .close-carbon-adv,
+#carbonads-container .close-ui8-adv,
+#ui8ads-container .close-carbon-adv,
+#ui8ads-container .close-ui8-adv {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: rgba(0, 20, 38, 0.8);
+  text-indent: 100%;
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+}
+#carbonads-container .close-carbon-adv:hover,
+#carbonads-container .close-ui8-adv:hover,
+#ui8ads-container .close-carbon-adv:hover,
+#ui8ads-container .close-ui8-adv:hover {
+  background: #001426;
+}
+#carbonads-container .close-carbon-adv::after, #carbonads-container .close-carbon-adv::before,
+#carbonads-container .close-ui8-adv::after,
+#carbonads-container .close-ui8-adv::before,
+#ui8ads-container .close-carbon-adv::after,
+#ui8ads-container .close-carbon-adv::before,
+#ui8ads-container .close-ui8-adv::after,
+#ui8ads-container .close-ui8-adv::before {
+  content: '';
+  background-color: #fff;
+  height: 2px;
+  width: 14px;
+  position: absolute;
+  top: 14px;
+  left: 9px;
+}
+#carbonads-container .close-carbon-adv::after,
+#carbonads-container .close-ui8-adv::after,
+#ui8ads-container .close-carbon-adv::after,
+#ui8ads-container .close-ui8-adv::after {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#carbonads-container .close-carbon-adv::before,
+#carbonads-container .close-ui8-adv::before,
+#ui8ads-container .close-carbon-adv::before,
+#ui8ads-container .close-ui8-adv::before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#carbonads-container .carbonad,
+#carbonads-container .ui8ad,
+#ui8ads-container .carbonad,
+#ui8ads-container .ui8ad {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 100%;
+  height: auto;
+  padding: 14px;
+  text-align: center;
+  border-radius: 3px 0 3px 3px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+#carbonads-container .carbonad .carbonad-image img,
+#carbonads-container .carbonad .ui8ad-image img,
+#carbonads-container .ui8ad .carbonad-image img,
+#carbonads-container .ui8ad .ui8ad-image img,
+#ui8ads-container .carbonad .carbonad-image img,
+#ui8ads-container .carbonad .ui8ad-image img,
+#ui8ads-container .ui8ad .carbonad-image img,
+#ui8ads-container .ui8ad .ui8ad-image img {
+  width: 130px;
+}
+#carbonads-container .carbonad .carbonad-image img,
+#carbonads-container .ui8ad .carbonad-image img,
+#ui8ads-container .carbonad .carbonad-image img,
+#ui8ads-container .ui8ad .carbonad-image img {
+  margin: 0 0 10px 10px;
+}
+#carbonads-container .carbonad .ui8ad-image img,
+#carbonads-container .carbonad .carbon-img img,
+#carbonads-container .ui8ad .ui8ad-image img,
+#carbonads-container .ui8ad .carbon-img img,
+#ui8ads-container .carbonad .ui8ad-image img,
+#ui8ads-container .carbonad .carbon-img img,
+#ui8ads-container .ui8ad .ui8ad-image img,
+#ui8ads-container .ui8ad .carbon-img img {
+  margin: 0 10px 10px;
+  width: 130px;
+}
+#carbonads-container .carbonad .carbon-text, #carbonads-container .carbonad .carbonad-tag,
+#carbonads-container .carbonad .carbon-poweredby,
+#carbonads-container .carbonad .ui8ad-text, #carbonads-container .carbonad .ui8ad-tag,
+#carbonads-container .ui8ad .carbon-text,
+#carbonads-container .ui8ad .carbonad-tag,
+#carbonads-container .ui8ad .carbon-poweredby,
+#carbonads-container .ui8ad .ui8ad-text,
+#carbonads-container .ui8ad .ui8ad-tag,
+#ui8ads-container .carbonad .carbon-text,
+#ui8ads-container .carbonad .carbonad-tag,
+#ui8ads-container .carbonad .carbon-poweredby,
+#ui8ads-container .carbonad .ui8ad-text,
+#ui8ads-container .carbonad .ui8ad-tag,
+#ui8ads-container .ui8ad .carbon-text,
+#ui8ads-container .ui8ad .carbonad-tag,
+#ui8ads-container .ui8ad .carbon-poweredby,
+#ui8ads-container .ui8ad .ui8ad-text,
+#ui8ads-container .ui8ad .ui8ad-tag {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+#carbonads-container .carbonad .carbon-wrap,
+#carbonads-container .carbonad .ui8ad-text,
+#carbonads-container .ui8ad .carbon-wrap,
+#carbonads-container .ui8ad .ui8ad-text,
+#ui8ads-container .carbonad .carbon-wrap,
+#ui8ads-container .carbonad .ui8ad-text,
+#ui8ads-container .ui8ad .carbon-wrap,
+#ui8ads-container .ui8ad .ui8ad-text {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+#carbonads-container .carbonad .carbon-wrap a,
+#carbonads-container .carbonad .ui8ad-text a,
+#carbonads-container .ui8ad .carbon-wrap a,
+#carbonads-container .ui8ad .ui8ad-text a,
+#ui8ads-container .carbonad .carbon-wrap a,
+#ui8ads-container .carbonad .ui8ad-text a,
+#ui8ads-container .ui8ad .carbon-wrap a,
+#ui8ads-container .ui8ad .ui8ad-text a {
+  color: #196a74;
+  font-size: 13px;
+  font-weight: bold;
+}
+.no-touch #carbonads-container .carbonad .carbon-wrap a:hover, .no-touch
+#carbonads-container .carbonad .ui8ad-text a:hover, .no-touch
+#carbonads-container .ui8ad .carbon-wrap a:hover, .no-touch
+#carbonads-container .ui8ad .ui8ad-text a:hover, .no-touch
+#ui8ads-container .carbonad .carbon-wrap a:hover, .no-touch
+#ui8ads-container .carbonad .ui8ad-text a:hover, .no-touch
+#ui8ads-container .ui8ad .carbon-wrap a:hover, .no-touch
+#ui8ads-container .ui8ad .ui8ad-text a:hover {
+  text-decoration: underline;
+}
+#carbonads-container .carbonad .carbonad-tag,
+#carbonads-container .carbonad .carbon-poweredby,
+#carbonads-container .carbonad .ui8ad-tag,
+#carbonads-container .ui8ad .carbonad-tag,
+#carbonads-container .ui8ad .carbon-poweredby,
+#carbonads-container .ui8ad .ui8ad-tag,
+#ui8ads-container .carbonad .carbonad-tag,
+#ui8ads-container .carbonad .carbon-poweredby,
+#ui8ads-container .carbonad .ui8ad-tag,
+#ui8ads-container .ui8ad .carbonad-tag,
+#ui8ads-container .ui8ad .carbon-poweredby,
+#ui8ads-container .ui8ad .ui8ad-tag {
+  margin-top: 5px;
+  color: #001426;
+}
+#carbonads-container .carbonad .carbonad-tag a,
+#carbonads-container .carbonad .carbon-poweredby a,
+#carbonads-container .carbonad .ui8ad-tag a,
+#carbonads-container .ui8ad .carbonad-tag a,
+#carbonads-container .ui8ad .carbon-poweredby a,
+#carbonads-container .ui8ad .ui8ad-tag a,
+#ui8ads-container .carbonad .carbonad-tag a,
+#ui8ads-container .carbonad .carbon-poweredby a,
+#ui8ads-container .carbonad .ui8ad-tag a,
+#ui8ads-container .ui8ad .carbonad-tag a,
+#ui8ads-container .ui8ad .carbon-poweredby a,
+#ui8ads-container .ui8ad .ui8ad-tag a {
+  color: #001426;
+}
+#carbonads-container .carbonad .carbonad-tag a:hover,
+#carbonads-container .carbonad .carbon-poweredby a:hover,
+#carbonads-container .carbonad .ui8ad-tag a:hover,
+#carbonads-container .ui8ad .carbonad-tag a:hover,
+#carbonads-container .ui8ad .carbon-poweredby a:hover,
+#carbonads-container .ui8ad .ui8ad-tag a:hover,
+#ui8ads-container .carbonad .carbonad-tag a:hover,
+#ui8ads-container .carbonad .carbon-poweredby a:hover,
+#ui8ads-container .carbonad .ui8ad-tag a:hover,
+#ui8ads-container .ui8ad .carbonad-tag a:hover,
+#ui8ads-container .ui8ad .carbon-poweredby a:hover,
+#ui8ads-container .ui8ad .ui8ad-tag a:hover {
+  color: #196a74;
+}
+#carbonads-container .carbonad .ui8ad-tag,
+#carbonads-container .carbonad .carbon-poweredby,
+#carbonads-container .ui8ad .ui8ad-tag,
+#carbonads-container .ui8ad .carbon-poweredby,
+#ui8ads-container .carbonad .ui8ad-tag,
+#ui8ads-container .carbonad .carbon-poweredby,
+#ui8ads-container .ui8ad .ui8ad-tag,
+#ui8ads-container .ui8ad .carbon-poweredby {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 15px;
+}
+@media only screen and (min-width: 1024px) {
+  #carbonads-container,
+  #ui8ads-container {
+    display: block;
+  }
+}
+
+/* -------------------------------- 
+
+Main Components 
+
+-------------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 20, 38, 0.85);
+  z-index: 10;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  padding: 1em 5%;
+  pointer-events: none;
+}
+@media only screen and (min-width: 768px) {
+  header {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 5%;
+  }
+  header h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+  }
+}
+
+.cd-background-wrapper {
+  overflow: hidden;
+}
+.no-touch .cd-background-wrapper {
+  -webkit-perspective: 4000px;
+  -moz-perspective: 4000px;
+  perspective: 4000px;
+}
+.cd-background-wrapper::before {
+  /* never visible - this is used in jQuery to check the device type */
+  content: 'web';
+  display: none;
+}
+.touch .cd-background-wrapper::before {
+  /* never visible - this is used in jQuery to check the device type */
+  content: 'mobile';
+}
+
+.cd-floating-background {
+  position: relative;
+}
+.cd-floating-background img {
+  display: block;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* fixes a Firefox bug - images not correctly rendered*/
+  background-color: rgba(255, 255, 255, 0.01);
+}
+.cd-floating-background img:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.no-touch .cd-floating-background {
+  top: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.no-touch .cd-floating-background.is-absolute {
+  position: absolute;
+}
+.no-touch .cd-floating-background img:first-child {
+  -webkit-transform: translateZ(50px);
+  -moz-transform: translateZ(50px);
+  -ms-transform: translateZ(50px);
+  -o-transform: translateZ(50px);
+  transform: translateZ(50px);
+}
+.no-touch .cd-floating-background img:nth-child(2) {
+  -webkit-transform: translateZ(290px);
+  -moz-transform: translateZ(290px);
+  -ms-transform: translateZ(290px);
+  -o-transform: translateZ(290px);
+  transform: translateZ(290px);
+}
+.no-touch .cd-floating-background img:nth-child(3) {
+  -webkit-transform: translateZ(400px);
+  -moz-transform: translateZ(400px);
+  -ms-transform: translateZ(400px);
+  -o-transform: translateZ(400px);
+  transform: translateZ(400px);
+}
+.no-touch.no-preserve-3d .cd-floating-background {
+  /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
+  position: relative;
+}

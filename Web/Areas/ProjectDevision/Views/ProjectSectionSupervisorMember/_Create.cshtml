@@ -1,0 +1,65 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionMemberViewModel.CreateProjectSectionMemberViewModel
+
+<form id="frm-ProjectSectionSupervisorMember" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionSupervisorMember.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionSupervisorMember.Id, @id = "ProjectSectionSupervisorMemberId" })
+    
+    <div class="form-group col-lg-4 col-md-6">
+        <label class="label-txt">انتخاب ناظر</label>
+        @Html.ValidationMessageFor(model => model.ProjectSectionSupervisorMember.MemberId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionSupervisorMember.MemberId, new SelectList(Model.Members, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionSupervisorMember.IsMainSupervisor, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionSupervisorMember.IsMainSupervisor, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionSupervisorMember.IsMainSupervisor, new List<SelectListItem> {
+            new SelectListItem{ Text="ناظر", Value="false"},
+            new SelectListItem{ Text="سر ناظر", Value="true"}
+        }, "انتخاب کنید...", new { @class = "form-control txtbox ", data_val = "true", data_val_required = "الزامی است"  })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionSupervisorMember.MonitoringTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionSupervisorMember.MonitoringTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionSupervisorMember.MonitoringTypeId, new SelectList(Model.MonitoringTypes, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionSupervisorMember.StartDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionSupervisorMember.StartDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionSupervisorMember.StartDate, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionSupervisorMember.EndDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionSupervisorMember.EndDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionSupervisorMember.EndDate, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionSupervisorMember.Description, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionSupervisorMember.Description, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionSupervisorMember.Description, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionSupervisorMember" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionSupervisorMember" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ViewModels.ProjectDefine.ProjectQuantityGoalViewModel.ListProjectQuantityGoalViewModel>
+@{ string tableName = "ProjectQuantityGoal";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectQuantityGoal.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectQuantityGoal.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectQuantityGoal.QuantityGoalType', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectQuantityGoal.QuantityGoalType) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Unit.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Unit.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectQuantityGoal.Amount', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectQuantityGoal.Amount) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectQuantityGoal.UnitPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectQuantityGoal.UnitPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectQuantityGoal.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectQuantityGoal.QuantityGoalType)">
+                                <input type="text" class="form-control txtbox" name="Program.ProjectQuantityGoal.QuantityGoalType">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Unit.Title)">
+                                <input type="text" class="form-control txtbox" name="Unit.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectQuantityGoal.Amount)">
+                                <input type="text" class="form-control txtbox" name="ProjectQuantityGoal.Amount">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectQuantityGoal.UnitPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectQuantityGoal.UnitPrice">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

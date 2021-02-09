@@ -1,0 +1,109 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionDeliveryTemproryViewModel.CreateProjectSectionDeliveryTemproryViewModel
+
+<form id="frm-ProjectSectionDeliveryTemprory" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionDeliveryTemprory.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionDeliveryTemprory.Id, @id = "ProjectSectionDeliveryTemproryId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionDeliveryTemprory" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.RequestNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.RequestNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.RequestNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.RequestDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.RequestDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.RequestDate, new { @class = "form-control txtbox pointer", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.ConveneNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.ConveneNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.ConveneNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.ConveneDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.ConveneDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.ConveneDate, new { @class = "form-control txtbox pointer", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.MeetingDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.MeetingDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.MeetingDate, new { @class = "form-control txtbox pointer", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.DefectId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.DefectId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionDeliveryTemprory.DefectId, new SelectList(Model.Defects, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="form-group col-lg-12">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.DefectDetails, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.DefectDetails, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.DefectDetails, new { @class = "form-control txtbox" })
+    </div>
+    
+    <div class="form-group col-lg-4 col-md-6">
+        @*@Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.PaidPrice, new { @class = "label-txt" })*@
+        <label class="label-txt" style="font-size:14px;"><span>مبلغ هزینه شده</span> <span>(با احتساب 15% جریمه)</span></label>
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.PaidPrice, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.PaidPrice, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.CommisionOpinionId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.CommisionOpinionId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionDeliveryTemprory.CommisionOpinionId, new SelectList(Model.Opinions, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    
+
+   
+    <div class="clear">
+    </div>
+
+
+        <div class="form-group col-lg-12">
+            @Html.LabelFor(model => model.ProjectSectionDeliveryTemprory.Description, new { @class = "label-txt" })
+            @Html.ValidationMessageFor(model => model.ProjectSectionDeliveryTemprory.Description, String.Empty, new { @class = "label-validation" })
+            @Html.TextBoxFor(model => model.ProjectSectionDeliveryTemprory.Description, new { @class = "form-control txtbox" })
+        </div>
+
+
+
+
+
+
+
+        <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+            <br />
+            <button type="button" id="btnShowProjectSectionDeliveryTemproryFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+        </div>
+
+
+        <div class="clear"></div>
+        <div class="form-group col-lg-4 col-md-6">
+            <button type="submit" id="btnSaveProjectSectionDeliveryTemprory" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+            <button type="button" id="btnNewProjectSectionDeliveryTemprory" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+        </div>
+</form>

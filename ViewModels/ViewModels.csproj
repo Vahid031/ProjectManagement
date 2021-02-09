@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70149F55-78D0-4E92-863F-E86266E5FAFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewModels</RootNamespace>
+    <AssemblyName>ViewModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseInformation\ContractorViewModel\CreateContractorViewModel.cs" />
+    <Compile Include="BaseInformation\ContractorViewModel\ListContractorViewModel.cs" />
+    <Compile Include="BaseInformation\CityViewModel\CreateCityViewModel.cs" />
+    <Compile Include="BaseInformation\CityViewModel\ListCityViewModel.cs" />
+    <Compile Include="BaseInformation\CommissionMemberViewModel\CreateCommissionMemberViewModel.cs" />
+    <Compile Include="BaseInformation\CommissionMemberViewModel\ListCommissionMemberViewModel.cs" />
+    <Compile Include="BaseInformation\ContractorViewModel\ReportParameterContractorViewModel.cs" />
+    <Compile Include="BaseInformation\ContractorViewModel\ReportContractorViewModel.cs" />
+    <Compile Include="BaseInformation\MajorTypeViewModel\CreateMajorTypeViewModel.cs" />
+    <Compile Include="BaseInformation\MajorTypeViewModel\ListMajorTypeViewModel.cs" />
+    <Compile Include="BaseInformation\LevelTypeViewModel\CreateLevelTypeViewModel.cs" />
+    <Compile Include="BaseInformation\LevelTypeViewModel\ListLevelTypeViewModel.cs" />
+    <Compile Include="BaseInformation\PlanTypeViewModel\CreatePlanTypeViewModel.cs" />
+    <Compile Include="BaseInformation\PlanTypeViewModel\ListPlanTypeViewModel.cs" />
+    <Compile Include="BaseInformation\RecoupmentTypeViewModel\CreateRecoupmentTypeViewModel.cs" />
+    <Compile Include="BaseInformation\RecoupmentTypeViewModel\ListRecoupmentTypeViewModel.cs" />
+    <Compile Include="BaseInformation\InvestmentChapterTypeViewModel\CreateInvestmentChapterTypeViewModel.cs" />
+    <Compile Include="BaseInformation\InvestmentChapterTypeViewModel\ListInvestmentChapterTypeViewModel.cs" />
+    <Compile Include="BaseInformation\InvestmentChapterViewModel\CreateInvestmentChapterViewModel.cs" />
+    <Compile Include="BaseInformation\InvestmentChapterViewModel\ListInvestmentChapterViewModel.cs" />
+    <Compile Include="BaseInformation\AccountTypeViewModel\CreateAccountTypeViewModel.cs" />
+    <Compile Include="BaseInformation\AccountTypeViewModel\ListAccountTypeViewModel.cs" />
+    <Compile Include="BaseInformation\DocumentTypeViewModel\CreateDocumentTypeViewModel.cs" />
+    <Compile Include="BaseInformation\DocumentTypeViewModel\ListDocumentTypeViewModel.cs" />
+    <Compile Include="BaseInformation\FinantialYearViewModel\CreateFinantialYearViewModel.cs" />
+    <Compile Include="BaseInformation\FinantialYearViewModel\ListFinantialYearViewModel.cs" />
+    <Compile Include="BaseInformation\CreditProvidePlaceViewModel\CreateCreditProvidePlaceViewModel.cs" />
+    <Compile Include="BaseInformation\CreditProvidePlaceViewModel\ListCreditProvidePlaceViewModel.cs" />
+    <Compile Include="BaseInformation\DeductionPercentViewModel\CreateDeductionPercentViewModel.cs" />
+    <Compile Include="BaseInformation\DeductionPercentViewModel\ListDeductionPercentViewModel.cs" />
+    <Compile Include="BaseInformation\ContractTypeViewModel\CreateContractTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ContractTypeViewModel\ListContractTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ExecutionTypeViewModel\CreateExecutionTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ExecutionTypeViewModel\ListExecutionTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ProjectTypeViewModel\CreateProjectTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ProjectTypeViewModel\ListProjectTypeViewModel.cs" />
+    <Compile Include="BaseInformation\UnitViewModel\CreateUnitViewModel.cs" />
+    <Compile Include="BaseInformation\UnitViewModel\ListUnitViewModel.cs" />
+    <Compile Include="BaseInformation\MonitoringTypeViewModel\CreateMonitoringTypeViewModel.cs" />
+    <Compile Include="BaseInformation\MonitoringTypeViewModel\ListMonitoringTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ProgramViewModel\CreateProgramViewModel.cs" />
+    <Compile Include="BaseInformation\ProgramViewModel\ListProgramViewModel.cs" />
+    <Compile Include="BaseInformation\SetViewModel\CreateSetViewModel.cs" />
+    <Compile Include="BaseInformation\SetViewModel\ListSetViewModel.cs" />
+    <Compile Include="BaseInformation\ResourceTypeViewModel\CreateResourceTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ResourceTypeViewModel\ListResourceTypeViewModel.cs" />
+    <Compile Include="BaseInformation\ResourceViewModel\CreateResourceViewModel.cs" />
+    <Compile Include="BaseInformation\ResourceViewModel\ListResourceViewModel.cs" />
+    <Compile Include="BaseInformation\StatementTypeViewModel\CreateStatementTypeViewModel.cs" />
+    <Compile Include="BaseInformation\StatementTypeViewModel\ListStatementTypeViewModel.cs" />
+    <Compile Include="BaseInformation\RuralDistrictViewModel\CreateRuralDistrictViewModel.cs" />
+    <Compile Include="BaseInformation\RuralDistrictViewModel\ListRuralDistrictViewModel.cs" />
+    <Compile Include="BaseInformation\VillageViewModel\CreateVillageViewModel.cs" />
+    <Compile Include="BaseInformation\VillageViewModel\ListVillageViewModel.cs" />
+    <Compile Include="BaseInformation\SectionViewModel\CreateSectionViewModel.cs" />
+    <Compile Include="BaseInformation\SectionViewModel\ListSectionViewModel.cs" />
+    <Compile Include="BaseInformation\StateViewModel\CreateStateViewModel.cs" />
+    <Compile Include="BaseInformation\StateViewModel\ListStateViewModel.cs" />
+    <Compile Include="BaseInformation\MemberGroupViewModel\CreateMemberGroupViewModel.cs" />
+    <Compile Include="BaseInformation\MemberGroupViewModel\ListMemberGroupViewModel.cs" />
+    <Compile Include="General\LogDetailViewModel\CreateLogDetailViewModel.cs" />
+    <Compile Include="General\LogDetailViewModel\ListLogDetailViewModel.cs" />
+    <Compile Include="General\LogViewModel\CreateLogViewModel.cs" />
+    <Compile Include="General\LogViewModel\ListLogViewModel.cs" />
+    <Compile Include="General\MemberViewModel\CreateMemberViewModel.cs" />
+    <Compile Include="General\MemberViewModel\ListMemberViewModel.cs" />
+    <Compile Include="General\NotificationViewModel\CreateNotificationViewModel.cs" />
+    <Compile Include="General\NotificationViewModel\ListNotificationViewModel.cs" />
+    <Compile Include="General\PermissionViewModel\CreatePermissionViewModel.cs" />
+    <Compile Include="General\PermissionViewModel\ListPermissionViewModel.cs" />
+    <Compile Include="General\RolePermissionViewModel\CreateRolePermissionViewModel.cs" />
+    <Compile Include="General\RolePermissionViewModel\ListRolePermissionViewModel.cs" />
+    <Compile Include="General\RoleViewModel\CreateRoleViewModel.cs" />
+    <Compile Include="General\RoleViewModel\ListRoleViewModel.cs" />
+    <Compile Include="Other\AccountViewModels.cs" />
+    <Compile Include="Other\BaseDropdownViewModel.cs" />
+    <Compile Include="Other\BaseTreeviewViewModel.cs" />
+    <Compile Include="Other\UploadFilesResultViewModel.cs" />
+    <Compile Include="Other\ResultProcudureViewModel.cs" />
+    <Compile Include="ProjectDefine\ProgramPlanViewModel\ReportParameterProgramPlanViewModel.cs" />
+    <Compile Include="ProjectDefine\ProgramPlanViewModel\ReportProgramPlanViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAllocateViewModel\CreateProjectAllocateViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAllocateViewModel\ListProjectAllocateViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAllocateViewModel\ReportParameterProjectAllocateViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAllocateViewModel\ReportProjectAllocateViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectPlanViewModel\ReportParameterProjectPlanViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectPlanViewModel\ReportProjectPlanViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectQuantityGoalViewModel\CreateProjectQuantityGoalViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectQuantityGoalViewModel\ListProjectQuantityGoalViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAverageViewModel\CreateProjectAverageViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAverageViewModel\ListProjectAverageViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectInvestmentChapterViewModel\CreateProjectInvestmentChapterViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectInvestmentChapterViewModel\ListProjectInvestmentChapterViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectFundingViewModel\CreateProjectFundingViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectFundingViewModel\ListProjectFundingViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAgreementViewModel\SearchProjectAgreementViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectAgreementViewModel\ListProjectAgreementViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionContractAmendmentDateReport\ReportParameterProjectSectionContractAmendmentDateViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionContractAmendmentDateReport\ReportProjectSectionContractAmendmentDateViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionContractAmendmentReport\ReportParameterProjectSectionContractAmendmentViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionContractAmendmentReport\ReportProjectSectionContractAmendmentViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionContractAndCostsReportViewModel\ReportParameterProjectSectionContractAndCostsViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionContractAndCostsReportViewModel\ReportProjectSectionContractAndCostsViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionProjectProgressReportViewModel\ReportParameterProjectSectionProjectProgressViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionProjectProgressReportViewModel\ReportProjectSectionProjectProgressViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionStatementPayReportViewModel\ReportParameterProjectSectionStatementPayViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectSectionStatementPayReportViewModel\ReportProjectSectionStatementPayViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectStatementViewModel\ReportParameterProjectStatementViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectStatementViewModel\ReportProjectStatementViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectViewModel\CreateProjectViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectViewModel\ListProjectViewModel.cs" />
+    <Compile Include="ProjectDefine\ProgramPlanViewModel\CreateProgramPlanViewModel.cs" />
+    <Compile Include="ProjectDefine\ProgramPlanViewModel\ListProgramPlanViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectViewModel\ReportParameterProjectViewModel.cs" />
+    <Compile Include="ProjectDefine\ProjectViewModel\ReportProjectViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionContractViewModel\ReportParameterProjectSectionContractViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionContractViewModel\ReportProjectSectionContractViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryFixdViewModel\ReportParameterProjectSectionDeliveryFixdViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryFixdViewModel\ReportProjectSectionDeliveryFixdViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryTemproryViewModel\ReportParameterProjectSectionDeliveryTemproryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryTemproryViewModel\ReportProjectSectionDeliveryTemproryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDepositeLiberalizationViewModel\ReportParameterProjectSectionDepositeLiberalizationsViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDepositeLiberalizationViewModel\ReportProjectSectionDepositeLiberalizationsViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFinalParticipantViewModel\ReportParameterProjectSectionFinalParticipantViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFinalParticipantViewModel\ReportProjectSectionFinalParticipantViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionGovermentWorthyDocumentsPaidPriceViewModel\CreateProjectSectionGovermentWorthyDocumentsPaidPriceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionGovermentWorthyDocumentsPaidPriceViewModel\ListProjectSectionGovermentWorthyDocumentsPaidPriceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMadeh46ViewModel\ReportParameterProjectSectionMadeh46ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMadeh46ViewModel\ReportProjectSectionMadeh46ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMadeh48ViewModel\ReportParameterProjectSectionMadeh48ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMadeh48ViewModel\ReportProjectSectionMadeh48ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionPaidPriceViewModel\CalculateProjectSectionPaidPriceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionOperationTitleViewModel\CreateProjectSectionOperationTitleViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionOperationTitleViewModel\ListProjectSectionOperationTitleViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionPrintDraftViewModel\ListProjectSectionPrintDraftViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionRecoupmentListViewModel\ListProjectSectionRecoupmentListViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionRecoupmentListViewModel\SearchProjectSectionRecoupmentListViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDraftViewModel\CreateProjectSectionDraftViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDraftViewModel\ListProjectSectionDraftConfirmViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDraftViewModel\ListProjectSectionDraftViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionRecoupmentViewModel\CreateProjectSectionRecoupmentViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionRecoupmentViewModel\ListProjectSectionRecoupmentViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionRecoupmentViewModel\ReportParameterProjectSectionRecoupmentViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionRecoupmentViewModel\ReportProjectSectionRecoupmentViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionStatementConfirmViewModel\CreateProjectSectionStatementConfirmViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionStatementConfirmViewModel\ListProjectSectionStatementConfirmViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionPaidPriceViewModel\CreateProjectSectionPaidPriceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionPaidPriceViewModel\ListProjectSectionPaidPriceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionStatementViewModel\CreateProjectSectionStatementViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionStatementViewModel\ListProjectSectionStatementViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryFixdViewModel\CreateProjectSectionDeliveryFixdViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryFixdViewModel\ListProjectSectionDeliveryFixdViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMadeh46ViewModel\CreateProjectSectionMadeh46ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMadeh48ViewModel\CreateProjectSectionDeliveryTemproryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionCorrespondenceViewModel\CreateProjectSectionCorrespondenceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionCorrespondenceViewModel\ListProjectSectionCorrespondenceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDepositeLiberalizationViewModel\CreateProjectSectionDepositeLiberalizationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDepositeLiberalizationViewModel\ListProjectSectionDepositeLiberalizationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionLiberalizationViewModel\ListProjectSectionLiberalizationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionLiberalizationViewModel\SearchProjectSectionLiberalizationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSection46ViewModel\ListProjectSection46ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSection46ViewModel\SearchProjectSection46ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSection48ViewModel\ListProjectSection48ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSection48ViewModel\SearchProjectSection48ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionLetterViewModel\ListProjectSectionLetterViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionLetterViewModel\SearchProjectSectionLetterViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFixedViewModel\ListProjectSectionFixedViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFixedViewModel\SearchProjectSectionFixedViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionSupervisorVisitViewModel\ReportParameterProjectSectionSupervisorVisitsViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionSupervisorVisitViewModel\ReportProjectSectionSupervisorVisitsViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionTemproryViewModel\ListProjectSectionTemproryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionTemproryViewModel\SearchProjectSectionTemproryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionParticipantViewModel\CreateProjectSectionParticipantViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionParticipantViewModel\ListProjectSectionParticipantViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFinanceEvaluationViewModel\CreateProjectSectionFinanceEvaluationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFinanceEvaluationViewModel\ListProjectSectionFinanceEvaluationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFinalParticipantViewModel\CreateProjectSectionFinalParticipantViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionFinalParticipantViewModel\ListProjectSectionFinalParticipantViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionOpenDateViewModel\CreateProjectSectionOpenDateViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionOpenDateViewModel\ListProjectSectionOpenDateViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionContractViewModel\CreateProjectSectionContractViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionScheduleViewModel\CreateProjectSectionScheduleViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionScheduleViewModel\ListProjectSectionScheduleViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMemberViewModel\CreateProjectSectionMemberViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionMemberViewModel\ListProjectSectionMemberViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionAdvisorVisitViewModel\CreateProjectSectionAdvisorVisitViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionAdvisorVisitViewModel\ListProjectSectionAdvisorVisitViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionSupervisorVisitViewModel\CreateProjectSectionSupervisorVisitViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionSupervisorVisitViewModel\ListProjectSectionSupervisorVisitViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryTemproryViewModel\CreateProjectSectionDeliveryTemproryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionDeliveryTemproryViewModel\ListProjectSectionDeliveryTemproryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionViewModel\ListProjectSection2ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionViewModel\ReportParameterProjectSectionViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionViewModel\ReportProjectSectionViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionWinnerViewModel\CreateProjectSectionWinnerViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionWinnerViewModel\ListProjectSection4648ViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionWinnerViewModel\ListProjectSectionWinnerViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionWinnerDegreeViewModel\CreateProjectSectionWinnerDegreeViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionWinnerDegreeViewModel\ListProjectSectionWinnerDegreeViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionComplementarityPriceViewModel\CreateProjectSectionComplementarityPriceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionComplementarityPriceViewModel\ListProjectSectionComplementarityPriceViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionComplementarityDateViewModel\CreateProjectSectionComplementarityDateViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionComplementarityDateViewModel\ProjectSectionComplementarityDateViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionTenderViewModel\CreateProjectSectionTenderViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionTenderViewModel\ListProjectSectionTenderViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionCeremonialViewModel\CreateProjectSectionCeremonialViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionCeremonialViewModel\ListProjectSectionCeremonialViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionOperationViewModel\ListProjectSectionOperationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionOperationViewModel\SearchProjectSectionOperationViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionAssignmentViewModel\ListProjectSectionAssignmentViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionAssignmentViewModel\SearchProjectSectionAssignmentViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionProductViewModel\CreateProjectSectionProductViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionProductViewModel\ListProjectSectionProductViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionInquiryViewModel\CreateProjectSectionInquiryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionInquiryViewModel\ListProjectSectionInquiryViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionViewModel\CreateProjectSectionViewModel.cs" />
+    <Compile Include="ProjectDevision\ProjectSectionViewModel\ListProjectSectionViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainModels\DomainModels.csproj">
+      <Project>{9f0a246c-fbac-4b88-9ab7-907ded9f74b6}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastracture\Infrastracture.csproj">
+      <Project>{af69803c-7dd5-42f5-b369-590335aa6c32}</Project>
+      <Name>Infrastracture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

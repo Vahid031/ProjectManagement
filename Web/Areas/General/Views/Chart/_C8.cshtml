@@ -1,0 +1,55 @@
+﻿@model ViewModels.ProjectDefine.ProjectViewModel.CreateProjectViewModel
+@*<script src="~/Areas/General/Business/ProjectBusinessC2.js"></script>
+    <link rel="stylesheet" href="~/Content/Reporting/css/core.css">
+    <link rel="stylesheet" href="~/Content/Reporting/css/style.css">*@
+@*<script src="~/Areas/General/Business/ProjectBusinessC2.js"></script>*@
+
+<form id="FormContainer-Project2" class="operationform" method="post">
+
+    @if (ViewBag.error != null)
+    {
+        <div class="col-lg-12">
+            <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                <span>@ViewBag.error</span>
+            </div>
+        </div>
+
+        <script>
+            $('#ErrorAlert').show().delay(4000).slideUp(300);
+        </script>
+    }
+
+
+
+
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("نحوه واگذاری")
+        @Html.ValidationMessageFor(model => model.Project.ExecutionTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.ExecutionTypeId, new SelectList(Model.AssignmentType, "Id", "Title"), new { @Id = "Type", @class = "form-control txtbox b1" })
+    </div>
+
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.StateId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.StateId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.StateId, new SelectList(Model.States, "Id", "Title"), new { @Id = "State", @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("نوع قرارداد")
+        @Html.ValidationMessageFor(model => model.Project.CityId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.CityId, new SelectList(Model.ContractType, "Id", "Title"), new { @Id = "Model", @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="button" id="btnSave" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>گزارش</button>
+    </div>
+</form>
+<div class="clear"></div>
+<div id="chart">
+    @Html.Partial("_C8Chart")
+</div>

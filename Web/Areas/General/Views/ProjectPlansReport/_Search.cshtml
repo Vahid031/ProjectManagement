@@ -1,0 +1,33 @@
+﻿@model ViewModels.ProjectDefine.ProjectPlanViewModel.ReportParameterProjectPlanViewModel
+
+<form id="frm-ReportParameterProjectPlans" class="operationform" method="post">
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.FileCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.FileCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.FileCode, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectTitle, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectTitle, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProgramId, new SelectList(Model.Programs, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.CreditProvidePlaceId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CreditProvidePlaceId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.CreditProvidePlaceId, new SelectList(Model.CreditProvidePlaces, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSearchProjectPlans" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>جستجو</button>
+    </div>
+</form>

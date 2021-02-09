@@ -1,0 +1,44 @@
+﻿<script src="~/Areas/ProjectDevision/Business/ProjectSectionFinanceBusiness.js"></script>
+
+<input type="hidden" id="permission-ProjectSectionFinance" value='@ViewBag.Permission' />
+
+<div id="FormSearch-ProjectSectionFinance" class="row">
+
+</div>
+
+<div id="FormList-ProjectSectionFinance" class="row">
+
+</div>
+
+<div id="FormTabs-ProjectSectionFinance">
+    <ul class="nav nav-pills" style="margin-top:10px;">
+        <li id="lprojectSectionStatement"><a data-toggle="pill" href="#projectSectionStatement">صورت وضعیت</a></li>
+        <li id="lprojectSectionStatementConfirm"><a data-toggle="pill" href="#projectSectionStatementConfirm">تایید صورت وضعیت</a></li>
+        <li id="lprojectSectionDraftSend"><a data-toggle="pill" href="#projectSectionDraftSend">صدور فرم حواله</a></li>
+        <li id="lprojectSectionDraft"><a data-toggle="pill" href="#projectSectionDraft">تایید فرم حواله</a></li>
+        @*<li id="lprintDraft"><a data-toggle="pill" href="#printDraft">چاپ فرم حواله</a></li>*@
+        <li id="lprojectSectionPaidPrice"><a data-toggle="pill" href="#projectSectionPaidPrice">پرداخت صورت وضعیت</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="projectSectionStatement" class="tab-pane fade">
+            <div id="projectSectionStatement-ProjectSectionFinance"></div>
+        </div>
+        <div id="projectSectionStatementConfirm" class="tab-pane fade">
+            <div id="projectSectionStatementConfirm-ProjectSectionFinance"></div>
+        </div>
+        <div id="projectSectionDraftSend" class="tab-pane fade">
+            <div id="projectSectionDraftSend-ProjectSectionFinance"></div>
+        </div>
+        <div id="projectSectionDraft" class="tab-pane fade">
+            <div id="projectSectionDraft-ProjectSectionFinance"></div>
+        </div>
+        <div id="printDraft" class="tab-pane fade">
+            <div id="projectSectionPrintDraft-ProjectSectionFinance"></div>
+        </div>
+        <div id="projectSectionPaidPrice" class="tab-pane fade">
+            <div id="projectSectionPaidPrice-ProjectSectionFinance"></div>
+        </div>
+    </div>
+</div>
+

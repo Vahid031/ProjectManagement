@@ -1,0 +1,92 @@
+﻿@model ViewModels.ProjectDefine.ProjectViewModel.CreateProjectViewModel
+<script src="~/Content/Reporting/js/amcharts.js"></script>
+<script src="~/Content/Reporting/js/pie.js"></script>
+<script src="~/Content/Reporting/js/donut-themes.js"></script>
+<div id="chartdiv" dir="ltr"></div>
+<div class="container-fluid">
+    <div class="row text-center" style="overflow:hidden;">
+        <div class="col-sm-3" style="float: none !important;display: inline-block;">
+            <label class="text-left">زاویه:</label>
+            <input class="chart-input" data-property="angle" type="range" min="0" max="60" value="30" step="1" />
+        </div>
+        <div class="col-sm-3" style="float: none !important;display: inline-block;">
+            <label class="text-left">عمق:</label>
+            <input class="chart-input" data-property="depth3D" type="range" min="1" max="50" value="10" step="1" />
+        </div>
+        <div class="col-sm-3" style="float: none !important;display: inline-block;">
+            <label class="text-left">شعاع داخلی:</label>
+            <input class="chart-input" data-property="innerRadius" type="range" min="0" max="90" value="50" step="1" />
+        </div>
+    </div>
+</div>
+@*<script src='~/Content/Reporting/js/jquery-1.11.2.min.js'></script>*@
+<script>
+
+        var FirstPercent;
+        var SecondPercent;
+        var ThirdPercent;
+        FirstPercent = '@ViewBag.FirstNumber';
+    SecondPercent = '@ViewBag.SecoundNumber';
+    ThirdPercent = '@ViewBag.ThirdNumber';
+    $("#FormContainer-Project").on("click", "#btnSave", function (e) {
+        var State = $('#State').val();
+        LoadPartialView('GET', 'General/Chart/_C1Update', {state: State}, '#chart');
+
+         
+
+        });
+        
+
+        var chart = AmCharts.makeChart("chartdiv", {
+            "type": "pie",
+            "theme": "chalk",						// theme "default" , "light" , "dark" , "chalk"
+            "titles": [{
+                "text": "نمودار مقایسه ای بر اساس نوع پروژه",		// chart title
+                "size": 16							// size of chart title
+            }],
+            "dataProvider": [{
+                "country": "سند مالکیت",
+                "visits": FirstPercent,
+
+            }, {
+                "country": "صورت جلسه واگذاری",
+                "visits": SecondPercent,
+
+            }, {
+                "country": "اوقافی",
+                "visits": ThirdPercent,
+
+            }],
+            "valueField": "visits",
+            "titleField": "country",
+            "startEffect": "elastic",
+            "balloon": {							// drop tooltip true / false
+                "drop": false,
+                "adjustBorderColor": false,
+                "color": "#000",
+                "fontSize": 16
+            },
+            "startDuration": 2,					// Duration of start animation
+            "labelRadius": 15,					// label space from donut
+            "innerRadius": "50%",					// inner radius of donut
+            "depth3D": 10,						// depth of donut
+            "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",		// tooltip text
+            "angle": 15,							// angle of donut
+            "export": {
+                "enabled": true
+            }
+        });
+        jQuery('.chart-input').off().on('input change', function () {
+            var property = jQuery(this).data('property');
+            var target = chart;
+            var value = Number(this.value);
+            chart.startDuration = 0;
+
+            if (property == 'innerRadius') {
+                value += "%";
+            }
+
+            target[property] = value;
+            chart.validateNow();
+        });
+</script>

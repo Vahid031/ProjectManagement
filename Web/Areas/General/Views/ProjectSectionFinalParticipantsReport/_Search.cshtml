@@ -1,0 +1,27 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionFinalParticipantViewModel.ReportParameterProjectSectionFinalParticipantViewModel
+
+<form id="frm-ReportParameterProjectSectionFinalParticipants" class="operationform" method="post">
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.FileCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.FileCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.FileCode, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectTitle, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectTitle, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Title, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Title, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Title, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSearchProjectSectionFinalParticipants" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>جستجو</button>
+    </div>
+</form>

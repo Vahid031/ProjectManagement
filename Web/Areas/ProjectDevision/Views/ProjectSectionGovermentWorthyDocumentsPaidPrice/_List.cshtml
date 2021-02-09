@@ -1,0 +1,58 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionGovermentWorthyDocumentsPaidPriceViewModel.ListProjectSectionGovermentWorthyDocumentsPaidPriceViewModel
+@{string tableName = "ProjectSectionGovermentWorthyDocumentsPaidPrice";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionDraft.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionDraft.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDraft.DraftNumber', '@(tableName)')">@Html.DisplayNameFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.Bank) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDraft.TempDraftPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionGovermentWorthyDocumentsPaidPrice.TempDraftPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDraft.DraftPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionGovermentWorthyDocumentsPaidPrice.DraftPrice) <span class="sort-arrow arrow-sortable`"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDraft.DraftDate_', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionGovermentWorthyDocumentsPaidPrice.DraftDate_) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='عملیات'>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDraft.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDraft.DraftNumber)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDraft.DraftNumber">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDraft.TempDraftPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDraft.TempDraftPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDraft.DraftPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDraft.DraftPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDraft.DraftDate_)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDraft.DraftDate_">
+                            </td>
+
+                            <td data-th='عملیات'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

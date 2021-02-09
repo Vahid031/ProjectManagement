@@ -1,0 +1,432 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>سامانه مدیریت پروژه های عمرانی</title>
+
+    <link href="~/Content/Styles/bootstrap-rtl2.css" rel="stylesheet" />
+    <link href="~/Content/Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/Styles/grid.css" rel="stylesheet" />
+    <link href="~/Content/Styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Styles/ionicons.css" rel="stylesheet" />
+
+    <link href="~/Utilities/Styles/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Utilities/Styles/jquery-ui.theme.min.css" rel="stylesheet" />
+    <link href="~/Utilities/Styles/confirm.css" rel="stylesheet" />
+    <link href="~/Utilities/Styles/popupform.css" rel="stylesheet" />
+    <link href="~/Utilities/Styles/dropdownlist.css" rel="stylesheet" />
+    <link href="~/Content/Styles/style.css" rel="stylesheet" />
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/Utilities/Scripts/AjaxUtility.js"></script>
+    <script src="~/Utilities/Scripts/ListViewUtility.js"></script>
+    <script src="~/Utilities/Scripts/validation.js"></script>
+    <script src="~/Utilities/Scripts/jquery.ui.datepicker-cc.all.min.js"></script>
+    <script src="~/Utilities/Scripts/dropdownlist.js"></script>
+
+    @*<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>*@
+    <script src="~/Content/map/gmaps.js"></script>
+
+    <script src="~/Areas/General/Business/HomeBusiness.js"></script>
+
+
+    <!-- -----------------  Start Scrollbar ------------------------ -->
+    <link href="~/Utilities/Styles/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <!-- custom scrollbars plugin -->
+    <script src="~/Utilities/Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $(window).load(function () {
+                var content = $("#content-box");
+                content.mCustomScrollbar({
+                    theme: "dark",
+                    scrollInertia: 299,
+                    advanced: { updateOnContentResize: true, autoScrollOnFocus: false },
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+            });
+        })(jQuery);
+
+
+        // این کد برای اضافه شدن کاما می باشد
+        function Seprator(value) {
+            if (!$.isNumeric(value))
+                return 0;
+
+            return value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+        }
+    </script>
+    <!-- -----------------  End Scrollbar ---------------------------- -->
+
+
+    <style>
+        .btngrid {
+            padding: 5px;
+            margin: 0px;
+            width: auto;
+            font-size: 14px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    
+
+    <div id="RightNavigation">
+
+    </div>
+
+
+    <!--------------------- Start Main Content ----------------------------------------->
+    <div class="main-content">
+        <!--------------- Start Header ------------------------->
+        <header class="header">
+            <section class="content-header">
+
+                <div class="header-date">
+                    <small>تاریخ : </small><small>@Infrastracture.AppCode.ConvertDate.GetShamsi(DateTime.Now)</small>
+
+                    <div class="header-title">
+                        <span>سامانه مدیریت پروژه های عمرانی(خبره)</span>
+                    </div>
+                </div>
+
+                <ul class="head-ul">
+                    <li><a href="/General/Home/Exit" class="head-a"><i class="fa fa-sign-out head-icon"></i><span class="head-text">خروج</span></a></li>
+                    @*<li><a href="#" class="head-a"><i class="fa fa-user head-icon"></i><span class="head-text">پروفایل</span></a></li>*@
+                    <li><a id="changePassword" href="/General/Home/_ChangePassword" class="head-a"><i class="fa fa-unlock-alt head-icon"></i><span class="head-text">کلمه عبور</span></a></li>
+                    <li style="border-right:1px #eaeaea solid;"><a href="/General/Dashboard/Index" class="head-a"><i class="fa fa-dashboard head-icon"></i><span class="head-text">داشبورد</span></a></li>
+                </ul>
+                <div style="clear:both;"></div>
+            </section>
+        </header>
+        <!--------------- End Header ------------------------->
+        <script>
+            $('#changePassword').on('click', function (event) {
+                var url = $(this).attr('href');
+                var Id = 0;
+
+                event.preventDefault();
+
+                if (url.split('/').length > 4) {
+                    Id = url.substr(url.lastIndexOf('/') + 1);
+                    url = url.substr(0, url.lastIndexOf('/'));
+                }
+
+                if (typeof url !== "undefined") {
+                    if (url.indexOf('_') > 0) {
+                        $('.alert').stop().slideUp(300);
+
+                        LoadPartialView('GET', url, { id: Id }, '#Default');
+                        $('#ContentTitle').text($(this).text().trim());
+                    }
+                }
+            });
+        </script>
+
+        <!--------------- Start Content ------------------------->
+        <section class="box" id="content-box">
+            <header class="box-header">
+                <div class="box-title"><i class="fa fa-inbox"></i><span id="ContentTitle">صفحه اصلی</span></div>
+            </header>
+
+            <!---------- Start Main Box ------------>
+            <div class="box-main">
+
+                <!----------- Start Message -------------->
+                <div id="Alert" class="alert alert-success" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span></span>
+                </div>
+
+                <div id="AlertDown" class="alert alert-success alert-down" role="alert">
+                    <button type="button" style="margin-left:10px; float:right;" class="close" id="AlertClose2"><span aria-hidden="true">&times;</span></button>
+                    <span>هیچ والدی انتخاب نشده است</span>
+                </div>
+
+                <div class="clear"></div>
+                <!----------- End Message -------------->
+                <div id="Default" class="content">
+
+                </div>
+
+
+
+            </div>
+            <!---------- End Main Box ------------>
+
+        </section>
+
+        <!--------------- End Content ------------------------->
+        <div class="clear"></div>
+    </div>
+    <!--------------------- End Main Content ----------------------------------------->
+
+
+    <div class="content-alert" id="loading" style=" background-color:transparent;">
+        <img src="/Utilities/Images/loading.gif" style=" width:110px; border-radius:50%; margin: auto; position: absolute; top:0px; bottom:0; right:0; left:0;" />
+    </div>
+
+
+    <!--------------------- Start PopupForm ------------------------------>
+    <div class="content-popup" id="cpb">
+        <div class="popup-box">
+
+            <div class="popup-box-title"><span class="fa fa-inbox"></span> &nbsp; <span class="popup-title-text"></span></div>
+
+            <div class="popup-box-main">
+                <div style="direction:rtl;" class="popup-main">
+                </div>
+            </div>
+
+            <div class="popup-box-bottom">
+                <input type="button" onclick="PopupSelectList('#cpb')" class="btn btn-info popupYes" value="انتخاب">
+                <input type="button" onclick="PopupFormClose('#cpb')" class="btn btn-danger popupNo" value="بازگشت">
+            </div>
+        </div>
+    </div>
+    <!--------------------- End PopupForm ---------------------------->
+    <!--------------------- Start PopupForm ------------------------------>
+    <div class="content-popup" id="cpb2">
+        <div class="popup-box">
+
+            <div class="popup-box-title"><span class="fa fa-inbox"></span> &nbsp; <span class="popup-title-text"></span></div>
+
+            <div class="popup-box-main">
+                <div style="direction:rtl;" class="popup-main">
+                </div>
+            </div>
+
+            <div class="popup-box-bottom">
+                <input type="button" onclick="PopupSelectList('#cpb2')" class="btn btn-info popupYes" value="انتخاب">
+                <input type="button" onclick="PopupFormClose('#cpb2')" class="btn btn-danger popupNo" value="بازگشت">
+            </div>
+        </div>
+    </div>
+    <!--------------------- End PopupForm ---------------------------->
+    <!--------------------- Start PopupForm ---------------------------->
+    <script>
+
+        var yesPopupClick = '';
+        var noPopupClick = '';
+
+        function PopupFormHtml(title, action, callback, yesButton, yesClick, popupContainer, noClick) {
+            yesPopupClick = yesClick;
+
+            if (noClick == undefined)
+                noPopupClick = '';
+            else
+                noPopupClick = noClick;
+
+            if (popupContainer == undefined) {
+                popupContainer = '#cpb';
+            }
+            LoadPartialView('GET', action, '', popupContainer + ' .popup-main');
+
+            $(popupContainer + ' .popup-title-text').text(title);
+
+            if (yesButton == false)
+                $(popupContainer + ' .popupYes').hide();
+            else
+                $(popupContainer + ' .popupYes').show();
+
+            $(popupContainer).fadeIn(200, function () {
+                eval(callback);
+            });
+            $(popupContainer + ' .popup-box').css({ 'top': '0', 'bottom': '0' });
+        }
+
+        function PopupSelectList(id) {
+            eval(yesPopupClick);
+            $(id + ' .popup-box').css({ 'top': '-250px', 'bottom': '500px' });
+            $(id).fadeOut(300);
+        }
+
+        function PopupFormClose(id) {
+            if (noPopupClick != '')
+                eval(noPopupClick);
+
+            $(id + ' .popup-box').css({ 'top': '-250px', 'bottom': '500px' });
+            $(id).fadeOut(300);
+        }
+
+    </script>
+    <!--------------------- End PopupForm ---------------------------->
+    @*<div id="HomeController" ng-controller="HomeController">
+        <div style="float:left">
+            {{22+333}}
+
+        </div>*@
+
+    <!--------------------- Start MvcAlert ------------------------------>
+    <div class="content-alert" id="cab">
+
+        <div class="alert-box">
+            @*<div class="alert-box-title">پیغام</div>
+                <div class="alert-box-close"></div>*@
+
+            <div class="alert-box-img"></div>
+
+            <div class="alert-box-text">
+                @*<span class="alert-box-icon"></span>*@
+                <div class="alert-box-msg">آیا از حذف اطمینان دارید</div>
+
+            </div>
+
+            <div class="alert-box-bottom">
+                <input type="button" onclick="ActionFunction(true)" id="Yes" class="btn btn-info" value="بله">
+                <input type="button" onclick="ActionFunction(false)" id="no" class="btn btn-danger" value="خیر">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var functionName = "";
+
+        function MvcAlert(names, ids) {
+            functionName = names + "(" + ids + ")";
+
+            $('.content-alert').fadeIn(200);
+            $('.alert-box').css({ 'top': '0', 'bottom': '0' });
+        }
+
+        function ActionFunction(value) {
+            if (value) {
+                eval(functionName);
+            }
+            $('.alert-box').css({ 'top': '-250px', 'bottom': '500px' });
+            $('.content-alert').fadeOut(300);
+        }
+    </script>
+
+    <!--------------------- End MvcAlert ---------------------------->
+    @*</div>*@
+
+    <script>
+        $(function () {
+            LoadPartialView('GET', '/General/Home/_RightNavigation', '', '#RightNavigation');
+            LoadPartialView('GET', '/General/Home/_Default', '', '#Default');
+
+            // باکس پیغام های صفحه
+            $('#AlertClose,#AlertClose2').click(function () {
+                $('.alert').slideUp(300);
+            });
+        });
+
+        function Messages(type, message) {
+            $('#Alert,#AlertDown').removeClass('alert-success alert-info alert-warning alert-danger');
+
+            $('#Alert,#AlertDown').addClass('alert-' + type);
+            $('#Alert,#AlertDown').children('span').html(message);
+
+
+            if ($('#Alert').css('display') == 'block')
+                $('#Alert,#AlertDown').fadeOut(100).fadeIn(200).delay(3000).slideUp(300);
+            else
+                $('#Alert,#AlertDown').slideDown(300).delay(3000).slideUp(300);
+
+        }
+
+        function CheckValue() {
+            if ($('#Id').val() != '-1')
+                $('#btnSave').html('<span class="glyphicon glyphicon-pencil float-rtl"></span>ویرایش');
+        }
+
+        function DatePic(selector) {
+            $(selector).datepicker({ changeMonth: true, changeYear: true, isRTL: true, dateFormat: 'yy/mm/dd', yearRange: '1300:1500' });
+        }
+
+
+        function TimePic(selector) {
+            $(selector).datepicker({ changeTime: true, isRTL: true, dateFormat: 'hh/mm' });
+        }
+    </script>
+
+
+
+    <script>
+
+
+
+
+        //-------- Scroll Down For Tab
+        $('#Default').on('click', '.nav-pills', function (e) {
+            //  alert('scroll');
+            // $('#myID').stop().delay(1000).stop().animate({ scrollTop: 1000 }, 1000);
+            // $('#content-box').mCustomScrollbar("scrollTo", position, options);
+            $('#content-box').delay(800).queue(function (next) {
+                $(this).mCustomScrollbar('scrollTo', 'bottom');
+                next();
+            });
+        });
+
+
+        // ======= price seperator by ',' =========== //
+        // کد سه رقم سه رقم شدن اعداد همگام تایپ
+        $("#Default,#cpb").on("keyup", ".input-price", function () {
+            var str = $(this).val();
+
+            if (!isNaN(str) && (str).length > 3) {
+                $(this).val(str.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+            }
+
+        }); // end each
+
+        // کد سه رقم سه رقم شدن اعداد در تکست باکس
+        // این کد در زمانی که صفحه برای آپدیت لود می شود فراخوانی می شود
+        function SepratePrice(item) {
+            var str = $(item).val();
+
+            if (!isNaN(str) && (str).length > 3) {
+                $(item).val(str.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+            }
+        }
+
+
+
+
+
+
+
+
+
+        //When Resize The Window Change the Content-Box Size
+        ResizeBox();
+
+        $(window).resize(function () {
+            ResizeBox();
+        });
+
+        function ResizeBox() {
+            if ($(window).width() >= 992) {
+                $('#content-box').css({ 'width': $(window).width() - 245 });
+                $('#content-box').css({ 'height': $(window).height() - 90 });
+            }
+            else {
+                $('#content-box').css({ 'width': $(window).width() - 25 });
+                $('#content-box').css({ 'height': $(window).height() - 146 });
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

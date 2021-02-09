@@ -1,0 +1,32 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionOperationTitleViewModel.CreateProjectSectionOperationTitleViewModel
+
+<form id="frm-ProjectSectionOperationTitle" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionOperationTitle.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionOperationTitle.Id, @id = "ProjectSectionOperationTitleId" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionOperationTitle.Title, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionOperationTitle.Title, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionOperationTitle.Title, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionOperationTitle" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionOperationTitle" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

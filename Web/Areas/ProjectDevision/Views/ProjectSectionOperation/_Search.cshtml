@@ -1,0 +1,41 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionOperationViewModel.SearchProjectSectionOperationViewModel
+
+<form id="frm-ProjectSectionOperation" class="operationform" method="post">
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.FileCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.FileCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.FileCode, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectTitle, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectTitle, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionTitle, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionTitle, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.StateId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.StateId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.StateId, new SelectList(Model.States, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.CityId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CityId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.CityId, new SelectList(Model.Cities, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionOperationStateId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionOperationStateId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionOperationStateId, new SelectList(Model.ProjectSectionOperationStates, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+</form>

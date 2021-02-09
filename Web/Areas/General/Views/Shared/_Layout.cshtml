@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سامانه مدیریت پروژه</title>
+    <link href="~/Content/Dashboard/Site.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/treeview.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/animation-chart.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/bootstrap-rtl2.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/clock.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/confirm.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/fileinput.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/grid.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/ionicons.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/jquery-clockpicker.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/jquery-ui.theme.min.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/popupform.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/style-panel.css" rel="stylesheet" />
+
+    <link href="~/Content/Dashboard/css/style.css" rel="stylesheet" />
+    <link href="~/Content/Dashboard/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <script src="~/Content/Dashboard/js/ListViewUtility.js"></script>
+    <script src="~/Content/Dashboard/js/fileinput.min.js"></script>
+    <script src="~/Content/Dashboard/js/fileinput_locale_ir.js"></script>
+    <script src="~/Content/Dashboard/js/jquery-clockpicker.min.js"></script>
+    <script src="~/Content/Dashboard/js/jquery.ui.datepicker-cc.all.min.js"></script>
+
+    <script src="~/Content/Dashboard/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <div id="RightNavigation">
+            <!-------------------------- Start Menu --------------------------------------->
+            <nav class="nav-side-menu" id="content-menu">
+                <div class="brand" style="font-size: 40px; height: 60px; color: #fe6b51">
+                    <i class="ion ion-person" style="display: block; color: rgb(204, 204, 204)"></i><span style="display: block; font-size: 19px; color: rgb(153, 153, 153); margin-top: -15px;">مدیر سیستم </span>
+                </div>
+                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                <div class="custom-nav collapse navbar-collapse navbar-ex1-collapse" style="padding-left:0px;padding-right:0px;">
+                    <ul id="menu-content" class="nav navbar-nav side-nav menu-content">
+                        @*<li>
+                                @Ajax.ActionLink("Book", "Index", "Book", new AjaxOptions { UpdateTargetId = "Default", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })
+                            </li>
+                            <li>
+                                @Ajax.ActionLink("Customer", "Index", "Customer", new AjaxOptions { UpdateTargetId = "Default", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })
+                            </li>*@
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#demo1"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span> پروژه <span class="arrow pull-left"></span></a>
+                            <ul id="demo1" class="collapse sub-menu">
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/General/Chart/_C1"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">وضعیت مالکیت</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/UserGroups/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تعریف گروه کاربری</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/RolePermission/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تعیین سطح دسترسی</span></a>
+
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تعیین سطح دسترسی</span></a>
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/AlarmsSettings/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تنظیمات آلارم ها</span></a>
+
+                                </li>
+
+                                @*<li>
+                                        <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تغییر رمز عبور کاربران</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تنظیمات پایه</span></a>
+                                    </li>*@
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#demo2"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span> اطلاعات پایه <span class="arrow pull-left"></span></a>
+                            <ul id="demo2" class="collapse sub-menu">
+
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/State/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تعریف شهرستان</span></a>
+
+                                </li>
+
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/Section/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تعریف بخش</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/City/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تعریف شهر</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/Village/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تعریف روستا</span></a>
+
+                                </li>
+                                <li>
+                                    @*<i class="fa fa-angle-left fa-lg" style="padding-right: 25px"><span style="font-size: 14px">@Ajax.ActionLink("تعریف نوع واگذاری", "Index", "Assignment", new AjaxOptions { UpdateTargetId = "Default", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })</span></i>*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/CommitteeTitle/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">عنوان هیأت ورزشی</span></a>
+
+                                </li>
+                                <li>
+                                    @*<i class="fa fa-angle-left fa-lg" style="padding-right: 25px"><span style="font-size: 14px">@Ajax.ActionLink("تعریف نوع واگذاری", "Index", "Assignment", new AjaxOptions { UpdateTargetId = "Default", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })</span></i>*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/SportField/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">رشته ورزشی</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/CompetitionLevel/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">سطح مسابقات</span></a>
+
+                                </li>
+                                <li>
+
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/CompetitionType/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">نوع مسابقات</span></a>
+
+                                </li>
+                                <li>
+                                    @*@Ajax.ActionLink("قوانین و مقررات", "Index", "Rules", new AjaxOptions { HttpMethod = "get", UpdateTargetId = "Default",InsertionMode = InsertionMode.Replace })*@
+                                    @*@Html.ActionLink("قوانین و مقررات","Index","Rules")*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/LeagueCategory/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">دسته در لیگ</span></a>
+                                </li>
+
+
+
+                                <li>
+
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/CoachingGrade/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">درجه مربیگری و داوری</span></a>
+
+                                </li>
+                                <li>
+                                    @*<i class="fa fa-angle-left fa-lg" style="padding-right: 25px"><span style="font-size: 14px">@Ajax.ActionLink("تعریف نوع واگذاری", "Index", "Assignment", new AjaxOptions { UpdateTargetId = "Default", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })</span></i>*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/ActivityType/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">نوع فعالیت</span></a>
+
+                                </li>
+                                <li>
+                                    @*<i class="fa fa-angle-left fa-lg" style="padding-right: 25px"><span style="font-size: 14px">@Ajax.ActionLink("تعریف نوع واگذاری", "Index", "Assignment", new AjaxOptions { UpdateTargetId = "Default", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })</span></i>*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/ActivityLevel/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">سطح فعالیت</span></a>
+
+                                </li>
+                                <li>
+                                    @*<i class="fa fa-angle-left fa-lg" style="padding-right: 25px"><span style="font-size: 14px">@Ajax.ActionLink("تعریف نوع واگذاری", "Index", "Assignment", new AjaxOptions { UpdateTargetId = "Default", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })</span></i>*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/ActivityTitle/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">عنوان فعالیت</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/TrainingCourse/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">دوره آموزشی</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/Occasions/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">مناسبت</span></a>
+                                </li>
+                                <li>
+                                    @*@Ajax.ActionLink("قوانین و مقررات", "Index", "Rules", new AjaxOptions { HttpMethod = "get", UpdateTargetId = "Default",InsertionMode = InsertionMode.Replace })*@
+                                    @*@Html.ActionLink("قوانین و مقررات","Index","Rules")*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/SportCommittee/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">عنوان هیأت ورزشی</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#demo3"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span>بانک اطلاعات اشخاص<span class="arrow pull-left"></span></a>
+                            <ul id="demo3" class="collapse sub-menu">
+
+                                <li>
+                                    @*@Ajax.ActionLink("قوانین و مقررات", "Index", "Rules", new AjaxOptions { HttpMethod = "get", UpdateTargetId = "Default",InsertionMode = InsertionMode.Replace })*@
+                                    @*@Html.ActionLink("قوانین و مقررات","Index","Rules")*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/AthleteInformation/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">بانک اطلاعاتی ورزشکاران</span></a>
+                                </li>
+                                <li>
+                                    @*@Ajax.ActionLink("قوانین و مقررات", "Index", "Rules", new AjaxOptions { HttpMethod = "get", UpdateTargetId = "Default",InsertionMode = InsertionMode.Replace })*@
+                                    @*@Html.ActionLink("قوانین و مقررات","Index","Rules")*@
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/Coach/Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">بانک اطلاعاتی مربیان و داوران</span></a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#demo4"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span><span class="text" style="font-size:13.4px;">شاخص عمالکرد</span><span class="arrow pull-left"></span></a>
+                            <ul id="demo4" class="collapse sub-menu">
+
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">دوره آموزشی</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">سمینار و همایش</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">اعضای هیأت</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">مدارس ورزشی</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">استعدادیابی</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">دعوت شدگان</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">ایستگاه های همگانی</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">واریزی به هیأت</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">میزبانی و اعزام</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">نتایج مسابقات</span></a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="active">
+                            <a href="#" data-toggle="collapse" data-target="#demo5"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span><span class="text" style="font-size:13.4px;">تایید اطلاعات</span><span class="arrow pull-left"></span></a>
+
+                            @*<a href="#" data-toggle="collapse" data-target="#demo5"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span> صورت جلسه ماده 88 <span class="arrow pull-left"></span></a>*@
+                            <ul id="demo5" class="collapse sub-menu">
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/AmareHeyaat/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">دوره آموزشی</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/Seminar/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">سمینار و همایش</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/AazayeHeyaat/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">اعضای هیأت</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/SportSchool/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">مدارس ورزشی</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/EstedadYabi/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">استعدادیابی</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/DaavatShodegan/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">دعوت شدگان</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/IstgaheHamegani/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">ایستگاه های همگانی</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/VariziBeHeyaat/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">واریزی به هیأت</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/Mizbani/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">میزبانی و اعزام</span></a>
+
+                                </li>
+                                <li>
+                                    <a data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#Default" href="/CompetitionResult/_Index"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">نتایج مسابقات</span></a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#demo10"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span> آلارم ها <span class="arrow pull-left"></span></a>
+                            <ul id="demo10" class="collapse sub-menu">
+                                <li>
+                                    <a href="ashboard.aspx"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تاریخ سررسید دوره آموزشی</span></a>
+                                </li>
+                                <li>
+                                    <a href="ashboard.aspx"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">تاریخ سررسید همایش و سمینار</span></a>
+                                </li>
+                                <li>
+                                    <a href="ashboard.aspx"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">اتمام اعتبار مجوز مدارس</span></a>
+                                </li>
+                                <li>
+                                    <a href="ashboard.aspx"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">سررسید برگزاری مسابقات</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="ashboard.aspx"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">اتمام اعتبار کارت مربیگری</span></a>
+                                </li>
+                                <li>
+                                    <a href="ashboard.aspx"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">اتمام اعتبار کارت داوری</span></a>
+                                </li>
+                                <li>
+                                    <a href="ashboard.aspx"><i class="fa fa-angle-left fa-lg"></i><span style="font-size: 14px;padding-right:10px">سررسید تولد</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#demo11"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span> گزارشات <span class="arrow pull-left"></span></a>
+                            <ul id="demo11" class="collapse sub-menu"></ul>
+                        </li>
+
+
+                        <li>
+                            <a href="#" data-toggle="collapse" data-target="#demo12"><i class="fa fa-comments-o fa-lg"></i><span class="menu-span"></span> داشبورد مدیریتی<span class="arrow pull-left"></span></a>
+                            <ul id="demo12" class="collapse sub-menu"></ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <!-------------------------- End Menu ----------------------------------------->
+        </div>
+
+        <!--------------------- Start Main Content ----------------------------------------->
+        <div class="main-content">
+            <!--------------- Start Header ------------------------->
+            <header class="header" style="background-color: #fff;">
+                <section class="content-header" style="background-color: #fff">
+
+                    <div class="header-date" style="width: 60%">
+                        <small style="font-size: 15px">تاریخ : </small><small style="font-size: 15px">1395/02/13</small>
+
+                        <div class="header-title" style="height: 30px; float: left">
+                            <span style="font-size: 18px; display: inline-block; padding-left: 4px; font-weight: 300; padding-top: 5px; color: #999">نرم افزار جامع مدیریت پروژه های عمرانی (خبره)</span>
+                        </div>
+                    </div>
+
+                    <ul class="head-ul">
+                        <li style="border-right: 1px #eaeaea solid;"><a href="Blank.aspx" class="head-a"><i class="fa fa-sign-out head-icon" style="color: #E5E5E5 !important;"></i><span class="head-text" style="color: #999999 !important; font-size: 14px;">خروج</span></a></li>
+                        <li style="border-right: 1px #eaeaea solid;"><a href="Blank.aspx" class="head-a"><i class="fa fa-unlock-alt head-icon" style="color: #E5E5E5 !important;"></i><span class="head-text" style="color: #999999 !important; font-size: 14px;">کلمه عبور</span></a></li>
+                        <li style="border-right: 1px #eaeaea solid;"><a href="/General/Home/Index" class="head-a"><i class="fa fa-dashboard head-icon" style="color: #E5E5E5 !important;"></i><span class="head-text" style="color: #999999 !important; font-size: 11px;">صفحه اصلی</span></a></li>
+                    </ul>
+                    <div style="clear: both;"></div>
+                </section>
+            </header>
+            <!--------------- End Header ------------------------->
+            <!--------------- Start Content ------------------------->
+            <section class="box">
+                <header class="box-header">
+                    <div class="box-title"><i class="fa fa-inbox"></i><span id="ContentTitle">داشبورد</span></div>
+                </header>
+
+
+                <!---------- Start Main Box ------------>
+                <div class="box-main">
+
+                    <!----------- Start Message -------------->
+                    <!----------- End Message -------------->
+                    <div id="Default" class="content" style="position: relative;max-width: 100%;height: 430px;overflow-y: scroll;">
+
+
+
+                        @RenderBody()
+
+                        @*-- ------------------------------------ Custom ----------------------------------- --*@
+
+
+
+                    </div>
+
+
+                </div>
+                <!---------- End Main Box ------------>
+
+            </section>
+
+            <!--------------- End Content ------------------------->
+        </div>
+        <!--------------------- End Main Content ----------------------------------------->
+
+
+        <div class="content-alert" id="loading" style="background-color: transparent;">
+            <img alt="" src="/Utilities/Images/loading.gif" style="width: 110px; border-radius: 50%; margin: auto; position: absolute; top: -200px; bottom: 0; right: 0; left: 0;" />
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionComplementarityPriceViewModel.ListProjectSectionComplementarityPriceViewModel>
+@{ string tableName = "ProjectSectionComplementarityPrice";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionComplementarityPrice.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)" style="min-width:900px;">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionComplementarityPrice.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityPrice.Date', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.Date) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityPrice.DecreasePercent', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.DecreasePercent) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityPrice.IncreasePercent', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.IncreasePercent) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityPrice.NewPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.NewPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityPrice.Number', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.Number) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityPrice.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.Date)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityPrice.Date">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.DecreasePercent)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityPrice.DecreasePercent">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.IncreasePercent)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityPrice.IncreasePercent">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.NewPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityPrice.NewPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityPrice.Number)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityPrice.Number">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="7"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

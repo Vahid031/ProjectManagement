@@ -1,0 +1,39 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionWinnerDegreeViewModel.CreateProjectSectionWinnerDegreeViewModel
+
+<form id="frm-ProjectSectionWinnerDegree" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionWinnerDegree.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionWinnerDegree.Id, @id = "ProjectSectionWinnerDegreeId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionWinnerDegree" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionWinnerDegree.ReciveDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionWinnerDegree.ReciveDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionWinnerDegree.ReciveDate, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowProjectSectionWinnerDegreeFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionWinnerDegree" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionWinnerDegree" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

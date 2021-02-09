@@ -1,0 +1,42 @@
+﻿/*** Yekan Regular ***/
+@font-face {
+	font-family: 'Yekan Regular';
+	font-weight: normal;
+	font-style: normal;
+	src:url('../fonts/yekan/regular-yekan.eot'); /* IE9 Compat Modes */
+	src:url('../fonts/yekan/regular-yekan.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	    url('../fonts/yekan/regular-yekan.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/yekan/regular-yekan.woff') format('woff'), /* Pretty Modern Browsers */
+		url('../fonts/yekan/regular-yekan.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/yekan/regular-yekan.svg#YekanRegular') format('svg'); /* Legacy iOS */
+}
+
+/*** BBCNassim Regular ***/
+@font-face {
+	font-family: 'BBCNassim Regular';
+	font-weight: normal;
+	font-style: normal;
+	src:url('../fonts/bbc nassim/regular-bbcnassim.eot'); /* IE9 Compat Modes */
+	src:url('../fonts/bbc nassim/regular-bbcnassim.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	    url('../fonts/bbc nassim/regular-bbcnassim.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/bbc nassim/regular-bbcnassim.woff') format('woff'), /* Pretty Modern Browsers */
+		url('../fonts/bbc nassim/regular-bbcnassim.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/bbc nassim/regular-bbcnassim.svg#BBCNassimRegular') format('svg'); /* Legacy iOS */
+}
+
+/*** B Koodak Regular ***/
+@font-face {
+	font-family: 'B Koodak Regular';
+	font-weight: normal;
+	font-style: normal;
+	src:url('../fonts/b koodak/regular-b koodak.eot'); /* IE9 Compat Modes */
+	src:url('../fonts/b koodak/regular-b koodak.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	    url('../fonts/b koodak/regular-b koodak.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/b koodak/regular-b koodak.woff') format('woff'), /* Pretty Modern Browsers */
+		url('../fonts/b koodak/regular-b koodak.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/b koodak/regular-b koodak.svg#BKoodakRegular') format('svg'); /* Legacy iOS */
+}
+body{
+    font-family: 'Yekan Regular';
+
+}

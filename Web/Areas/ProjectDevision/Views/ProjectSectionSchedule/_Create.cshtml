@@ -1,0 +1,45 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionScheduleViewModel.CreateProjectSectionScheduleViewModel
+
+<form id="frm-ProjectSectionSchedule" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionSchedule.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionSchedule.Id, @id = "ProjectSectionScheduleId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionSchedule" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionSchedule.OpinionId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionSchedule.OpinionId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionSchedule.OpinionId, new SelectList(Model.Opinions, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionSchedule.Description, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionSchedule.Description, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionSchedule.Description, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowProjectSectionScheduleFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionSchedule" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionSchedule" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+﻿@model ViewModels.BaseInformation.ContractorViewModel.ReportParameterContractorViewModel
+
+<form id="frm-ReportParameterContractor" class="operationform" method="post">
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ContractorType, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ContractorType, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ContractorType, new List<SelectListItem> {
+            new SelectListItem{ Text="حقیقی", Value="حقیقی"},
+            new SelectListItem{ Text="حقوقی", Value="حقوقی"}
+        }, "انتخاب کنید...", new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.IsActive, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.IsActive, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.IsActive, new List<SelectListItem> {
+            new SelectListItem{ Text="فعال", Value="true"},
+            new SelectListItem{ Text="غیر فعال", Value="false"}
+        }, "انتخاب کنید...", new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.MajorTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.MajorTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.MajorTypeId, new SelectList(Model.MajorTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.LevelTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.LevelTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.LevelTypeId, new SelectList(Model.LevelTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSearchContractor" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>جستجو</button>
+    </div>
+</form>

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C50C9CB-A776-42DF-A285-6165F80F3158}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Services</RootNamespace>
+    <AssemblyName>Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EfServices\BaseInformation\ContractorLevelService.cs" />
+    <Compile Include="EfServices\BaseInformation\MajorTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\LevelTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\PlanTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\RecoupmentTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\StatementNumberService.cs" />
+    <Compile Include="EfServices\BaseInformation\TempFixedService.cs" />
+    <Compile Include="EfServices\BaseInformation\LetterTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\DefectService.cs" />
+    <Compile Include="EfServices\BaseInformation\RankService.cs" />
+    <Compile Include="EfServices\BaseInformation\AssignmentTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\ProjectSectionOperationStateService.cs" />
+    <Compile Include="EfServices\BaseInformation\ProjectSectionAssignmentStateService.cs" />
+    <Compile Include="EfServices\BaseInformation\ServiceProductService.cs" />
+    <Compile Include="EfServices\BaseInformation\ProjectStateService.cs" />
+    <Compile Include="EfServices\BaseInformation\OwnershipTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\AccountTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\CityService.cs" />
+    <Compile Include="EfServices\BaseInformation\CommissionMemberService.cs" />
+    <Compile Include="EfServices\BaseInformation\ContractorService.cs" />
+    <Compile Include="EfServices\BaseInformation\ContractTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\CreditProvidePlaceService.cs" />
+    <Compile Include="EfServices\BaseInformation\DeductionPercentService.cs" />
+    <Compile Include="EfServices\BaseInformation\DocumentTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\ProjectTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\FinantialYearService.cs" />
+    <Compile Include="EfServices\BaseInformation\InvestmentChapterService.cs" />
+    <Compile Include="EfServices\BaseInformation\InvestmentChapterTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\MonitoringTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\ExecutionTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\ProgramService.cs" />
+    <Compile Include="EfServices\BaseInformation\ResourceService.cs" />
+    <Compile Include="EfServices\BaseInformation\ResourceTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\RuralDistrictService.cs" />
+    <Compile Include="EfServices\BaseInformation\SectionService.cs" />
+    <Compile Include="EfServices\BaseInformation\SetService.cs" />
+    <Compile Include="EfServices\BaseInformation\StatementTypeService.cs" />
+    <Compile Include="EfServices\BaseInformation\StateService.cs" />
+    <Compile Include="EfServices\BaseInformation\UnitService.cs" />
+    <Compile Include="EfServices\BaseInformation\VillageService.cs" />
+    <Compile Include="EfServices\BaseInformation\NotificationTypeService.cs" />
+    <Compile Include="EfServices\General\LogDetailService.cs" />
+    <Compile Include="EfServices\General\FileService.cs" />
+    <Compile Include="EfServices\General\LogService.cs" />
+    <Compile Include="EfServices\General\MemberService.cs" />
+    <Compile Include="EfServices\General\PermissionService.cs" />
+    <Compile Include="EfServices\General\RolePermissionService.cs" />
+    <Compile Include="EfServices\General\RoleService.cs" />
+    <Compile Include="EfServices\GenericService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectFundingFileService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectPlanService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectAllocateService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectQuantityGoalService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectAverageService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectInvestmentChapterService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectFundingService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectFileService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectAllocateFileService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProjectService.cs" />
+    <Compile Include="EfServices\ProjectDefine\ProgramPlanService.cs" />
+    <Compile Include="EfServices\BaseInformation\OpinionService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionContractAndCostsService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionContractDetailService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionComplementarityDateFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionComplementarityPriceFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionComplementarityDateService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionComplementarityPriceService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionContractFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionContractService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionAdvisorVisitFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionCorrespondenceFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionCorrespondenceService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionGovermentWorthyDocumentsPaidPriceService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionProductFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionPaidPriceFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDraftFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionPaidPriceService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionOperationTitleService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionRecoupmentFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionStatementConfirmFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionStatementFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionStatementConfirmService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDraftService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionRecoupmentService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionStatementService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionMadeh48FileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionMadeh46FileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDepositeLiberalizationFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDeliveryFixdFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionMadeh48Service.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionMadeh46Service.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDepositeLiberalizationService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDeliveryFixdService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionSupervisorVisitFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionScheduleFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionMemberService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionAdvisorVisitService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionSupervisorVisitService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionScheduleService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDeliveryTemproryFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionDeliveryTemproryService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionWinnerDegreeFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionWinnerDegreeService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionWinnerService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionFinanceEvaluationService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionOpenDateService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionParticipantService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionFinalParticipantFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionTenderFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionCeremonialFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionFinalParticipantService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionTenderService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionInquiryFileService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionCeremonialService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionInquiryService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionProductService.cs" />
+    <Compile Include="EfServices\ProjectDevision\ProjectSectionService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IContractorLevelService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IMajorTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ILevelTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IPlanTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IProjectStatementService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IRecoupmentTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IStatementNumberService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ITempFixedService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ILetterTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IDefectService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IRankService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IAssignmentTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IProjectSectionOperationStateService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IProjectSectionAssignmentStateService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IServiceProductService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IOwnershipTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IProjectStateService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IFinantialYearService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IMonitoringTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IExecutionTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IProjectTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IVillageService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IUnitService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IStateService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IStatementTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ISetService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ISectionService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IRuralDistrictService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IResourceService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IResourceTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IProgramService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IInvestmentChapterService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IInvestmentChapterTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IDocumentTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IDeductionPercentService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ICreditProvidePlaceService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IContractTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IContractorService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ICommissionMemberService.cs" />
+    <Compile Include="Interfaces\BaseInformation\ICityService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IAccountTypeService.cs" />
+    <Compile Include="Interfaces\BaseInformation\INotificationTypeService.cs" />
+    <Compile Include="Interfaces\General\ILogDetailService.cs" />
+    <Compile Include="Interfaces\General\IFileService.cs" />
+    <Compile Include="Interfaces\General\ILogService.cs" />
+    <Compile Include="Interfaces\General\IMemberService.cs" />
+    <Compile Include="Interfaces\General\INotificationService.cs" />
+    <Compile Include="Interfaces\General\IPermissionService.cs" />
+    <Compile Include="Interfaces\General\IRolePermissionService.cs" />
+    <Compile Include="Interfaces\General\IRoleService.cs" />
+    <Compile Include="Interfaces\IGenericService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectFundingFileService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectPlanService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectAllocateService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectQuantityGoalService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectAverageService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectInvestmentChapterService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectFundingService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectFileService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectAllocateFileService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProjectService.cs" />
+    <Compile Include="Interfaces\ProjectDefine\IProgramPlanService.cs" />
+    <Compile Include="Interfaces\BaseInformation\IOpinionService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionContractAndCostsService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionContractDetailService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionContractFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionContractService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionCorrespondenceFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionCorrespondenceService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionGovermentWorthyDocumentsPaidPriceService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionProductFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionPaidPriceFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDraftFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionPaidPriceService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionOperationTitleService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionRecoupmentFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionStatementConfirmFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionStatementFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionStatementConfirmService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDraftService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionRecoupmentService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionStatementService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionMadeh48FileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionMadeh46FileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDepositeLiberalizationFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDeliveryFixdFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionMadeh48Service.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionMadeh46Service.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDepositeLiberalizationService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDeliveryFixdService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionMemberService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionScheduleFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionScheduleService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionSupervisorVisitFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionSupervisorVisitService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionAdvisorVisitFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionAdvisorVisitService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDeliveryTemproryFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionDeliveryTemproryService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionWinnerService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionFinalParticipantFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionWinnerDegreeFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionComplementarityPriceFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionComplementarityDateFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionTenderFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionCeremonialFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionFinalParticipantService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionWinnerDegreeService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionComplementarityPriceService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionComplementarityDateService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionParticipantService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionFinanceEvaluationService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionOpenDateService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionTenderService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionInquiryFileService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionCeremonialService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionInquiryService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionProductService.cs" />
+    <Compile Include="Interfaces\ProjectDevision\IProjectSectionService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseContext\DatabaseContext.csproj">
+      <Project>{36351a9e-ee33-4f83-b251-4d679960d581}</Project>
+      <Name>DatabaseContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainModels\DomainModels.csproj">
+      <Project>{9f0a246c-fbac-4b88-9ab7-907ded9f74b6}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastracture\Infrastracture.csproj">
+      <Project>{af69803c-7dd5-42f5-b369-590335aa6c32}</Project>
+      <Name>Infrastracture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{70149f55-78d0-4e92-863f-e86266e5fafd}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

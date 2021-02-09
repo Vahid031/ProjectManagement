@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ViewModels.BaseInformation.ContractorViewModel.ListContractorViewModel>
+@{ string tableName = "Contractor";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="@(tableName).Id descending" />
+
+    <!------------- Start Table ----------------------->
+
+    <div class="col-lg-12 content-grid">
+        <form id="frm-tbl-@(tableName)">
+            <table class="tbl-grid" id="tbl-@(tableName)" style="min-width: 1300px;">
+                <thead>
+                    <tr>
+                        <th style="width:80px;"><a onmousedown="Sort('Contractor.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th><a onmousedown="Sort('Contractor.CompanyName', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.CompanyName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th><a onmousedown="Sort('Contractor.ManagerFirstName', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.ManagerFirstName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th><a onmousedown="Sort('Contractor.ManagerLastName', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.ManagerLastName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th><a onmousedown="Sort('Contractor.ManagerMobileNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.ManagerMobileNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th><a onmousedown="Sort('Contractor.ManagerNationalCode', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.ManagerNationalCode) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th><a onmousedown="Sort('Contractor.PhoneNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.PhoneNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th><a onmousedown="Sort('Contractor.IsActive', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.IsActive) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-th='ردیف'>
+                            <input type="text" class="form-control txtbox" name="Contractor.Id">
+                        </td>
+
+                        <td data-th="@Html.DisplayNameFor(model => model.Contractor.CompanyName)">
+                            <input type="text" class="form-control txtbox" name="Contractor.CompanyName">
+                        </td>
+
+                        <td data-th="@Html.DisplayNameFor(model => model.Contractor.ManagerFirstName)">
+                            <input type="text" class="form-control txtbox" name="Contractor.ManagerFirstName">
+                        </td>
+
+                        <td data-th="@Html.DisplayNameFor(model => model.Contractor.ManagerLastName)">
+                            <input type="text" class="form-control txtbox" name="Contractor.ManagerLastName">
+                        </td>
+
+                        <td data-th="@Html.DisplayNameFor(model => model.Contractor.ManagerMobileNumber)">
+                            <input type="text" class="form-control txtbox" name="Contractor.ManagerMobileNumber">
+                        </td>
+
+                        <td data-th="@Html.DisplayNameFor(model => model.Contractor.ManagerNationalCode)">
+                            <input type="text" class="form-control txtbox" name="Contractor.ManagerNationalCode">
+                        </td>
+
+                        <td data-th="@Html.DisplayNameFor(model => model.Contractor.PhoneNumber)">
+                            <input type="text" class="form-control txtbox" name="Contractor.PhoneNumber">
+                        </td>
+
+                        <td data-th="@Html.DisplayNameFor(model => model.Contractor.IsActive)">
+                            <select name="Contractor.IsActive">
+                                <option value="">نمایش همه</option>
+                                <option value="true">فعال</option>
+                                <option value="false">غیر فعال</option>
+                            </select>
+                        </td>
+
+                        <td data-th='ویرایش/حذف'></td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="9"></td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </form>
+    </div>
+
+</div>
+
+<!------------- End Table ----------------------->

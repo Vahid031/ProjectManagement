@@ -1,0 +1,129 @@
+﻿@model ViewModels.General.MemberViewModel.CreateMemberViewModel
+
+<form id="frm-Member" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.Member.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.Member.Id, @id = "Id" })
+    @Html.HiddenFor(model => model.Member.MemberGroupId, new { @id = "MemberGroupId" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.FirstName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.FirstName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.FirstName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.LastName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.LastName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.LastName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.FatherName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.FatherName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.FatherName, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.UserName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.UserName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.UserName, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.Password, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.Password, String.Empty, new { @class = "label-validation" })
+        @Html.PasswordFor(model => model.Member.Password, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.PasswordCampare, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.PasswordCampare, String.Empty, new { @class = "label-validation" })
+        @Html.PasswordFor(model => model.Member.PasswordCampare, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="txt-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.Gender, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.Gender, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Member.Gender, new List<SelectListItem> {
+                    new SelectListItem{ Text="مرد", Value="true"},
+                    new SelectListItem{ Text="زن", Value="false"}
+                }, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="txt-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.RoleId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.RoleId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Member.RoleId, new SelectList(Model.Roles, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.BirthdayDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.BirthdayDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.BirthdayDate, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.Job, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.Job, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.Job, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.NationalCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.NationalCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.NationalCode, new { @class = "form-control txtbox num-txt" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.Email, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.Email, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.Email, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.Address, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.Address, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.Address, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.CartNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.CartNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.CartNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.Description, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.Description, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Member.Description, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Member.IsActive, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Member.IsActive, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Member.IsActive, new List<SelectListItem> {
+            new SelectListItem{ Text="فعال", Value="true"},
+            new SelectListItem{ Text="غیر فعال", Value="false"}
+        }, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSave" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNew" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

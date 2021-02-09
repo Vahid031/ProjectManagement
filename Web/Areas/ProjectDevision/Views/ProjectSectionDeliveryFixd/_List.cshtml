@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionDeliveryFixdViewModel.ListProjectSectionDeliveryFixdViewModel>
+@{ string tableName = "ProjectSectionDeliveryFixd";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionDeliveryFixd.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)" style="min-width:1200px;">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionDeliveryFixd.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Opinion.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Opinion.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Defect.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Defect.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryFixd.ConveneDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.ConveneDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryFixd.ConveneNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.ConveneNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryFixd.DefectDetails', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.DefectDetails) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionDeliveryFixd.MeetingDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.MeetingDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryFixd.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Opinion.Title)">
+                                <input type="text" class="form-control txtbox" name="Opinion.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Defect.Title)">
+                                <input type="text" class="form-control txtbox" name="Defect.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.ConveneDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryFixd.ConveneDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.ConveneNumber)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryFixd.ConveneNumber">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.DefectDetails)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryFixd.DefectDetails">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDeliveryFixd.MeetingDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDeliveryFixd.MeetingDate">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="9"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

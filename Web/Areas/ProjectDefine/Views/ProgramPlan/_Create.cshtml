@@ -1,0 +1,127 @@
+﻿@model ViewModels.ProjectDefine.ProgramPlanViewModel.CreateProgramPlanViewModel
+
+<form id="frm-ProgramPlan" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProgramPlan.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProgramPlan.Id, @id = "Id" })
+    
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.ProgramId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.ProgramId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProgramPlan.ProgramId, new SelectList(Model.Programs, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.PlanTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.PlanTitle, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.PlanTitle, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.PlanCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.PlanCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.PlanCode, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.PlanTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.PlanTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProgramPlan.PlanTypeId, new SelectList(Model.PlanTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ExecutionSetTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ExecutionSetTitle, String.Empty, new { @class = "label-validation" })
+        @Html.HiddenFor(model => model.ProgramPlan.ExecutionSetId)
+
+        <div class="DropDownContainer">
+            @Html.TextBoxFor(model => model.ExecutionSetTitle, new { @class = "form-control txtbox customdropdown", Value = (@Model.ExecutionSetTitle == null) ? "انتخاب کنید..." : @Model.ExecutionSetTitle, autocomplete = "off" })
+            <div id="DropDownPanel" class="col-lg-12 DropDownPanel"></div>
+        </div>
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.BeneficiarySetTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.BeneficiarySetTitle, String.Empty, new { @class = "label-validation" })
+        @Html.HiddenFor(model => model.ProgramPlan.BeneficiarySetId)
+
+        <div class="DropDownContainer">
+            @Html.TextBoxFor(model => model.BeneficiarySetTitle, new { @class = "form-control txtbox customdropdown", Value = (@Model.BeneficiarySetTitle == null) ? "انتخاب کنید..." : @Model.BeneficiarySetTitle, autocomplete = "off" })
+            <div id="BeneficiarySetDropDownPanel" class="col-lg-12 DropDownPanel"></div>
+        </div>
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.RevisionNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.RevisionNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.RevisionNumber, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.AgreementDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.AgreementDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.AgreementDate, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.ExchangeProjectCounts, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.ExchangeProjectCounts, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.ExchangeProjectCounts, new { @class = "form-control txtbox numeric" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.CorrigendumNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.CorrigendumNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.CorrigendumNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.TotalProjects, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.TotalProjects, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.TotalProjects, new { @class = "form-control txtbox numeric" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.FirstProjectFinantialYearId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.FirstProjectFinantialYearId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProgramPlan.FirstProjectFinantialYearId, new SelectList(Model.FinantialYears, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.ForecastLastProjectFinantialYearId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.ForecastLastProjectFinantialYearId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProgramPlan.ForecastLastProjectFinantialYearId, new SelectList(Model.FinantialYears, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramPlan.ExecutionPlaceType, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramPlan.ExecutionPlaceType, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProgramPlan.ExecutionPlaceType, new { @class = "form-control txtbox" })
+    </div>
+
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSave" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNew" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>
+
+
+<script>
+    //HandelValidation();
+</script>

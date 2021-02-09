@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionRecoupmentViewModel.ListProjectSectionRecoupmentViewModel>
+@{ string tableName = "ProjectSectionRecoupment";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionRecoupment.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionRecoupment.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionRecoupment.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.RecoupmentType.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionRecoupment.Number', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionRecoupment.Number) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionRecoupment.Date_', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionRecoupment.Date_) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionRecoupment.BranchExporter', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionRecoupment.BranchExporter) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionRecoupment.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.RecoupmentType.Title)">
+                                <input type="text" class="form-control txtbox" name="RecoupmentType.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionRecoupment.Number)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionRecoupment.Number">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionRecoupment.Date_)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionRecoupment.Date_">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionRecoupment.BranchExporter)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionRecoupment.BranchExporter">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

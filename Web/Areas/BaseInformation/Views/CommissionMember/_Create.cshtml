@@ -1,0 +1,59 @@
+﻿@model ViewModels.BaseInformation.CommissionMemberViewModel.CreateCommissionMemberViewModel
+
+<form id="frm-CommissionMember" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.CommissionMember.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.CommissionMember.Id, @id = "Id" })
+    
+    <div class="form-group col-lg-4 col-md-6 col-sm-6">
+        @Html.LabelFor(model => model.CommissionMember.FirstName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CommissionMember.FirstName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.CommissionMember.FirstName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6 col-sm-6">
+        @Html.LabelFor(model => model.CommissionMember.LastName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CommissionMember.LastName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.CommissionMember.LastName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6 col-sm-6">
+        @Html.LabelFor(model => model.CommissionMember.MobileNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CommissionMember.MobileNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.CommissionMember.MobileNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6 col-sm-6">
+        @Html.LabelFor(model => model.CommissionMember.Post, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CommissionMember.Post, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.CommissionMember.Post, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6 col-sm-6">
+        @Html.LabelFor(model => model.CommissionMember.IsActive, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CommissionMember.IsActive, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.CommissionMember.IsActive, new List<SelectListItem> {
+            new SelectListItem{ Text="فعال", Value="true"},
+            new SelectListItem{ Text="غیر فعال", Value="false"}
+        }, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6 col-sm-6">
+        <button type="submit" id="btnSave" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNew" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

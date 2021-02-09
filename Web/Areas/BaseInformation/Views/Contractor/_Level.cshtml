@@ -1,0 +1,60 @@
+﻿
+@{ string tableName = "ContractorLevel";}
+
+<form id="frm-ContractorLevel" class="operationform" method="post">
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("نوع رشته پیمانکار", new { @class = "label-txt" })
+        @Html.ValidationMessage("ddlMajorTypeId", new { @class = "label-validation" })
+        @Html.DropDownList("ddlMajorTypeId", new SelectList(Model.MajorTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("رتبه پیمانکار", new { @class = "label-txt" })
+        @Html.ValidationMessage("ddlLevelTypeId", new { @class = "label-validation" })
+        @Html.DropDownList("ddlLevelTypeId", new SelectList(Model.LevelTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("تاریخ اتمام اعتبار", new { @class = "label-txt" })
+        @Html.ValidationMessage("txtFinishCreditDate", new { @class = "label-validation" })
+        @Html.TextBox("txtFinishCreditDate", String.Empty, new { @class = "form-control txtbox pointer", data_val = "true", data_val_required = "الزامی است", @readonly = "readonly" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnAddContractorLevel" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ثبت</button>
+    </div>
+</form>
+
+<div class="clear"></div>
+<div class="col-lg-12">
+    <div class="col-lg-12 content-grid">
+        <form id="frm-tbl-@(tableName)">
+            <table class="tbl-grid" id="tbl-@(tableName)" style="min-width: 700px;">
+                <thead>
+                    <tr>
+                        <th><a>ردیف</a></th>
+                        <th style="display:none"><a>نوع رشته پیمانکار</a></th>
+                        <th><a>نوع رشته پیمانکار</a></th>
+
+                        <th style="display:none"><a>رتبه پیمانکار</a></th>
+                        <th><a>رتبه پیمانکار</a></th>
+
+                        <th><a>تاریخ اتمام اعتبار پیمانکار</a></th>
+                        <th data-th='حذف'>حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </form>
+    </div>
+</div>

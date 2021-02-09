@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionWinnerViewModel.ListProjectSection4648ViewModel>
+@{ string tableName = "ProjectSectionWinner4648";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionWinner4648.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionWinner4648.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Contractor.CompanyName', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Rank.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+
+                            <th><a onmousedown="Sort('Rank.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionTitle) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Rank.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.StartDate_) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Rank.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.EndDate_) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Rank.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Type4648) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Rank.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Date_) <span class="sort-arrow arrow-sortable"></span></a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th=''></td>
+                            <td data-th=""></td>
+                            <td data-th=""></td>
+                            <td data-th=''></td>
+                            <td data-th=""></td>
+                            <td data-th=""></td>
+                            <td data-th=""></td>
+                            <td data-th=""></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="8">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

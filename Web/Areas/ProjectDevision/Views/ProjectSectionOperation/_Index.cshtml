@@ -1,0 +1,39 @@
+﻿<script src="~/Areas/ProjectDevision/Business/ProjectSectionOperationBusiness.js"></script>
+
+<input type="hidden" id="permission-ProjectSectionOperation" value='@ViewBag.Permission' />
+
+<div id="FormSearch-ProjectSectionOperation" class="row">
+
+</div>
+
+<div id="FormList-ProjectSectionOperation" class="row">
+
+</div>
+
+<div id="FormTabs-ProjectSectionOperation">
+    <ul class="nav nav-pills" style="margin-top:10px;">
+        <li id="lprojectSectionSupervisorMember"><a data-toggle="pill" href="#projectSectionSupervisorMember">ناظرین پروژه</a></li>
+        <li id="lprojectSectionAdvisorMember"><a data-toggle="pill" href="#projectSectionAdvisorMember">مشاورین پروژه</a></li>
+        <li id="lprojectSectionSchedule"><a data-toggle="pill" href="#projectSectionSchedule">تایید زمانبندی پروژه</a></li>
+        <li id="lprojectSectionSupervisorVisit"><a data-toggle="pill" href="#projectSectionSupervisorVisit">بازدیدهای ناظرین</a></li>
+        <li id="lprojectSectionAdvisorVisit"><a data-toggle="pill" href="#projectSectionAdvisorVisit">بازدیدهای مشاورین</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="projectSectionSupervisorMember" class="tab-pane fade">
+            <div id="ProjectSectionSupervisorMember-ProjectSectionOperation"></div>
+        </div>
+        <div id="projectSectionAdvisorMember" class="tab-pane fade">
+            <div id="ProjectSectionAdvisorMember-ProjectSectionOperation"></div>
+        </div>
+        <div id="projectSectionSchedule" class="tab-pane fade">
+            <div id="ProjectSectionSchedule-ProjectSectionOperation"></div>
+        </div>
+        <div id="projectSectionSupervisorVisit" class="tab-pane fade">
+            <div id="ProjectSectionSupervisorVisit-ProjectSectionOperation"></div>
+        </div>
+        <div id="projectSectionAdvisorVisit" class="tab-pane fade">
+            <div id="ProjectSectionAdvisorVisit-ProjectSectionOperation"></div>
+        </div>
+    </div>
+</div>

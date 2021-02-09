@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionDraftViewModel.ListProjectSectionDraftViewModel>
+@{ string tableName = "ProjectSectionPaidPriceList";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('StatementNumberTitle', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDraft.DraftPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ConfirmPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionDraft.DraftDate) <span class="sort-arrow arrow-sortable"></span></a></th>                         
+                            <th data-th='محاسبه و پرداخت'>محاسبه و پرداخت</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDraft.DraftPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDraft.DraftPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionDraft.DraftDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionDraft.DraftDate">
+                            </td>
+
+                            <td data-th='محاسبه و پرداخت'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

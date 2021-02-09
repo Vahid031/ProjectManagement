@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ViewModels.BaseInformation.DeductionPercentViewModel.ListDeductionPercentViewModel>
+@{ string tableName = "DeductionPercent";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="@(tableName).Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('DeductionPercent.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('DeductionPercent.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.DeductionPercent.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('DeductionPercent.PercentAmount', '@(tableName)')">@Html.DisplayNameFor(model => model.DeductionPercent.PercentAmount) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش'>ویرایش</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="DeductionPercent.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.DeductionPercent.Title)">
+                                <input type="text" class="form-control txtbox" name="DeductionPercent.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.DeductionPercent.PercentAmount)">
+                                <input type="text" class="form-control txtbox" name="DeductionPercent.PercentAmount">
+                            </td>
+                            <td data-th='ویرایش'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

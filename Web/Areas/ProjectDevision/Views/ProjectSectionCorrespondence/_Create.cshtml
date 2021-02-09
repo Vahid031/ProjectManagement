@@ -1,0 +1,57 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionCorrespondenceViewModel.CreateProjectSectionCorrespondenceViewModel
+
+<form id="frm-ProjectSectionCorrespondence" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionCorrespondence.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionCorrespondence.Id, @id = "ProjectSectionCorrespondenceId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionCorrespondence" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionCorrespondence.LetterTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionCorrespondence.LetterTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectSectionCorrespondence.LetterTypeId, new SelectList(Model.LetterTypes, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionCorrespondence.LetterNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionCorrespondence.LetterNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionCorrespondence.LetterNumber, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionCorrespondence.LetterDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionCorrespondence.LetterDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionCorrespondence.LetterDate, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionCorrespondence.LetterIssue, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionCorrespondence.LetterIssue, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionCorrespondence.LetterIssue, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowProjectSectionCorrespondenceFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionCorrespondence" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionCorrespondence" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

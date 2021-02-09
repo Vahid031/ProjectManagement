@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ViewModels.ProjectDefine.ProjectAllocateViewModel.ListProjectAllocateViewModel>
+@{ string tableName = "ProjectAllocateDetail";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectAllocate.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectAllocate.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectAllocate.CreditAmount', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectAllocate.CreditAmount) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectAllocate.AllocateAmount', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectAllocate.AllocateAmount) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectAllocate.CreditPercent', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectAllocate.CreditPercent) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectAllocate.AllocateDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectAllocate.AllocateDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectAllocate.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectAllocate.CreditAmount)">
+                                <input type="text" class="form-control txtbox" name="ProjectAllocate.CreditAmount">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectAllocate.AllocateAmount)">
+                                <input type="text" class="form-control txtbox" name="ProjectAllocate.AllocateAmount">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectAllocate.CreditPercent)">
+                                <input type="text" class="form-control txtbox" name="ProjectAllocate.CreditPercent">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectAllocate.AllocateDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectAllocate.AllocateDate">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

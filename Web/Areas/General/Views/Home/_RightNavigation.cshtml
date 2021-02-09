@@ -1,0 +1,74 @@
+﻿<!-------------------------- Start Menu --------------------------------------->
+<nav class="nav-side-menu" id="content-menu">
+    <div class="brand" style="font-size:40px;color:#ccc">
+        <i class="ion ion-person" style="display:block"></i> 
+        <span style="display: block;font-size:19px; color: #999; margin-top:-15px;">
+            @Html.Raw(ViewBag.UserName)
+        </span>
+    </div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list" >
+
+        <ul id="menu-content" class="menu-content collapse out">
+            @Html.Raw(ViewBag.value)
+        </ul>
+    </div>
+</nav>
+<!-------------------------- End Menu --------------------------------------->
+
+<script>
+
+    (function ($) {
+        $(window).load(function () {
+            var content = $("#content-menu");
+            content.mCustomScrollbar({
+                theme: "dark",
+                advanced:{ updateOnContentResize: true },
+                scrollButtons: {
+                    enable: true
+                }
+            });
+        });
+    })(jQuery);
+
+
+
+    $(function () {
+        $('.sub-menu').children().click(function (e) {
+            return false;
+        });
+
+        $('#menu-content a').on('click', function (event) {
+            var url = $(this).attr('href');
+            var Id = 0;
+            
+            event.preventDefault();
+
+            if (url.split('/').length > 4) {
+                Id = url.substr(url.lastIndexOf('/') + 1);
+                url = url.substr(0, url.lastIndexOf('/'));
+            }
+
+            if (typeof url !== "undefined") {
+                if (url.indexOf('_') > 0) {
+                    $('.alert').stop().slideUp(300);
+                    LoadPartialView('GET', url, { id: Id }, '#Default');
+                    $('#ContentTitle').text($(this).text().trim());
+                }
+            }
+        });
+
+
+        $('#menu-content li ul li a').on('click', function (event) {
+
+            $('#menu-content li ul li a').removeClass('active-menu');
+
+           
+            $(this).addClass('active-menu');
+            
+        });
+
+
+    });
+</script>

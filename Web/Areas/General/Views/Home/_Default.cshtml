@@ -1,0 +1,20 @@
+﻿
+<div class="row">
+    <div class="col-lg-12">
+        <div class="">
+            <div class="col-lg-3 col-md-3"></div>
+
+            <div class="col-lg-6 col-md-6">
+                @{
+                    var Admin = Session["Member"] as ViewModels.Other.AdminViewModel;
+                    <br />
+                    <h1 style="text-align:center;"><span style="color:#22CAD1;">خوش آمدید کاربر محترم : </span> <span style="color: #009EE7">@Admin.UserName</span></h1>
+                }
+            </div>
+            @*<img src="~/Content/Images/dashboard.png" style="width:100%;" />*@
+
+            <div class="col-lg-3 col-md-3"></div>
+
+        </div>
+    </div>
+</div>

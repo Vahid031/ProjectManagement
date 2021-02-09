@@ -1,0 +1,221 @@
+﻿@model ViewModels.ProjectDefine.ProjectViewModel.CreateProjectViewModel
+
+<form id="frm-Project" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.Project.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.Project.Id, @id = "Id" })
+    @Html.HiddenFor(model => model.Project.ProjectStateId)
+    @Html.HiddenFor(model => model.Files, new { @id = "images-Project" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.ProjectTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.ProjectTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.ProjectTypeId, new SelectList(Model.ProjectTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.ProjectTitle, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.ProjectTitle, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.ProjectTitle, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.FileCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.FileCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.FileCode, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.ExecutionTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.ExecutionTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.ExecutionTypeId, new SelectList(Model.ExecutionTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.ProjectGoal, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.ProjectGoal, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.ProjectGoal, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.StateId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.StateId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.StateId, new SelectList(Model.States, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.CityId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.CityId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.CityId, new SelectList(Model.Cities, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.SectionId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.SectionId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.SectionId, new SelectList(Model.Sections, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.VillageId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.VillageId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.VillageId, new SelectList(Model.Villages, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.RuralDistrictId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.RuralDistrictId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.RuralDistrictId, new SelectList(Model.RuralDistrictes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.StartFinantialYearId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.StartFinantialYearId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.StartFinantialYearId, new SelectList(Model.FinantialYears, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.ForecastEndFinantialYearId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.ForecastEndFinantialYearId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.ForecastEndFinantialYearId, new SelectList(Model.ForecastEndFinantialYears, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.Amount, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.Amount, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.Amount, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.UnitId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.UnitId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.UnitId, new SelectList(Model.Units, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.EstimateCost, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.EstimateCost, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.EstimateCost, new { @class = "form-control txtbox numeric input-price" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColOwnershipTypeId">
+        @Html.LabelFor(model => model.Project.OwnershipTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.OwnershipTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Project.OwnershipTypeId, new SelectList(Model.OwnershipTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColNumber">
+        @Html.LabelFor(model => model.Project.Number, new { @class = "label-txt", id="lblNumber" })
+        @Html.ValidationMessageFor(model => model.Project.Number, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.Number, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.Area, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.Area, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.Area, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.CloseArea, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.CloseArea, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.CloseArea, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.OpenArea, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.OpenArea, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.OpenArea, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Project.BuildingPermitNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.BuildingPermitNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.BuildingPermitNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColGasNumber">
+        @Html.LabelFor(model => model.Project.GasNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.GasNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.GasNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColPowerNumber">
+        @Html.LabelFor(model => model.Project.PowerNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.PowerNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.PowerNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColWaterNumber">
+        @Html.LabelFor(model => model.Project.WaterNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.WaterNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.WaterNumber, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColAddress">
+        @Html.LabelFor(model => model.Project.Address, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.Address, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.Address, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColLocationX">
+        @Html.LabelFor(model => model.Project.LocationX, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.LocationX, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.LocationX, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="ColLocationY">
+        @Html.LabelFor(model => model.Project.LocationY, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Project.LocationY, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Project.LocationY, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnAddPlan" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>سوابق طرح های پروژه</button>
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center" id="mapContainer">
+        <br />
+        <button type="button" id="btnShowMap" class="btn btn-warning" style="width:220px; float:right; height: 50px; border-radius: 4px; background-image: linear-gradient(to bottom,#f0ad4e 0,#f0ad4e 100%); "><span class="glyphicon glyphicon-ok" style="float:right;"></span>انتخاب محل پروژه روی نقشه</button>
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSave" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNew" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>
+
+
+<script>
+    $('#frm-Project').on('change', '#Project_OwnershipTypeId', function () {
+        var text = $('option:selected', $(this)).text();
+
+        if (text == 'انتخاب کنید...')
+            text = 'شماره';
+        else
+            text = 'شماره ' + text;
+
+        $('#lblNumber').html(text);
+    });
+
+    
+</script>

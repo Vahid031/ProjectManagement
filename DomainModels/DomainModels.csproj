@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F0A246C-FBAC-4B88-9AB7-907DED9F74B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainModels</RootNamespace>
+    <AssemblyName>DomainModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\BaseInformation\ContractorLevel.cs" />
+    <Compile Include="Entities\BaseInformation\FileType.cs" />
+    <Compile Include="Entities\BaseInformation\AccountType.cs" />
+    <Compile Include="Entities\BaseInformation\AssignmentType.cs" />
+    <Compile Include="Entities\BaseInformation\City.cs" />
+    <Compile Include="Entities\BaseInformation\CommissionMember.cs" />
+    <Compile Include="Entities\BaseInformation\Contractor.cs" />
+    <Compile Include="Entities\BaseInformation\ContractType.cs" />
+    <Compile Include="Entities\BaseInformation\CreditProvidePlace.cs" />
+    <Compile Include="Entities\BaseInformation\DeductionPercent.cs" />
+    <Compile Include="Entities\BaseInformation\Defect.cs" />
+    <Compile Include="Entities\BaseInformation\DocumentType.cs" />
+    <Compile Include="Entities\BaseInformation\ExecutionType.cs" />
+    <Compile Include="Entities\BaseInformation\FinantialYear.cs" />
+    <Compile Include="Entities\BaseInformation\InvestmentChapter.cs" />
+    <Compile Include="Entities\BaseInformation\InvestmentChapterType.cs" />
+    <Compile Include="Entities\BaseInformation\LetterType.cs" />
+    <Compile Include="Entities\BaseInformation\MajorType.cs" />
+    <Compile Include="Entities\BaseInformation\MemberGroup.cs" />
+    <Compile Include="Entities\BaseInformation\MonitoringType.cs" />
+    <Compile Include="Entities\BaseInformation\NotificationType.cs" />
+    <Compile Include="Entities\BaseInformation\Opinion.cs" />
+    <Compile Include="Entities\BaseInformation\OwnershipType.cs" />
+    <Compile Include="Entities\BaseInformation\LevelType.cs" />
+    <Compile Include="Entities\BaseInformation\PlanType.cs" />
+    <Compile Include="Entities\BaseInformation\Program.cs" />
+    <Compile Include="Entities\BaseInformation\ProjectSectionAssignmentState.cs" />
+    <Compile Include="Entities\BaseInformation\ProjectSectionStatementState.cs" />
+    <Compile Include="Entities\BaseInformation\ProjectSectionOperationState.cs" />
+    <Compile Include="Entities\BaseInformation\ProjectState.cs" />
+    <Compile Include="Entities\BaseInformation\ProjectType.cs" />
+    <Compile Include="Entities\BaseInformation\Rank.cs" />
+    <Compile Include="Entities\BaseInformation\RecoupmentType.cs" />
+    <Compile Include="Entities\BaseInformation\Resource.cs" />
+    <Compile Include="Entities\BaseInformation\ResourceType.cs" />
+    <Compile Include="Entities\BaseInformation\RuralDistrict.cs" />
+    <Compile Include="Entities\BaseInformation\Section.cs" />
+    <Compile Include="Entities\BaseInformation\ServiceProduct.cs" />
+    <Compile Include="Entities\BaseInformation\Set.cs" />
+    <Compile Include="Entities\BaseInformation\State.cs" />
+    <Compile Include="Entities\BaseInformation\StatementNumber.cs" />
+    <Compile Include="Entities\BaseInformation\StatementType.cs" />
+    <Compile Include="Entities\BaseInformation\TempFixed.cs" />
+    <Compile Include="Entities\BaseInformation\Unit.cs" />
+    <Compile Include="Entities\BaseInformation\Village.cs" />
+    <Compile Include="Entities\General\File.cs" />
+    <Compile Include="Entities\General\Log.cs" />
+    <Compile Include="Entities\General\LogDetail.cs" />
+    <Compile Include="Entities\General\Member.cs" />
+    <Compile Include="Entities\General\Notification.cs" />
+    <Compile Include="Entities\General\Permission.cs" />
+    <Compile Include="Entities\General\Role.cs" />
+    <Compile Include="Entities\General\RolePermission.cs" />
+    <Compile Include="Entities\ProjectDefine\ProgramPlan.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectFundingFile.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectPlan.cs" />
+    <Compile Include="Entities\ProjectDefine\Project.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectAllocate.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectAverage.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectFile.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectFunding.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectInvestmentChapter.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectQuantityGoal.cs" />
+    <Compile Include="Entities\ProjectDefine\ProjectAllocateFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSection.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionAdvisorVisit.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionAdvisorVisitFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionGovermentWorthyDocumentsPaidPrice.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionOperationTitle.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionInquiryFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionInquiry.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionCeremonial.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionCeremonialFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionComplementarityDate.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionComplementarityDateFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionComplementarityPrice.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionComplementarityPriceFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionContract.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionContractDetail.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionContractFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionCorrespondence.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionCorrespondenceFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDeliveryFixd.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDeliveryFixdFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDeliveryTemprory.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDeliveryTemproryFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDepositeLiberalization.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDepositeLiberalizationFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDraft.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionDraftFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionFinalParticipant.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionFinalParticipantFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionFinanceEvaluation.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionMadeh46.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionMadeh46File.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionMadeh48.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionMadeh48File.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionMember.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionOpenDate.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionPaidPrice.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionPaidPriceFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionProductFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionParticipant.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionProduct.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionRecoupment.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionRecoupmentFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionSchedule.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionScheduleFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionStatement.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionStatementConfirm.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionStatementConfirmFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionStatementFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionSupervisorVisit.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionSupervisorVisitFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionTender.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionWinnerDegreeFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionTenderFile.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionWinner.cs" />
+    <Compile Include="Entities\ProjectDevision\ProjectSectionWinnerDegree.cs" />
+    <Compile Include="Entities\Report\C1.cs" />
+    <Compile Include="Entities\Report\C2.cs" />
+    <Compile Include="Entities\Report\C3.cs" />
+    <Compile Include="Entities\Report\C4.cs" />
+    <Compile Include="Entities\Report\C6.cs" />
+    <Compile Include="Entities\Report\C8.cs" />
+    <Compile Include="Entities\Report\C9.cs" />
+    <Compile Include="Enums\GeneralEnums.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastracture\Infrastracture.csproj">
+      <Project>{af69803c-7dd5-42f5-b369-590335aa6c32}</Project>
+      <Name>Infrastracture</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

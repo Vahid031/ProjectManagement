@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionInquiryViewModel.ListProjectSectionInquiryViewModel>
+@{ string tableName = "ProjectSectionInquiry";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionInquiry.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionInquiry.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionInquiry.InquiryNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionInquiry.InquiryNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionInquiry.InquiryDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionInquiry.InquiryDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionInquiry.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionInquiry.InquiryNumber)">
+                                <input type="text" class="form-control txtbox" name="Program.ProjectSectionInquiry.QuantityGoalType">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionInquiry.InquiryDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionInquiry.Amount">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

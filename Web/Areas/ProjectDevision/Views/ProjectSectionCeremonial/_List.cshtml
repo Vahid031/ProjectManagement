@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionCeremonialViewModel.ListProjectSectionCeremonialViewModel>
+@{ string tableName = "ProjectSectionCeremonial";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionCeremonial.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionCeremonial.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionCeremonial.JustificationNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionCeremonial.JustificationNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionCeremonial.JustificationDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionCeremonial.JustificationDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionCeremonial.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionCeremonial.JustificationNumber)">
+                                <input type="text" class="form-control txtbox" name="Program.ProjectSectionCeremonial.JustificationNumber">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionCeremonial.JustificationDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionCeremonial.JustificationDate">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

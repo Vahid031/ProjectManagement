@@ -1,0 +1,51 @@
+﻿@model ViewModels.ProjectDefine.ProjectInvestmentChapterViewModel.CreateProjectInvestmentChapterViewModel
+
+<form id="frm-ProjectInvestmentChapter" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectInvestmentChapter.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectInvestmentChapter.Id, @id = "ProjectInvestmentChapterId" })
+    
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectInvestmentChapter.FinantialYearId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectInvestmentChapter.FinantialYearId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectInvestmentChapter.FinantialYearId, new SelectList(Model.FinantialYears, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.InvestmentChapterId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.InvestmentChapterId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.InvestmentChapterId, new SelectList(Model.InvestmentChapters, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectInvestmentChapter.InvestmentChapterTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectInvestmentChapter.InvestmentChapterTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectInvestmentChapter.InvestmentChapterTypeId, new SelectList(Model.InvestmentChapterTypes, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectInvestmentChapter.Price, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectInvestmentChapter.Price, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectInvestmentChapter.Price, new { @class = "form-control txtbox numeric input-price", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectInvestmentChapter" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectInvestmentChapter" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

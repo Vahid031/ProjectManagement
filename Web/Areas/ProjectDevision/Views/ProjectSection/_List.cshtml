@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionViewModel.ListProjectSection2ViewModel>
+@{ string tableName = "ProjectSection";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)" style="min-width:1200px;">
+                    <thead>
+                        <tr>
+                            @*@Html.DisplayNameFor(model => model.ProjectSection.ForecastStartDate)*@
+                            @*@Html.DisplayNameFor(model => model.ProjectSection.ForecastEndDate)*@
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSection.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSection.Title', '@(tableName)')">عنوان فاز پروژه<span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('AssignmentType.Title', '@(tableName)')">نحوه واگذاری <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSection.ForecastStartDate', '@(tableName)')">تاریخ شروع <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSection.ForecastEndDate', '@(tableName)')"> پیش بینی تاریخ خاتمه<span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSection.ForecastEndDate', '@(tableName)')">مجموع مبالغ کالا و خدمات<span class="sort-arrow arrow-sortable"></span></a></th>
+                            @*<th><a onmousedown="Sort('ProjectSectionOperationState.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionOperationState.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                    <th><a onmousedown="Sort('ProjectSectionAssignmentState.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionAssignmentState.Title) <span class="sort-arrow arrow-sortable"></span></a></th>*@
+                            <td data-th='انتخاب'>افزودن کالا و خدمات</td>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSection.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionTitle)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionTitle">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.AssignmentTypeTitle)">
+                                <input type="text" class="form-control txtbox" name="AssignmentTypeTitle">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ForecastStartDate)">
+                                <input type="text" class="form-control txtbox" name="ForecastStartDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ForecastEndDate)">
+                                <input type="text" class="form-control txtbox" name="ForecastEndDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.TotalProductServicePrice)">
+                                <input type="text" class="form-control txtbox" name="TotalProductServicePrice">
+                            </td>
+
+                            @*<td data-th="@Html.DisplayNameFor(model => model.ProjectSectionOperationState.Title)">
+                        <input type="text" class="form-control txtbox" name="ProjectSectionOperationState.Title">
+                    </td>
+
+                    <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionAssignmentState.Title)">
+                        <input type="text" class="form-control txtbox" name="ProjectSectionAssignmentState.Title">
+                    </td>*@
+
+                            <td data-th='انتخاب'></td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="8"></td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

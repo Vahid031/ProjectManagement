@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionPaidPriceViewModel.ListProjectSectionPaidPriceViewModel>
+@{ string tableName = "ProjectSectionPaidPrice";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionPaidPrice.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionPaidPrice.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionPaidPrice.DraftPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.DraftPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionPaidPrice.PayablePrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.PayablePrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionPaidPrice.PaidPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.PaidPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionPaidPrice.PaidDate_', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.PaidDate_) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionPaidPrice.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.DraftPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionPaidPrice.DraftPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.PayablePrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionPaidPrice.PayablePrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.PaidPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionPaidPrice.PaidPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionPaidPrice.PaidDate_)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionPaidPrice.PaidDate_">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Catalog>
+  <Message Key="SuccessInsert">
+    <Text>اطلاعات با موفقیت ثبت شد</Text>
+    <Code>01</Code>
+  </Message>
+  <Message Key="SuccessUpdate">
+    <Text>اطلاعات با موفقیت ویرایش شد</Text>
+    <Code>02</Code>
+  </Message>
+  <Message Key="SuccessDelete">
+    <Text>اطلاعات با موفقیت حذف شد</Text>
+    <Code>03</Code>
+  </Message>
+  <Message Key="ErrorSystem">
+    <Text>مشکلی در سیستم رخ داده است</Text>
+    <Code>04</Code>
+  </Message>
+  <Message Key="ErrorSameEmail">
+    <Text>این آدرس ایمیل قبلا در سایت ثبت شده است</Text>
+    <Code>05</Code>
+  </Message>
+  <Message Key="ErrorInsert">
+    <Text>مشکلی در سیستم ثبت رخ داده است</Text>
+    <Code>06</Code>
+  </Message>
+  <Message Key="ErrorUpdate">
+    <Text>مشکلی در سیستم ویرایش رخ داده است</Text>
+    <Code>07</Code>
+  </Message>
+  <Message Key="ErrorDelete">
+    <Text>آیتم دارای زیرمجموعه می باشد، لذا حذف آن امکان پذیر نیست.</Text>
+    <Code>08</Code>
+  </Message>
+  <Message Key="ErrorDeleteOrUpdate">
+    <Text>مشکلی در سیستم حذف/ویرایش رخ داده است</Text>
+    <Code>09</Code>
+  </Message>
+  <Message Key="ErrorInsertOrUpdate">
+    <Text>مشکلی در سیستم ثبت/ویرایش رخ داده است</Text>
+    <Code>10</Code>
+  </Message>
+  <Message Key="ErrorInputParameter">
+    <Text>پارامترهای ورودی نادرست است. ، لطفا از دست کاری آدرس بپرهیزید</Text>
+    <Code>11</Code>
+  </Message>
+  <Message Key="ALLFieldsRequired">
+    <Text>پر کردن تمامی فیلد ها الزامی است</Text>
+    <Code>12</Code>
+  </Message>
+  <Message Key="StarFieldsRequired">
+    <Text>پر کردن فیلد های ستاره دار الزامی است</Text>
+    <Code>13</Code>
+  </Message>
+  <Message Key="PassNotEqualToRepass">
+    <Text>کلمه عبور و تکرار کلمه عبور یکسان نیست</Text>
+    <Code>14</Code>
+  </Message>
+  <Message Key="SuccessRegister">
+    <Text>ثبت نام با موفقیت انجام شد</Text>
+    <Code>15</Code>
+  </Message>
+  <Message Key="ErrorTypingData">
+    <Text>مقدار وارد شده نادرست است</Text>
+    <Code>16</Code>
+  </Message>
+  <Message Key="ErrorValidInputData">
+    <Text>مقدار وارد شده غیر مجاز است</Text>
+    <Code>17</Code>
+  </Message>
+  <Message Key="ErrorTypingDataIsOutOfRanges">
+    <Text>مقدار وارد شده بیش از حد مجاز است</Text>
+    <Code>18</Code>
+  </Message>
+  <Message Key="ErrorImageResizer">
+    <Text>مشکلی در سیستم ریسایزر رخ داده است</Text>
+    <Code>19</Code>
+  </Message>
+  <Message Key="ErrorMailSender">
+    <Text>مشکلی در سیستم ارسال ایمیل رخ داده است</Text>
+    <Code>20</Code>
+  </Message>
+  <Message Key="ErrorGettingData">
+    <Text>مشکلی در دریافت اطلاعات رخ داده است</Text>
+    <Code>21</Code>
+  </Message>
+  <Message Key="ErrorChoosePic">
+    <Text>انتخاب تصویر الزامی است</Text>
+    <Code>22</Code>
+  </Message>
+  <Message Key="ErrorChooseDoc">
+    <Text>انتخاب فایل متنی الزامی است</Text>
+    <Code>23</Code>
+  </Message>
+  <Message Key="ErrorChooseZip">
+    <Text>انتخاب فایل فشرده الزامی است</Text>
+    <Code>24</Code>
+  </Message>
+  <Message Key="ErrorInvalidAnimatedPicExt">
+    <Text>فرمت فایل تصویر غیرمجاز است</Text>
+    <Code>25</Code>
+  </Message>
+  <Message Key="ErrorInvalidPicExt">
+    <Text>فرمت فایل تصویر غیرمجاز است</Text>
+    <Code>26</Code>
+  </Message>
+  <Message Key="ErrorInPicLen">
+    <Text>حجم تصویر بیش از حد مجاز است</Text>
+    <Code>27</Code>
+  </Message>
+  <Message Key="ErrorOutputIsEmpty">
+    <Text>موردی یافت نشد</Text>
+    <Code>28</Code>
+  </Message>
+  <Message Key="ErrorSearch">
+    <Text>مشکلی در سیستم جستجو رخ داده است</Text>
+    <Code>29</Code>
+  </Message>
+  <Message Key="SuccessRefresh">
+    <Text>به روز رسانی با موفقیت انجام شد</Text>
+    <Code>30</Code>
+  </Message>
+  <Message Key="ErrorRefresh">
+    <Text>مشکلی در سیستم به روزرسانی رخ داد ه است</Text>
+    <Code>31</Code>
+  </Message>
+  <Message Key="SuccessAccept">
+    <Text>اطلاعات با موفقیت تایید شد</Text>
+    <Code>32</Code>
+  </Message>
+  <Message Key="SuccessDecline">
+    <Text>اطلاعات با موفقیت رد شد</Text>
+    <Code>33</Code>
+  </Message>
+  <Message Key="SuccessPending">
+    <Text>اطلاعات با موفقیت در انتظار تایید شد</Text>
+    <Code>34</Code>
+  </Message>
+  <Message Key="ErrorSameUser">
+    <Text>نام کاربری انتخابی شما قبلا در سیستم ثبت شده است ، لطفا نام کاربری دیگری برگزینید</Text>
+    <Code>35</Code>
+  </Message>
+  <Message Key="ErrorInputOneTBox">
+    <Text>حداقل باید یکی از فیلدها را پر نمایید</Text>
+    <Code>36</Code>
+  </Message>
+  <Message Key="ErrorHaveChild">
+    <Text>این گزینه دارای زیر مجموعه می باشد ، لذا حذف آن میسر نیست</Text>
+    <Code>37</Code>
+  </Message>
+  <Message Key="ErrorOldPassword">
+    <Text>رمز عبور قبلی اشتباه است</Text>
+    <Code>38</Code>
+  </Message>
+  <Message Key="ErrorCantDelete">
+    <Text>این رکورد قابل حذف نمی باشد</Text>
+    <Code>39</Code>
+  </Message>
+  <Message Key="ErrorDeletePersonSubset">
+    <Text>این شخص زیرمجموعه دارد و سیستم قادر به حذف نیست</Text>
+    <Code>40</Code>
+  </Message>
+  <Message Key="ErrorCantDeletePerson">
+    <Text>این شخص قابل حذف نمی باشد</Text>
+    <Code>41</Code>
+  </Message>
+  <Message Key="ErrorDeleteOrActive">
+    <Text>شما مجاز به حذف این شخص نیستید این شخص فعال می باشد و فقط مدیر سیستم مجاز به حذف می باشد</Text>
+    <Code>42</Code>
+  </Message>
+  <Message Key="ErrorUsernameMistake">
+    <Text>نام کاربری یا کلمه عبور اشتباه است</Text>
+    <Code>43</Code>
+  </Message>
+  <Message Key="SuccessSetGalleryCover">
+    <Text>کاور گالری با موفقیت تنظیم شد</Text>
+    <Code>44</Code>
+  </Message>
+  <Message Key="ErrorLoadData">
+    <Text>خطا در بارگذاری اطلاعات</Text>
+    <Code>45</Code>
+  </Message>
+</Catalog>

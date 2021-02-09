@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionCorrespondenceViewModel.ListProjectSectionCorrespondenceViewModel>
+@{ string tableName = "ProjectSectionCorrespondence";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionCorrespondence.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionCorrespondence.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('LetterType.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.LetterType.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionCorrespondence.LetterNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionCorrespondence.LetterNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionCorrespondence.LetterDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionCorrespondence.LetterDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionCorrespondence.LetterIssue', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionCorrespondence.LetterIssue) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionCorrespondence.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.LetterType.Title)">
+                                <input type="text" class="form-control txtbox" name="LetterType.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionCorrespondence.LetterNumber)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionCorrespondence.LetterNumber">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionCorrespondence.LetterDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionCorrespondence.LetterDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionCorrespondence.LetterIssue)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionCorrespondence.LetterIssue">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

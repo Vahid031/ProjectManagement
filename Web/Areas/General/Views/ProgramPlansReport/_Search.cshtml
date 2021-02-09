@@ -1,0 +1,21 @@
+﻿@model ViewModels.ProjectDefine.ProgramPlanViewModel.ReportParameterProgramPlanViewModel
+
+<form id="frm-ReportParameterProgramPlans" class="operationform" method="post">
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProgramId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProgramId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProgramId, new SelectList(Model.Programs, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.PlanTypeId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.PlanTypeId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.PlanTypeId, new SelectList(Model.PlanTypes, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSearchProgramPlans" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>جستجو</button>
+    </div>
+</form>

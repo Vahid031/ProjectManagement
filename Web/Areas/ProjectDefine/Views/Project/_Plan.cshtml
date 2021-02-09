@@ -1,0 +1,86 @@
+﻿@model ViewModels.ProjectDefine.ProjectViewModel.CreateProjectViewModel
+
+@{ string tableName = "ProjectPlan";}
+
+<form id="frm-ProjectPlan" class="operationform" method="post">
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("برنامه", new { @class = "label-txt" })
+        @Html.ValidationMessage("ProgramPlanId", new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProgramPlanId, new SelectList(Model.Programs, "Id", "Title"), new { @class = "form-control txtbox", @id = "Project_ProgramId" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("طرح برنامه", new { @class = "label-txt" })
+        @Html.ValidationMessage("ddlLevelTypeId", new { @class = "label-validation" })
+        @Html.Hidden("Project_ProgramPlanId")
+
+        <div class="DropDownContainer">
+            @Html.TextBox("ProgramPlanTitle", String.Empty, new { @class = "form-control txtbox customdropdown", Value = (@Model.ProgramPlanTitle == null) ? "انتخاب کنید..." : @Model.ProgramPlanTitle, autocomplete = "off" })
+            <div id="DropDownPanel" class="col-lg-12 DropDownPanel"></div>
+        </div>
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("محل تامین اعتبار", new { @class = "label-txt" })
+        @Html.ValidationMessage("ddlCreditProvidePlaceId", new { @class = "label-validation" })
+        @Html.DropDownList("ddlCreditProvidePlaceId", new SelectList(Model.CreditProvidePlaces, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("از سال", new { @class = "label-txt" })
+        @Html.ValidationMessage("ddlFromYear", new { @class = "label-validation" })
+        @Html.DropDownList("ddlFromYear", new SelectList(Model.FinantialYears, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.Label("تا سال", new { @class = "label-txt" })
+        @Html.ValidationMessage("ddlToYear", new { @class = "label-validation" })
+        @Html.DropDownList("ddlToYear", new SelectList(Model.FinantialYears, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnAddProjectPlan" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ثبت</button>
+    </div>
+</form>
+
+<div class="clear"></div>
+<div class="col-lg-12">
+    <div class="col-lg-12 content-grid">
+        <form id="frm-tbl-@(tableName)">
+            <table class="tbl-grid" id="tbl-@(tableName)" style="min-width: 700px;">
+                <thead>
+                    <tr>
+                        <th><a>ردیف</a></th>
+                        <th style="display:none"><a>برنامه</a></th>
+                        <th><a>برنامه</a></th>
+
+                        <th style="display:none"><a>طرح برنامه</a></th>
+                        <th><a>طرح برنامه</a></th>
+
+                        <th style="display:none"><a>محل تامین اعتبار</a></th>
+                        <th><a>محل تامین اعتبار</a></th>
+
+                        <th style="display:none"><a>از سال</a></th>
+                        <th><a>از سال</a></th>
+
+                        <th style="display:none"><a>تا سال</a></th>
+                        <th><a>تا سال</a></th>
+
+                        <th data-th='حذف'>حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </form>
+    </div>
+</div>

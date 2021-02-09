@@ -1,0 +1,59 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionDepositeLiberalizationViewModel.CreateProjectSectionDepositeLiberalizationViewModel
+
+<form id="frm-ProjectSectionDepositeLiberalization" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionDepositeLiberalization.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionDepositeLiberalization.Id, @id = "ProjectSectionDepositeLiberalizationId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionDepositeLiberalization" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDepositeLiberalization.PaidDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDepositeLiberalization.PaidDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDepositeLiberalization.PaidDate, new { @class = "form-control txtbox pointer", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDepositeLiberalization.TemproryPrice, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDepositeLiberalization.TemproryPrice, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDepositeLiberalization.TemproryPrice, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionDepositeLiberalization.FixedPrice, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDepositeLiberalization.FixedPrice, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDepositeLiberalization.FixedPrice, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="form-group col-lg-12">
+        @Html.LabelFor(model => model.ProjectSectionDepositeLiberalization.Description, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectSectionDepositeLiberalization.Description, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectSectionDepositeLiberalization.Description, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowProjectSectionDepositeLiberalizationFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+    </div>
+
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectSectionDepositeLiberalization" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionDepositeLiberalization" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

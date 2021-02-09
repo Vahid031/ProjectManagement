@@ -1,0 +1,9 @@
+﻿.sort-arrow {
+    width: 16px;
+    height: 18px;
+    display: block;
+    background-image: url('../images/sort-arrow.png');
+    float: right;
+    margin-left: 5px;
+    margin-top: 1px;
+}

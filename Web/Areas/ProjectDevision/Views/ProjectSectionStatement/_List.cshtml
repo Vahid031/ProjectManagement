@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionStatementViewModel.ListProjectSectionStatementViewModel>
+@{ string tableName = "ProjectSectionStatement";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionStatement.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)" style="min-width:1400px;">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionStatement.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Opinion.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.Opinion.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('StatementType.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.StatementType.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('TempFixed.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.TempFixed.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('StatementNumber.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.StatementNumber.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionStatement.ContractPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionStatement.ContractPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionStatement.AdvisorPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionStatement.AdvisorPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionStatement.ConfirmPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionStatement.ConfirmPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionStatement.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Opinion.Title)">
+                                <input type="text" class="form-control txtbox" name="Opinion.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.StatementType.Title)">
+                                <input type="text" class="form-control txtbox" name="StatementType.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.TempFixed.Title)">
+                                <input type="text" class="form-control txtbox" name="TempFixed.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.StatementNumber.Title)">
+                                <input type="text" class="form-control txtbox" name="StatementNumber.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionStatement.ContractPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionStatement.ContractPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionStatement.AdvisorPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionStatement.AdvisorPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionStatement.ConfirmPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionStatement.ConfirmPrice">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="9">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

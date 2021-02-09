@@ -1,0 +1,87 @@
+﻿@model ViewModels.ProjectDefine.ProjectAllocateViewModel.CreateProjectAllocateViewModel
+
+<form id="frm-ProjectAllocateDetail" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectAllocate.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectAllocate.Id, @id = "ProjectAllocateId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectAllocate" })
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectAllocate.ProjectPlanId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectAllocate.ProjectPlanId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectAllocate.ProjectPlanId, new SelectList(Model.ProjectPlans, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectAllocate.CreditAmount, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectAllocate.CreditAmount, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectAllocate.CreditAmount, new { @class = "form-control txtbox numeric input-price", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectAllocate.AllocateAmount, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectAllocate.AllocateAmount, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectAllocate.AllocateAmount, new { @class = "form-control txtbox numeric input-price", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectAllocate.AllocateDate, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectAllocate.AllocateDate, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectAllocate.AllocateDate, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectAllocate.CreditPercent, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectAllocate.CreditPercent, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.ProjectAllocate.CreditPercent, new { @class = "form-control txtbox" })
+    </div>
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectAllocate.ProjectSectionId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.ProjectAllocate.ProjectSectionId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.ProjectAllocate.ProjectSectionId, new SelectList(Model.ProjectSections, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        <label class="label-txt">تخصیص درصد به کلیه پروژه های سال جاری</label>
+        @Html.DropDownList("AllocatePercentToCurrentYearProject", new List<SelectListItem> {
+            new SelectListItem{ Text="خیر", Value="false"},
+            new SelectListItem{ Text="بله", Value="true"}
+        }, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnShowProjectAllocateFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+    </div>
+
+    <div class="clear"></div>
+
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSaveProjectAllocateDetail" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectAllocateDetail" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>
+
+
+<script>
+    SepratePrice('#ProjectAllocate_CreditAmount');
+    SepratePrice('#ProjectAllocate_AllocateAmount');
+</script>

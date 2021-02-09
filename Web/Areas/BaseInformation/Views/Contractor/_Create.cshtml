@@ -1,0 +1,167 @@
+﻿@model ViewModels.BaseInformation.ContractorViewModel.CreateContractorViewModel
+
+<form id="frm-Contractor" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.Contractor.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.Contractor.Id, @id = "Id" })
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.ContractorType, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.ContractorType, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Contractor.ContractorType, new List<SelectListItem> {
+            new SelectListItem{ Text="حقیقی", Value="حقیقی"},
+            new SelectListItem{ Text="حقوقی", Value="حقوقی"}
+        }, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="RegistrationNumber">
+        @Html.LabelFor(model => model.Contractor.RegistrationNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.RegistrationNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.RegistrationNumber, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="RegistrationDate_">
+        @Html.LabelFor(model => model.Contractor.RegistrationDate_, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.RegistrationDate_, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.RegistrationDate_, new { @class = "form-control txtbox pointer", data_val = "true", data_val_required = "الزامی است", @readonly="readonly" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="NationalID">
+        @Html.LabelFor(model => model.Contractor.NationalID, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.NationalID, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.NationalID, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="EconomicCode">
+        @Html.LabelFor(model => model.Contractor.EconomicCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.EconomicCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.EconomicCode, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6" id="LicenseValueAddedNumber">
+        @Html.LabelFor(model => model.Contractor.LicenseValueAddedNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.LicenseValueAddedNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.LicenseValueAddedNumber, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+
+
+
+
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.CompanyName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.CompanyName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.CompanyName, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.ManagerFirstName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.ManagerFirstName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.ManagerFirstName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.ManagerLastName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.ManagerLastName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.ManagerLastName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.ManagerMobileNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.ManagerMobileNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.ManagerMobileNumber, new { @class = "form-control txtbox numeric" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.ManagerNationalCode, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.ManagerNationalCode, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.ManagerNationalCode, new { @class = "form-control txtbox numeric" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.AgentFirstName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.AgentFirstName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.AgentFirstName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.AgentLastName, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.AgentLastName, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.AgentLastName, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.AgentMobileNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.AgentMobileNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.AgentMobileNumber, new { @class = "form-control txtbox numeric" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.Email, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.Email, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.Email, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.Address, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.Address, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.Address, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.FaxNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.FaxNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.FaxNumber, new { @class = "form-control txtbox numeric" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.PhoneNumber, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.PhoneNumber, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.PhoneNumber, new { @class = "form-control txtbox numeric" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.Website, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.Website, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.Contractor.Website, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractor.IsActive, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.Contractor.IsActive, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.Contractor.IsActive, new List<SelectListItem> {
+            new SelectListItem{ Text="فعال", Value="true"},
+            new SelectListItem{ Text="غیر فعال", Value="false"}
+        }, new { @class = "form-control txtbox" })
+    </div>
+
+    <div id="contractorLevel" class="form-group col-lg-4 col-md-6" style="text-align:center">
+        <br />
+        <button type="button" id="btnAddLevel" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>انتخاب رشته و رتبه پیمانکار</button>
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSave" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNew" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>
+
+<script>
+    
+</script>

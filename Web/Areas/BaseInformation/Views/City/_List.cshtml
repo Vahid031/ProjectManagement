@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ViewModels.BaseInformation.CityViewModel.ListCityViewModel>
+@{ string tableName = "City";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="@(tableName).Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('City.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('State.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.State.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('City.Code', '@(tableName)')">@Html.DisplayNameFor(model => model.City.Code) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('City.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.City.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="City.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.State.Title)">
+                                <input type="text" class="form-control txtbox" name="State.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.City.Code)">
+                                <input type="text" class="form-control txtbox" name="City.Code">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.City.Title)">
+                                <input type="text" class="form-control txtbox" name="City.Title">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

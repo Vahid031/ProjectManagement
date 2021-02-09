@@ -1,0 +1,19 @@
+﻿@model ViewModels.ProjectDefine.ProjectSectionContractAmendmentReport.ReportParameterProjectSectionContractAmendmentViewModel
+<form id="frm-ReportParameterProjectSectionContractAmendment" class="operationform" method="post">
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.FileCode, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.FileCode, new { @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectTitle, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.ProjectTitle, new { @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionTitle, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.ProjectSectionTitle, new { @class = "form-control txtbox" })
+    </div>
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSearchProjectStatement" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>جستجو</button>
+    </div>
+</form>

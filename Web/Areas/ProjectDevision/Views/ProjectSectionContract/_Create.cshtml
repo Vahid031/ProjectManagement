@@ -1,0 +1,266 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionContractViewModel.CreateProjectSectionContractViewModel
+
+<form id="frm-ProjectSectionContract" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionContract.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionContract.Id, @id = "ProjectSectionContractId" })
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionContract" })
+    @Html.HiddenFor(model => model.ContractDetails, new { @id = "ContractDetails-ProjectSectionContract" })
+
+    <br />
+    <!-- ----------------- Start Contract ------------------------ -->
+    <div class="panel panel-primary" style="width:98%; margin:0px auto;">
+        <div class="panel-heading"> <h3 class="panel-title">اطلاعات قرارداد</h3> </div>
+        <div class="panel-body">
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ContractTypeId, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ContractTypeId, String.Empty, new { @class = "label-validation" })
+                @Html.DropDownListFor(model => model.ProjectSectionContract.ContractTypeId, new SelectList(Model.ContractTypes, "Id", "Title"), new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ContractDate, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ContractDate, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.ContractDate, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ContractDuration, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ContractDuration, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.ContractDuration, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+            
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.EndDate, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.EndDate, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.EndDate, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ContractNumber, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ContractNumber, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.ContractNumber, new { @class = "form-control txtbox", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ContractPrice, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ContractPrice, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.ContractPrice, new { @class = "form-control txtbox numeric input-price", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ArchitecturePlan, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ArchitecturePlan, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.ArchitecturePlan, new { @class = "form-control txtbox", placeholder="برگ" })
+            </div>
+           
+            
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ElectronicalInstallationPlan, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ElectronicalInstallationPlan, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.ElectronicalInstallationPlan, new { @class = "form-control txtbox", placeholder = "برگ" })
+            </div>
+
+
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.ExecutionDetailPlan, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.ExecutionDetailPlan, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.ExecutionDetailPlan, new { @class = "form-control txtbox", placeholder = "برگ" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.FencePlan, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.FencePlan, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.FencePlan, new { @class = "form-control txtbox", placeholder = "برگ" })
+            </div>
+
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.MechanicalInstallationPlan, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.MechanicalInstallationPlan, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.MechanicalInstallationPlan, new { @class = "form-control txtbox", placeholder = "برگ" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.PlanMapSituation, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.PlanMapSituation, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.PlanMapSituation, new { @class = "form-control txtbox", placeholder = "برگ" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.StructurePlan, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.StructurePlan, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.StructurePlan, new { @class = "form-control txtbox", placeholder = "برگ" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.GuaranteePeriod, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.GuaranteePeriod, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.GuaranteePeriod, new { @class = "form-control txtbox"})
+            </div>
+
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.UnitPrice, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.UnitPrice, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.UnitPrice, new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.MinosPercent, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.MinosPercent, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.MinosPercent, new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.PaulusPercent, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.PaulusPercent, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.PaulusPercent, new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.StartDate, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.StartDate, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.StartDate, new { @class = "form-control txtbox", @readonly="readonly" })
+            </div>
+
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.WorkshopDeliveryDate, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.WorkshopDeliveryDate, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.WorkshopDeliveryDate, new { @class = "form-control txtbox", @readonly = "readonly" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.WorkshopToolingDate, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.WorkshopToolingDate, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.WorkshopToolingDate, new { @class = "form-control txtbox", @readonly = "readonly" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.WorkshopRemoveDate, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.WorkshopRemoveDate, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.WorkshopRemoveDate, new { @class = "form-control txtbox", @readonly = "readonly" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.WorkshopSupervisor, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.WorkshopSupervisor, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.WorkshopSupervisor, new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContract.PaidPriceType, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContract.PaidPriceType, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContract.PaidPriceType, new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-8" style="text-align:center">
+                <br />
+                <button type="button" id="btnShowProjectSectionContractFiles" class="btn btn-warning btn-uploader"><span class="glyphicon glyphicon-ok" style="float:right;"></span>افزودن فایل های پیوستی پروژه</button>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- ----------------- End Contract ------------------------ -->
+    
+    <div class="clear"></div>
+    <br />
+
+    <!-- ----------------- Start Contract ------------------------ -->
+    <div class="panel panel-primary" style="width:98%; margin:0px auto;">
+        <div class="panel-heading"> <h3 class="panel-title">نرخ پیمان</h3> </div>
+        <div class="panel-body">
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContractDetail.ProjectDetails, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContractDetail.ProjectDetails, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContractDetail.ProjectDetails, new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContractDetail.UnitId, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContractDetail.UnitId, String.Empty, new { @class = "label-validation" })
+                @Html.DropDownListFor(model => model.ProjectSectionContractDetail.UnitId, new SelectList(Model.Units, "Id", "Title"), new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContractDetail.TotalAmonts, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContractDetail.TotalAmonts, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContractDetail.TotalAmonts, new { @class = "form-control txtbox numeric input-price" })
+            </div>
+            
+            
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContractDetail.UnitPrice, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContractDetail.UnitPrice, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContractDetail.UnitPrice, new { @class = "form-control txtbox numeric input-price"})
+            </div>
+            
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionContractDetail.TotalPrice, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionContractDetail.TotalPrice, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionContractDetail.TotalPrice, new { @class = "form-control txtbox numeric input-price" })
+            </div>
+
+
+            <div class="clear"></div>
+            <div class="form-group col-lg-4 col-md-6">
+                <button type="button" id="btnSaveProjectSectionContractDetail" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="form-group col-lg-12">
+                <table class="tbl-grid" id="tbl-ProjectSectionContractDetail">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;">ردیف</th>
+                            <th>@Html.DisplayNameFor(model => model.ProjectSectionContractDetail.ProjectDetails)</th>
+                            <th>@Html.DisplayNameFor(model => model.ProjectSectionContractDetail.TotalAmonts)</th>
+                            <th>@Html.DisplayNameFor(model => model.ProjectSectionContractDetail.TotalPrice)</th>
+                            <th>@Html.DisplayNameFor(model => model.ProjectSectionContractDetail.UnitId)</th>
+                            <th>@Html.DisplayNameFor(model => model.ProjectSectionContractDetail.UnitPrice)</th>
+                            <th data-th='حذف'>حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+
+            <div class="clear"></div>
+            <br />
+            <div class="form-group col-lg-4 col-md-6">
+                <button type="submit" id="btnSaveProjectSectionContract" class="btn btn-success" style="width:170px;"><span class="glyphicon glyphicon-ok" style="float:right;"></span>تایید نهایی قرارداد</button>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------- End Contract ------------------------ -->
+</form>
+
+
+<script>
+    SepratePrice('#ProjectSectionContract_ContractPrice');
+    SepratePrice('#ProjectSectionContract_UnitPrice');
+    
+</script>

@@ -1,0 +1,351 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionPaidPriceViewModel.CreateProjectSectionPaidPriceViewModel
+
+<form id="frm-ProjectSectionPaidPrice" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.ProjectSectionPaidPrice.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.ProjectSectionPaidPrice.Id, @id = "ProjectSectionPaidPriceId" })
+    @Html.HiddenFor(model => model.ProjectSectionPaidPrice.ProjectSectionDraftId)
+    @Html.HiddenFor(model => model.Files, new { @id = "images-ProjectSectionPaidPrice" })
+
+
+    <!-- ----------------- Start Draft ------------------------ -->
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h3 class="panel-title">اطلاعات حواله</h3> </div>
+        <div class="panel-body">
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.DraftPrice, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.DraftPrice, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.DraftPrice, new { id = "DraftPrice", @class = "form-control txtbox numeric input-price", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.DraftNumber, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.DraftNumber, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.DraftNumber, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.DraftDate_, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.DraftDate_, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.DraftDate_, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+        </div>
+    </div>
+    <!-- ----------------- End Draft ------------------------ -->
+
+    <!-- ----------------- Start InsuranceType ------------------------ -->
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h3 class="panel-title">وضعیت نوع بیمه</h3> </div>
+        <div class="panel-body">
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.InsuranceType, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.InsuranceType, String.Empty, new { @class = "label-validation" })
+                @Html.DropDownListFor(model => model.ProjectSectionPaidPrice.InsuranceType, new List<SelectListItem> {
+                    new SelectListItem{ Text="بیمه اعتبارات تملک و داراییها", Value="1"},
+                    new SelectListItem{ Text="بیمه دستمزدی با مصالح", Value="2"},
+                    new SelectListItem{ Text="بیمه دستمزدی بدون مصالح", Value="3"}
+                }, new { @class = "form-control txtbox" })
+            </div>
+
+        </div>
+    </div>
+    <!-- ----------------- End InsuranceType ------------------------ -->
+
+
+    <!-- ----------------- Start کسورات  ------------------------ -->
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h3 class="panel-title">کسورات</h3> </div><div class="panel-body">
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.Deposit, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.Deposit, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.Deposit, new { id = "Deposit", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.PrePayment, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.PrePayment, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.PrePayment, new { id = "PrePayment", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.Forfeit, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.Forfeit, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.Forfeit, new { id = "Forfeit", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.ContractorInsurance, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.ContractorInsurance, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.ContractorInsurance, new { id = "ContractorInsurance", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.Tax, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.Tax, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.Tax, new { id = "Tax", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.OtherDept, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.OtherDept, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.OtherDept, new { id = "OtherDept", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.TotalContractorDeductions, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.TotalContractorDeductions, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.TotalContractorDeductions, new { id = "TotalContractorDeductions", @class = "form-control txtbox numeric input-price", @readonly = "readonly" })
+            </div>
+
+        </div>
+    </div>
+    <!-- ----------------- Start کسورات ------------------------ -->
+
+
+
+    <!-- ----------------- Start اضافات ------------------------ -->
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h3 class="panel-title">اضافات</h3> </div><div class="panel-body">
+            
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.MasterInsurance, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.MasterInsurance, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.MasterInsurance, new { id = "MasterInsurance", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.ValueTax, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.ValueTax, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.ValueTax, new { id = "ValueTax", @class = "form-control txtbox numeric input-price" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.TotalMasterDeductions, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.TotalMasterDeductions, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.TotalMasterDeductions, new { id = "TotalMasterDeductions", @class = "form-control txtbox numeric input-price", @readonly = "readonly" })
+            </div>
+
+        </div>
+    </div>
+    <!-- ----------------- Start اضافات ------------------------ -->
+   
+
+
+
+    <!-- ----------------- Start پرداختی ------------------------ -->
+    <div class="panel panel-primary">
+        <div class="panel-heading"> <h3 class="panel-title">پرداختی</h3> </div><div class="panel-body">
+            
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.PayablePrice, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.PayablePrice, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.PayablePrice, new { id = "PayablePrice", @class = "form-control txtbox numeric input-price", @readonly = "readonly" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.PaidPrice, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.PaidPrice, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.PaidPrice, new { id = "PaidPrice", @class = "form-control txtbox numeric input-price", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.PaidDate_, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.PaidDate_, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.PaidDate_, new { @class = "form-control txtbox", @readonly = "readonly", style = "cursor:pointer;", data_val = "true", data_val_required = "الزامی است" })
+            </div>
+        
+            <div class="clear"></div>
+
+            <div class="form-group col-lg-12">
+                @Html.LabelFor(model => model.ProjectSectionPaidPrice.Description, new { @class = "label-txt" })
+                @Html.ValidationMessageFor(model => model.ProjectSectionPaidPrice.Description, String.Empty, new { @class = "label-validation" })
+                @Html.TextBoxFor(model => model.ProjectSectionPaidPrice.Description, new { @class = "form-control txtbox" })
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+                <br />
+                <button type="button" id="btnShowProjectSectionPaidPriceFiles" class="btn btn-warning btn-uploader" style="min-width: 200px;"><span class="glyphicon glyphicon-ok" style="float: right;"></span>افزودن فایل های پیوستی</button>
+            </div>
+
+            <div class="form-group col-lg-4 col-md-6" style="text-align:center">
+                <br />
+                <button type="button" id="btnGovermentWorthyDocumentsPaidPrice" class="btn btn-warning btn-uploader" style="min-width: 280px;"><span class="glyphicon glyphicon-ok" style="float: right;"></span>پرداخت به صورت اوراق بهادار دولتی</button>
+            </div>
+
+        </div>
+    </div>
+    <!-- ----------------- Start پرداختی ------------------------ -->
+   
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-8">
+        <button type="submit" id="btnSaveProjectSectionPaidPrice" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+    </div>
+</form>
+
+
+<script>
+
+    // این کد برای برداشتن کاما ، از مقدارهای عددی می باشد
+    function GetNumber(value) {
+        return value.replace(/\,/g, '');
+    }
+
+    // این کد برای اضافه شدن کاما می باشد
+    function SeprateNumberByValue(value) {
+        return value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    }
+
+    
+
+    //-------------------- کسورات
+    HandelDeductions();
+    function HandelDeductions() {
+        $('#Deposit,#PrePayment,#Forfeit,#ContractorInsurance,#Tax,#OtherDept').each(function () {
+            $(this).bind('keyup', function () {
+                var Deposit = TryParseInt(GetNumber($('#Deposit').val()), 0);
+                var PrePayment = TryParseInt(GetNumber($('#PrePayment').val()), 0);
+                var Forfeit = TryParseInt(GetNumber($('#Forfeit').val()), 0);
+                var ContractorInsurance = TryParseInt(GetNumber($('#ContractorInsurance').val()), 0);
+                var Tax = TryParseInt(GetNumber($('#Tax').val()), 0);
+                var OtherDept = TryParseInt(GetNumber($('#OtherDept').val()), 0);
+
+                var Total = Deposit + PrePayment + Forfeit + ContractorInsurance + Tax + OtherDept;
+
+                $('#TotalContractorDeductions').val(SeprateNumberByValue(Total));
+            });
+        });
+    }
+    //------------------------
+
+
+    //-------------------- اضافات
+    HandlAdditions();
+    function HandlAdditions() {
+        $('#MasterInsurance,#ValueTax').each(function () {
+            $(this).bind('keyup', function () {
+                var MasterInsurance = TryParseInt(GetNumber($('#MasterInsurance').val()), 0);
+                var ValueTax = TryParseInt(GetNumber($('#ValueTax').val()), 0);
+
+                var Total = MasterInsurance + ValueTax;
+                $('#TotalMasterDeductions').val(SeprateNumberByValue(Total));
+            });
+        });
+    }
+    //----------------
+
+
+
+
+    //-------------------- پرداختی
+    HandlPaid();
+    function HandlPaid() {
+        $('#Deposit,#PrePayment,#Forfeit,#ContractorInsurance,#Tax,#OtherDept,#MasterInsurance,#ValueTax').each(function () {
+            $(this).bind('keyup', function () {
+                var DraftPrice = TryParseInt(GetNumber($('#DraftPrice').val()), 0);
+                var Deposit = TryParseInt(GetNumber($('#Deposit').val()), 0);
+                var PrePayment = TryParseInt(GetNumber($('#PrePayment').val()), 0);
+                var Forfeit = TryParseInt(GetNumber($('#Forfeit').val()), 0);
+                var ContractorInsurance = TryParseInt(GetNumber($('#ContractorInsurance').val()), 0);
+                var Tax = TryParseInt(GetNumber($('#Tax').val()), 0);
+                var OtherDept = TryParseInt(GetNumber($('#OtherDept').val()), 0);
+
+                var Total1 = Deposit + PrePayment + Forfeit + ContractorInsurance + Tax + OtherDept;
+
+                //--------------------
+                var MasterInsurance = TryParseInt(GetNumber($('#MasterInsurance').val()), 0);
+                var ValueTax = TryParseInt(GetNumber($('#ValueTax').val()), 0);
+
+                var Total2 = MasterInsurance + ValueTax;
+
+                $('#PayablePrice,#PaidPrice').val(SeprateNumberByValue((DraftPrice - Total1 + Total2)));
+            });
+        });
+    }
+    //----------------
+
+
+
+    $(function () {
+
+        //---------------- کسورات
+        var Deposit = TryParseInt($('#Deposit').val(), 0);
+        var PrePayment = TryParseInt($('#PrePayment').val(), 0);
+        var Forfeit = TryParseInt($('#Forfeit').val(), 0);
+        var ContractorInsurance = TryParseInt($('#ContractorInsurance').val(), 0);
+        var Tax = TryParseInt($('#Tax').val(), 0);
+        var OtherDept = TryParseInt($('#OtherDept').val(), 0);
+
+        var Total1 = Deposit + PrePayment + Forfeit + ContractorInsurance + Tax + OtherDept;
+        $('#TotalContractorDeductions').val(Total1);
+        //-----------------------------------------------
+        
+
+        //---------------------- اضافات
+        var MasterInsurance = TryParseInt($('#MasterInsurance').val(), 0);
+        var ValueTax = TryParseInt($('#ValueTax').val(), 0);
+
+        var Total2 = MasterInsurance + ValueTax;
+        $('#TotalMasterDeductions').val(Total2);
+        //--------------------------------------------
+
+
+        //--------------------------- پرداختی
+        var DraftPrice = TryParseInt($('#DraftPrice').val(), 0);
+
+        $('#PayablePrice,#PaidPrice').val(DraftPrice - Total1 + Total2);
+        //------------------------------------------------
+
+
+
+        DatePic('#ProjectSectionPaidPrice_PaidDate_');
+    });
+
+
+    // تبدیل رشته به عدد
+    function TryParseInt(str, defaultValue) {
+        var retValue = defaultValue;
+        if (str !== null) {
+            if (str.length > 0) {
+                if (!isNaN(str)) {
+                    retValue = parseInt(str);
+                }
+            }
+        }
+        return retValue;
+    }
+
+
+    // جداسازی اعداد با کاما ، زمانی که صفحه لود میشود
+    SepratePrice('#DraftPrice');
+    SepratePrice('#Deposit');   
+    SepratePrice('#PrePayment');
+    SepratePrice('#Forfeit');
+    SepratePrice('#ContractorInsurance');
+    SepratePrice('#Tax');
+    SepratePrice('#OtherDept');
+    SepratePrice('#TotalContractorDeductions');
+    SepratePrice('#MasterInsurance');
+    SepratePrice('#ValueTax');
+    SepratePrice('#TotalMasterDeductions');
+    SepratePrice('#PayablePrice');
+    SepratePrice('#PaidPrice');
+
+</script>

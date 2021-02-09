@@ -1,0 +1,1280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B13D0232-E979-4578-8FCA-DE2B56B81A4A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Mvc, Version=2015.2.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\packages\structuremap.web.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\BaseInformation\Business\MajorTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\LevelTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\PlanTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\RecoupmentTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\ResourceBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\InvestmentChapterBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\ResourceTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\InvestmentChapterTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\RuralDistrictBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\VillageBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\SectionBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\CityBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\StateBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\UnitBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\StatementTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\SetBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\ProjectTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\ProgramBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\MonitoringTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\FinantialYearBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\ExecutionTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\DocumentTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\DeductionPercentBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\CreditProvidePlaceBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\ContractTypeBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\ContractorBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\CommissionMemberBusiness.js" />
+    <Content Include="Areas\BaseInformation\Business\AccountTypeBusiness.js" />
+    <Content Include="Areas\General\Business\ProgramPlansReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectAllocatesReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectPlansReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionContractAmendmentDateReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionContractAmendmentReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionContractAndCostsReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionContractsReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionDeliveryFixdesReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionDeliveryTemproriesReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionDepositeLiberalizationsReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionProjectProgressReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionsReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionStatementPayReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionSupervisorVisitsReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectsReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionRecoupmentsReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionMadeh48sReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionMadeh46sReportBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectSectionFinalParticipantsReportBusiness.js" />
+    <Content Include="Areas\General\Business\HomeBusiness.js" />
+    <Content Include="Areas\General\Business\ContractorReportBusiness.js" />
+    <Content Include="Areas\General\Business\MemberBusiness.js" />
+    <Content Include="Areas\General\Business\ProjectStatementReport.js" />
+    <Content Include="Areas\General\Business\ReportBusiness.js" />
+    <Content Include="Areas\General\Business\RolePermissionBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectProgrammingBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectAllocateBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectAllocateDetailBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectQuantityGoalBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectAverageBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectInvestmentChapterBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectFundingBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectAgreementBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProjectBusiness.js" />
+    <Content Include="Areas\ProjectDefine\Business\ProgramPlanBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSection48Business.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionDraftBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionDraftListBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionFinanceBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionGovermentWorthyDocumentsPaidPriceBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionOperationTitleBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionRecoupmentBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionRecoupmentListBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionPaidPriceBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionPaidPriceListBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionPrintDraftBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionStatementConfirmListBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionStatementConfirmBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionStatementBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionComplementarityDateBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionComplementarityPriceBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionMadeh48Business.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionMadeh46Business.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionContractBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionAdvisorMemberBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionAdvisorVisitBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionDeliveryFixdBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionCorrespondenceBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionDepositeLiberalizationBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionFixedBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionLiberalizationBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionLetterBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSection46Business.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionTemproryBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionSupervisorVisitBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionSupervisorMemberBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionScheduleBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionDeliveryTemproryBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionWinner4648Business.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionWinnerDegreeBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionWinnerBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionOpenDateBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionFinanceEvaluationBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionParticipantBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionFinalParticipantBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionTenderBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionCeremonialBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionInquiryBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionOperationBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionAssignmentBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionBusiness.js" />
+    <Content Include="Areas\ProjectDevision\Business\ProjectSectionProductBusiness.js" />
+    <Content Include="Content\Dashboard\bootstrap.min.css" />
+    <Content Include="Content\Dashboard\css\AlarmsAgreement.css" />
+    <Content Include="Content\Dashboard\css\animation-chart.css" />
+    <Content Include="Content\Dashboard\css\bootstrap-rtl2.css" />
+    <Content Include="Content\Dashboard\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Dashboard\css\clock.css" />
+    <Content Include="Content\Dashboard\css\codi-style.css" />
+    <Content Include="Content\Dashboard\css\confirm.css" />
+    <Content Include="Content\Dashboard\css\css.css" />
+    <Content Include="Content\Dashboard\css\custom-style.css" />
+    <Content Include="Content\Dashboard\css\demo-style.css" />
+    <Content Include="Content\Dashboard\css\farsi-fonts.css" />
+    <Content Include="Content\Dashboard\css\fileinput.min.css" />
+    <Content Include="Content\Dashboard\css\font-awesome.min.css" />
+    <Content Include="Content\Dashboard\css\font.css" />
+    <Content Include="Content\Dashboard\css\grid.css" />
+    <Content Include="Content\Dashboard\css\ionicons.css" />
+    <Content Include="Content\Dashboard\css\jquery-clockpicker.min.css" />
+    <Content Include="Content\Dashboard\css\jquery-ui.min.css" />
+    <Content Include="Content\Dashboard\css\jquery-ui.theme.min.css" />
+    <Content Include="Content\Dashboard\css\loading-style.css" />
+    <Content Include="Content\Dashboard\css\Permissons.css" />
+    <Content Include="Content\Dashboard\css\popupform.css" />
+    <Content Include="Content\Dashboard\css\reset.css" />
+    <Content Include="Content\Dashboard\css\ResponsiveStyle.css" />
+    <Content Include="Content\Dashboard\css\style-allec-nav.css" />
+    <Content Include="Content\Dashboard\css\style-panel.css" />
+    <Content Include="Content\Dashboard\css\style.css" />
+    <Content Include="Content\Dashboard\css\treeview.css" />
+    <Content Include="Content\Dashboard\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Dashboard\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Dashboard\fonts\ionicons.svg" />
+    <Content Include="Content\Dashboard\fonts\wYekan.svg" />
+    <Content Include="Content\Dashboard\js\AjaxUtility.js" />
+    <Content Include="Content\Dashboard\js\allec-nav.js" />
+    <Content Include="Content\Dashboard\js\bootstrap.3.3.6.min.js" />
+    <Content Include="Content\Dashboard\js\bootstrap.min.css" />
+    <Content Include="Content\Dashboard\js\bootstrap.min.js" />
+    <Content Include="Content\Dashboard\js\demo-custom.js" />
+    <Content Include="Content\Dashboard\js\fileinput.min.js" />
+    <Content Include="Content\Dashboard\js\fileinput_locale_ir.js" />
+    <Content Include="Content\Dashboard\js\gmaps.js" />
+    <Content Include="Content\Dashboard\js\jquery-1-11.js" />
+    <Content Include="Content\Dashboard\js\jquery-2.1.1.min.js" />
+    <Content Include="Content\Dashboard\js\jquery-2.js" />
+    <Content Include="Content\Dashboard\js\jquery-clockpicker.min.js" />
+    <Content Include="Content\Dashboard\js\jquery.ui.datepicker-cc.all.min.js" />
+    <Content Include="Content\Dashboard\js\ListViewUtility.js" />
+    <Content Include="Content\Dashboard\js\main.js" />
+    <Content Include="Content\Dashboard\js\modernizr.js" />
+    <Content Include="Content\Dashboard\js\rightMenu.js" />
+    <Content Include="Content\Dashboard\js\TweenMax.min.js" />
+    <Content Include="Content\Dashboard\Scripts\bootstrap.min.js" />
+    <Content Include="Content\Dashboard\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Content\Dashboard\Scripts\jquery.validate.min.js" />
+    <Content Include="Content\Dashboard\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Dashboard\Site.css" />
+    <Content Include="Content\fileUpload\blueimp-gallery.min.css" />
+    <Content Include="Content\fileUpload\bootstrap.min.css" />
+    <Content Include="Content\fileUpload\demo-ie8.css" />
+    <Content Include="Content\fileUpload\demo.css" />
+    <Content Include="Content\fileUpload\jquery.fileupload-noscript.css" />
+    <Content Include="Content\fileUpload\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\fileUpload\jquery.fileupload-ui.css" />
+    <Content Include="Content\fileUpload\jquery.fileupload.css" />
+    <Content Include="Content\fileUpload\style.css" />
+    <Content Include="Content\font-awesome-4.2.0\css\font-awesome.css" />
+    <Content Include="Content\font-awesome-4.2.0\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome-4.2.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Fonts\ionicons.svg" />
+    <Content Include="Content\Fonts\wYekan.svg" />
+    <Content Include="Content\Images\1.png" />
+    <Content Include="Content\Images\10.png" />
+    <Content Include="Content\Images\2.png" />
+    <Content Include="Content\Images\3.png" />
+    <Content Include="Content\Images\4.png" />
+    <Content Include="Content\Images\5.png" />
+    <Content Include="Content\Images\6.png" />
+    <Content Include="Content\Images\7.png" />
+    <Content Include="Content\Images\8.png" />
+    <Content Include="Content\Images\9.png" />
+    <Content Include="Content\Images\active.png" />
+    <Content Include="Content\Images\delete_btn.png" />
+    <Content Include="Content\Images\edit_btn.png" />
+    <Content Include="Content\Images\sort-arrow.png" />
+    <Content Include="Content\Images\dashboard.png" />
+    <Content Include="Content\map\gmaps.js" />
+    <Content Include="Content\map\jquery-2.1.1.min.js" />
+    <Content Include="Content\map\jquery-gmaps-latlon-picker.css" />
+    <Content Include="Content\map\jquery-gmaps-latlon-picker.js" />
+    <Content Include="Content\map\jquery.gomap-1.3.3.min.js" />
+    <Content Include="Content\Reporting\css\core.css" />
+    <Content Include="Content\Reporting\css\style.css" />
+    <Content Include="Content\Reporting\images\chalk.jpg" />
+    <Content Include="Content\Reporting\js\amcharts.js" />
+    <Content Include="Content\Reporting\js\amcharts0.js" />
+    <Content Include="Content\Reporting\js\data.js" />
+    <Content Include="Content\Reporting\js\donut-themes.js" />
+    <Content Include="Content\Reporting\js\drilldown.js" />
+    <Content Include="Content\Reporting\js\exporting.js" />
+    <Content Include="Content\Reporting\js\funnel.js" />
+    <Content Include="Content\Reporting\js\highcharts.js" />
+    <Content Include="Content\Reporting\js\jquery-1.11.2.min.js" />
+    <Content Include="Content\Reporting\js\jquery.min.js" />
+    <Content Include="Content\Reporting\js\pie.js" />
+    <Content Include="Content\Reporting\js\plotly.min.js" />
+    <Content Include="Content\Reporting\js\serial.js" />
+    <Content Include="Content\Reporting\js\serial0.js" />
+    <Content Include="Content\Reporting\js\zingchart.min.js" />
+    <Content Include="Content\Styles\bootstrap-rtl2.css" />
+    <Content Include="Content\Styles\bootstrap-theme.min.css" />
+    <Content Include="Content\Styles\font-awesome.min.css" />
+    <Content Include="Content\Styles\grid.css" />
+    <Content Include="Content\Styles\ionicons.css" />
+    <Content Include="Content\Styles\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\General\Views\Account\Index.cshtml" />
+    <Content Include="Areas\General\Views\Account\_Login.cshtml" />
+    <Content Include="Areas\General\Views\Account\_Recovery.cshtml" />
+    <Content Include="Areas\General\Views\Home\Index.cshtml" />
+    <Content Include="Areas\General\Views\Home\_Default.cshtml" />
+    <Content Include="Areas\General\Views\Home\_RightNavigation.cshtml" />
+    <Content Include="Areas\General\Views\Member\_Create.cshtml" />
+    <Content Include="Areas\General\Views\Member\_Index.cshtml" />
+    <Content Include="Areas\General\Views\Member\_List.cshtml" />
+    <Content Include="Content\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome-4.2.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome-4.2.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\font-awesome-4.2.0\less\bordered-pulled.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\core.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\fixed-width.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\font-awesome.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\icons.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\larger.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\list.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\mixins.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\path.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\rotated-flipped.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\spinning.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\stacked.less" />
+    <Content Include="Content\font-awesome-4.2.0\less\variables.less" />
+    <Content Include="Content\font-awesome-4.2.0\scss\font-awesome.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_core.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_fixed-width.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_icons.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_larger.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_list.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_mixins.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_path.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_spinning.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_stacked.scss" />
+    <Content Include="Content\font-awesome-4.2.0\scss\_variables.scss" />
+    <Content Include="Content\Fonts\b koodak\regular-b koodak.eot" />
+    <Content Include="Content\Fonts\b koodak\regular-b koodak.ttf" />
+    <Content Include="Content\Fonts\b koodak\regular-b koodak.woff" />
+    <Content Include="Content\Fonts\b koodak\regular-b koodak.woff2" />
+    <Content Include="Content\Fonts\bbc nassim\regular-bbcnassim.eot" />
+    <Content Include="Content\Fonts\bbc nassim\regular-bbcnassim.ttf" />
+    <Content Include="Content\Fonts\bbc nassim\regular-bbcnassim.woff" />
+    <Content Include="Content\Fonts\bbc nassim\regular-bbcnassim.woff2" />
+    <Content Include="Content\Fonts\BYekan.eot" />
+    <Content Include="Content\Fonts\BYekan.ttf" />
+    <Content Include="Content\Fonts\BYekan.woff" />
+    <Content Include="Content\Fonts\droid arabic kufi\bold-droid arabic kufi.eot" />
+    <Content Include="Content\Fonts\droid arabic kufi\bold-droid arabic kufi.otf" />
+    <Content Include="Content\Fonts\droid arabic kufi\bold-droid arabic kufi.ttf" />
+    <Content Include="Content\Fonts\droid arabic kufi\regular-droid arabic kufi.eot" />
+    <Content Include="Content\Fonts\droid arabic kufi\regular-droid arabic kufi.ttf" />
+    <Content Include="Content\Fonts\droid arabic kufi\regular-droid arabic kufi.woff" />
+    <Content Include="Content\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\ionicons.eot" />
+    <Content Include="Content\Fonts\ionicons.ttf" />
+    <Content Include="Content\Fonts\ionicons.woff" />
+    <Content Include="Content\Fonts\iransans\bold-iransans.eot" />
+    <Content Include="Content\Fonts\iransans\bold-iransans.ttf" />
+    <Content Include="Content\Fonts\iransans\bold-iransans.woff" />
+    <Content Include="Content\Fonts\iransans\bold-iransans.woff2" />
+    <Content Include="Content\Fonts\iransans\regular-iransans.eot" />
+    <Content Include="Content\Fonts\iransans\regular-iransans.ttf" />
+    <Content Include="Content\Fonts\iransans\regular-iransans.woff" />
+    <Content Include="Content\Fonts\iransans\regular-iransans.woff2" />
+    <Content Include="Content\Fonts\iransans\ultralight-iransans.eot" />
+    <Content Include="Content\Fonts\iransans\ultralight-iransans.ttf" />
+    <Content Include="Content\Fonts\iransans\ultralight-iransans.woff" />
+    <Content Include="Content\Fonts\iransans\ultralight-iransans.woff2" />
+    <Content Include="Content\Fonts\wYekan.afm" />
+    <Content Include="Content\Fonts\wYekan.eot" />
+    <Content Include="Content\Fonts\wYekan.otf" />
+    <Content Include="Content\Fonts\wYekan.pfa" />
+    <Content Include="Content\Fonts\wYekan.pfb" />
+    <Content Include="Content\Fonts\wYekan.ps" />
+    <Content Include="Content\Fonts\wYekan.pt3" />
+    <Content Include="Content\Fonts\wYekan.ttf" />
+    <Content Include="Content\Fonts\wYekan.woff" />
+    <Content Include="Content\Fonts\yekan\regular-yekan.eot" />
+    <Content Include="Content\Fonts\yekan\regular-yekan.ttf" />
+    <Content Include="Content\Fonts\yekan\regular-yekan.woff" />
+    <Content Include="Content\Fonts\yekan\regular-yekan.woff2" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Areas\General\Views\RolePermission\_Create.cshtml" />
+    <Content Include="Areas\General\Views\RolePermission\_Index.cshtml" />
+    <Content Include="Areas\General\Views\RolePermission\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\AccountType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\AccountType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\AccountType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\CommissionMember\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\CommissionMember\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\CommissionMember\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\DocumentType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\DocumentType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\DocumentType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ExecutionType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ExecutionType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ExecutionType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\FinantialYear\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\FinantialYear\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\FinantialYear\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\MonitoringType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\MonitoringType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\MonitoringType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Program\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Program\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Program\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ProjectType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ProjectType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ProjectType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Set\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Set\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Set\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\StatementType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\StatementType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\StatementType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Contractor\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Contractor\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Contractor\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ContractType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ContractType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ContractType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\CreditProvidePlace\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\CreditProvidePlace\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\CreditProvidePlace\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\DeductionPercent\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\DeductionPercent\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\DeductionPercent\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Unit\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Unit\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Unit\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\State\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\State\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\State\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\City\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\City\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\City\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Section\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Section\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Section\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Village\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Village\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Village\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\RuralDistrict\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\RuralDistrict\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\RuralDistrict\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\InvestmentChapterType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\InvestmentChapterType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\InvestmentChapterType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\InvestmentChapter\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\InvestmentChapter\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\InvestmentChapter\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Resource\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Resource\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Resource\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ResourceType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ResourceType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\ResourceType\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\web.config" />
+    <Content Include="Areas\ProjectDefine\Views\ProgramPlan\_Create.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProgramPlan\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProgramPlan\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\Project\_Create.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\Project\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\Project\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\Project\_Map.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\Project\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAgreement\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAgreement\_Search.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAgreement\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectFunding\_Create.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectFunding\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectFunding\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectInvestmentChapter\_Create.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectInvestmentChapter\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectInvestmentChapter\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectQuantityGoal\_Create.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectQuantityGoal\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectQuantityGoal\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAverage\_Create.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAverage\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAverage\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAllocate\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAllocate\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAllocate\_Search.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectProgramming\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectProgramming\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectProgramming\_Search.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAllocateDetail\_Create.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAllocateDetail\_Index.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAllocateDetail\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\web.config" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionProduct\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionProduct\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionProduct\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAssignment\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAssignment\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAssignment\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOperation\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOperation\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOperation\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionInquiry\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionInquiry\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionInquiry\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionInquiry\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCeremonial\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCeremonial\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCeremonial\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCeremonial\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionTender\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionTender\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionTender\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionTender\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionParticipant\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionParticipant\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionParticipant\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinanceEvaluation\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinanceEvaluation\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinanceEvaluation\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinalParticipant\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinalParticipant\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinalParticipant\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOpenDate\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOpenDate\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOpenDate\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionWinner\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionWinner\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionWinner\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\projectSectionWinnerDegree\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\projectSectionWinnerDegree\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\projectSectionWinnerDegree\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\projectSectionWinnerDegree\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityPrice\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityPrice\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityPrice\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityPrice\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityDate\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityDate\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityDate\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionComplementarityDate\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionContract\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionContract\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionContract\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinalParticipant\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSchedule\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSchedule\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSchedule\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSchedule\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSupervisorMember\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSupervisorMember\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSupervisorMember\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAdvisorMember\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAdvisorMember\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAdvisorMember\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSupervisorVisit\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSupervisorVisit\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSupervisorVisit\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionSupervisorVisit\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAdvisorVisit\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAdvisorVisit\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAdvisorVisit\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionAdvisorVisit\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionTemprory\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionTemprory\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionTemprory\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryTemprory\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryTemprory\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryTemprory\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryTemprory\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryFixd\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryFixd\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryFixd\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDeliveryFixd\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFixed\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFixed\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFixed\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionLiberalization\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionLiberalization\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionLiberalization\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDepositeLiberalization\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDepositeLiberalization\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDepositeLiberalization\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDepositeLiberalization\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCorrespondence\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCorrespondence\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCorrespondence\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionCorrespondence\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionLetter\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionLetter\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionLetter\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection46\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection46\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection46\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection48\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection48\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSection48\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionMadeh46\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionMadeh46\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionMadeh46\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionMadeh48\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionMadeh48\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionMadeh48\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatement\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatement\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatement\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatement\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\General\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\General\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatementConfirmList\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatementConfirmList\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatementConfirm\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatementConfirm\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatementConfirm\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPaidPriceList\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPaidPriceList\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPaidPrice\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPaidPrice\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPaidPrice\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPaidPrice\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\RecoupmentType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\RecoupmentType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\RecoupmentType\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionRecoupmentList\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionRecoupmentList\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionRecoupmentList\_Search.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionRecoupment\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionRecoupment\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionRecoupment\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionRecoupment\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\PlanType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\PlanType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\PlanType\_List.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C1.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C2.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C5.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C8.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C7.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C6.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C4.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C3.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_Alarms.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_Sms.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\LevelType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\LevelType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\LevelType\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionWinner4648\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionWinner4648\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPaidPriceList\_Create.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_F1.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_F2.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_F3.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_F4.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_F5.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_F6.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C9.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C10.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectAllocateDetail\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionStatementConfirm\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOperationTitle\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOperationTitle\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionOperationTitle\_List.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\Contractor\_Level.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\MajorType\_Create.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\MajorType\_Index.cshtml" />
+    <Content Include="Areas\BaseInformation\Views\MajorType\_List.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\Project\_Plan.cshtml" />
+    <Content Include="Areas\General\Views\Home\_ChangePassword.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionProduct\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDefine\Views\ProjectFunding\_FileUpload.cshtml" />
+    <Content Include="Areas\General\Views\ContractorReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ContractorReport\_Report.cshtml" />
+    <Content Include="Content\Reports\Contractor.mrt" />
+    <Content Include="Areas\General\Views\ContractorReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProgramPlansReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProgramPlansReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProgramPlansReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectPlansReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectPlansReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectPlansReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractsReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDeliveryFixdesReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDeliveryFixdesReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDeliveryFixdesReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionMadeh46sReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionMadeh46sReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionMadeh46sReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionMadeh48sReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionMadeh48sReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionMadeh48sReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionRecoupmentsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionRecoupmentsReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionRecoupmentsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionsReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionSupervisorVisitsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionSupervisorVisitsReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionSupervisorVisitsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectAllocatesReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectAllocatesReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectAllocatesReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectsReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionFinalParticipantsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionFinalParticipantsReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionFinalParticipantsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDepositeLiberalizationsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDepositeLiberalizationsReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDepositeLiberalizationsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDeliveryTemproriesReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDeliveryTemproriesReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionDeliveryTemproriesReport\_Search.cshtml" />
+    <Content Include="Content\Reports\DepositeLiberalizations.mrt" />
+    <Content Include="Content\Reports\ProgramPlans.mrt" />
+    <Content Include="Content\Reports\ProjectAllocates.mrt" />
+    <Content Include="Content\Reports\ProjectPlans.mrt" />
+    <Content Include="Content\Reports\Projects.mrt" />
+    <Content Include="Content\Reports\ProjectSectionContracts.mrt" />
+    <Content Include="Content\Reports\ProjectSectionDeliveryFixdes.mrt" />
+    <Content Include="Content\Reports\ProjectSectionDeliveryTemprories.mrt" />
+    <Content Include="Content\Reports\ProjectSectionFinalParticipants.mrt" />
+    <Content Include="Content\Reports\ProjectSectionMadeh46s.mrt" />
+    <Content Include="Content\Reports\ProjectSectionMadeh48s.mrt" />
+    <Content Include="Content\Reports\ProjectSectionRecoupments.mrt" />
+    <Content Include="Content\Reports\ProjectSections.mrt" />
+    <Content Include="Content\Reports\ProjectSectionSupervisorVisits.mrt" />
+    <Content Include="Areas\General\Views\ProjectSectionStatementReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionStatementReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionStatementReport\_Report.cshtml" />
+    <Content Include="Content\Reports\ProjectStatment.mrt" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAmendmentReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAmendmentReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAmendmentReport\_Report.cshtml" />
+    <Content Include="Content\Reports\ProjectSectionContractAmendment.mrt" />
+    <Content Include="Areas\General\Views\ProjectSectionStatementPayReport\_Index.cshtml" />
+    <Content Include="Content\Reports\ReportProjectSectionStatementPay.mrt" />
+    <Content Include="Areas\General\Views\ProjectSectionProjectProgressReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionProjectProgressReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionProjectProgressReport\_Report.cshtml" />
+    <Content Include="Content\Reports\ProjectSectionProjectProgress.mrt" />
+    <Content Include="Areas\General\Views\ProjectSectionStatementPayReport\_Report.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionStatementPayReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAndCostsReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAndCostsReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAndCostsReport\_Report.cshtml" />
+    <Content Include="Content\Reports\ProjectSectionContractAndCostsService.mrt" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAmendmentDateReport\_Index.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAmendmentDateReport\_Search.cshtml" />
+    <Content Include="Areas\General\Views\ProjectSectionContractAmendmentDateReport\_Report.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDraftList\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDraftList\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDraft\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDraft\_FileUpload.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDraft\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionDraft\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinance\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinance\_List.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionFinance\_Search.cshtml" />
+    <Content Include="Areas\General\Views\Dashboard\Index.cshtml" />
+    <Content Include="Content\Dashboard\fonts\b koodak\regular-b koodak.eot" />
+    <Content Include="Content\Dashboard\fonts\b koodak\regular-b koodak.ttf" />
+    <Content Include="Content\Dashboard\fonts\b koodak\regular-b koodak.woff" />
+    <Content Include="Content\Dashboard\fonts\b koodak\regular-b koodak.woff2" />
+    <Content Include="Content\Dashboard\fonts\bbc nassim\regular-bbcnassim.eot" />
+    <Content Include="Content\Dashboard\fonts\bbc nassim\regular-bbcnassim.ttf" />
+    <Content Include="Content\Dashboard\fonts\bbc nassim\regular-bbcnassim.woff" />
+    <Content Include="Content\Dashboard\fonts\bbc nassim\regular-bbcnassim.woff2" />
+    <Content Include="Content\Dashboard\fonts\BYekan.eot" />
+    <Content Include="Content\Dashboard\fonts\BYekan.ttf" />
+    <Content Include="Content\Dashboard\fonts\BYekan.woff" />
+    <Content Include="Content\Dashboard\fonts\droid arabic kufi\bold-droid arabic kufi.eot" />
+    <Content Include="Content\Dashboard\fonts\droid arabic kufi\bold-droid arabic kufi.otf" />
+    <Content Include="Content\Dashboard\fonts\droid arabic kufi\bold-droid arabic kufi.ttf" />
+    <Content Include="Content\Dashboard\fonts\droid arabic kufi\regular-droid arabic kufi.eot" />
+    <Content Include="Content\Dashboard\fonts\droid arabic kufi\regular-droid arabic kufi.ttf" />
+    <Content Include="Content\Dashboard\fonts\droid arabic kufi\regular-droid arabic kufi.woff" />
+    <Content Include="Content\Dashboard\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Dashboard\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Dashboard\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Dashboard\fonts\FontAwesome.otf" />
+    <Content Include="Content\Dashboard\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Dashboard\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Dashboard\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Dashboard\fonts\ionicons.eot" />
+    <Content Include="Content\Dashboard\fonts\ionicons.ttf" />
+    <Content Include="Content\Dashboard\fonts\ionicons.woff" />
+    <Content Include="Content\Dashboard\fonts\iransans\bold-iransans.eot" />
+    <Content Include="Content\Dashboard\fonts\iransans\bold-iransans.ttf" />
+    <Content Include="Content\Dashboard\fonts\iransans\bold-iransans.woff" />
+    <Content Include="Content\Dashboard\fonts\iransans\bold-iransans.woff2" />
+    <Content Include="Content\Dashboard\fonts\iransans\regular-iransans.eot" />
+    <Content Include="Content\Dashboard\fonts\iransans\regular-iransans.ttf" />
+    <Content Include="Content\Dashboard\fonts\iransans\regular-iransans.woff" />
+    <Content Include="Content\Dashboard\fonts\iransans\regular-iransans.woff2" />
+    <Content Include="Content\Dashboard\fonts\iransans\ultralight-iransans.eot" />
+    <Content Include="Content\Dashboard\fonts\iransans\ultralight-iransans.ttf" />
+    <Content Include="Content\Dashboard\fonts\iransans\ultralight-iransans.woff" />
+    <Content Include="Content\Dashboard\fonts\iransans\ultralight-iransans.woff2" />
+    <Content Include="Content\Dashboard\fonts\wYekan.afm" />
+    <Content Include="Content\Dashboard\fonts\wYekan.eot" />
+    <Content Include="Content\Dashboard\fonts\wYekan.otf" />
+    <Content Include="Content\Dashboard\fonts\wYekan.pfa" />
+    <Content Include="Content\Dashboard\fonts\wYekan.pfb" />
+    <Content Include="Content\Dashboard\fonts\wYekan.ps" />
+    <Content Include="Content\Dashboard\fonts\wYekan.pt3" />
+    <Content Include="Content\Dashboard\fonts\wYekan.ttf" />
+    <Content Include="Content\Dashboard\fonts\wYekan.woff" />
+    <Content Include="Content\Dashboard\fonts\yekan\regular-yekan.eot" />
+    <Content Include="Content\Dashboard\fonts\yekan\regular-yekan.ttf" />
+    <Content Include="Content\Dashboard\fonts\yekan\regular-yekan.woff" />
+    <Content Include="Content\Dashboard\fonts\yekan\regular-yekan.woff2" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPrintDraft\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionPrintDraft\_Report.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C10Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C1Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C2Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C3Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C4Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C5Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C6Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C7Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C8Chart.cshtml" />
+    <Content Include="Areas\General\Views\Chart\_C9Chart.cshtml" />
+    <Content Include="Areas\General\Views\Report\_Index.cshtml" />
+    <Content Include="Areas\General\Views\Report\_Search.cshtml" />
+    <Content Include="Areas\General\Views\Report\_Report.cshtml" />
+    <Content Include="Content\Reports\DraftReport.mrt" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionGovermentWorthyDocumentsPaidPrice\_Index.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionGovermentWorthyDocumentsPaidPrice\_Create.cshtml" />
+    <Content Include="Areas\ProjectDevision\Views\ProjectSectionGovermentWorthyDocumentsPaidPrice\_List.cshtml" />
+    <None Include="Properties\PublishProfiles\Bazli.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fileUpload\app.js" />
+    <Content Include="Scripts\fileUpload\bootstrap.min.js" />
+    <Content Include="Scripts\fileUpload\canvas-to-blob.min.js" />
+    <Content Include="Scripts\fileUpload\cors\jquery.postmessage-transport.js" />
+    <Content Include="Scripts\fileUpload\cors\jquery.xdr-transport.js" />
+    <Content Include="Scripts\fileUpload\jquery.blueimp-gallery.min.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-angular.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-audio.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-image.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-jquery-ui.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-process.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-validate.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload-video.js" />
+    <Content Include="Scripts\fileUpload\jquery.fileupload.js" />
+    <Content Include="Scripts\fileUpload\jquery.iframe-transport.js" />
+    <Content Include="Scripts\fileUpload\jquery.min.js" />
+    <Content Include="Scripts\fileUpload\load-image.all.min.js" />
+    <Content Include="Scripts\fileUpload\main.js" />
+    <Content Include="Scripts\fileUpload\tmpl.min.js" />
+    <Content Include="Scripts\fileUpload\vendor\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.0.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.0.0.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\less.min.js" />
+    <Content Include="Uploads\noimage.png" />
+    <Content Include="Utilities\Files\Messages.xml" />
+    <Content Include="Utilities\Images\1382296821_Information.png" />
+    <Content Include="Utilities\Images\1382296875_Help and Support.png" />
+    <Content Include="Utilities\Images\alert-delete.png" />
+    <Content Include="Utilities\Images\arrow-down.png" />
+    <Content Include="Utilities\Images\close.png" />
+    <Content Include="Utilities\Images\close2.png" />
+    <Content Include="Utilities\Images\close3.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_222222_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_228ef1_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_454545_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_888888_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Utilities\Images\jquery-ui\ui-icons_ffffff_256x240.png" />
+    <Content Include="Utilities\Images\loading.gif" />
+    <Content Include="Utilities\Images\mCSB_buttons.png" />
+    <Content Include="Utilities\Images\treeview\add-child.jpg" />
+    <Content Include="Utilities\Images\treeview\close.png" />
+    <Content Include="Utilities\Images\treeview\colaps-expand.png" />
+    <Content Include="Utilities\Images\treeview\delete.png" />
+    <Content Include="Utilities\Images\treeview\delete2.png" />
+    <Content Include="Utilities\Images\treeview\delete3.png" />
+    <Content Include="Utilities\Images\treeview\img-tree.png" />
+    <Content Include="Utilities\Images\treeview\line-verticle.jpg" />
+    <Content Include="Utilities\Images\treeview\tree-arrow.png" />
+    <Content Include="Utilities\Images\treeview\tree-parent.png" />
+    <Content Include="Utilities\Images\treeview\update.png" />
+    <Content Include="Utilities\Images\treeview\update2.png" />
+    <Content Include="Utilities\Images\treeview\update3.png" />
+    <Content Include="Utilities\Images\treeview\user-False.png" />
+    <Content Include="Utilities\Images\treeview\user-True.png" />
+    <Content Include="Utilities\Images\treeview\user2-false.png" />
+    <Content Include="Utilities\Images\treeview\user2-true.png" />
+    <Content Include="Utilities\Images\warning.png" />
+    <Content Include="Utilities\Scripts\AjaxUtility.js" />
+    <Content Include="Utilities\Scripts\fileinput.min.js" />
+    <Content Include="Utilities\Scripts\fileinput_locale_ir.js" />
+    <Content Include="Utilities\Scripts\jquery-clockpicker.min.js" />
+    <Content Include="Utilities\Scripts\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Utilities\Scripts\jquery.ui.datepicker-cc.all.min.js" />
+    <Content Include="Utilities\Scripts\ListViewUtility.js" />
+    <Content Include="Utilities\Scripts\dropdownlist.js" />
+    <Content Include="Utilities\Scripts\validation.js" />
+    <Content Include="Utilities\Styles\clock.css" />
+    <Content Include="Utilities\Styles\confirm.css" />
+    <Content Include="Utilities\Styles\fileinput.min.css" />
+    <Content Include="Utilities\Styles\jquery-clockpicker.min.css" />
+    <Content Include="Utilities\Styles\jquery-ui.min.css" />
+    <Content Include="Utilities\Styles\jquery-ui.theme.min.css" />
+    <Content Include="Utilities\Styles\dropdownlist.css" />
+    <Content Include="Utilities\Styles\jquery.mCustomScrollbar.css" />
+    <Content Include="Utilities\Styles\popupform.css" />
+    <Content Include="Utilities\Styles\treeview.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\BaseInformation\BaseInformationAreaRegistration.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\MajorTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\LevelTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\PlanTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\RecoupmentTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\ResourceTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\ResourceController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\InvestmentChapterController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\InvestmentChapterTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\RuralDistrictController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\VillageController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\SectionController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\CityController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\StateController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\DeductionPercentController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\DocumentTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\ExecutionTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\FinantialYearController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\MonitoringTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\ProgramController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\ProjectTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\SetController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\StatementTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\UnitController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\CreditProvidePlaceController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\ContractTypeController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\ContractorController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\CommissionMemberController.cs" />
+    <Compile Include="Areas\BaseInformation\Controllers\AccountTypeController.cs" />
+    <Compile Include="Areas\General\Controllers\AccountController.cs" />
+    <Compile Include="Areas\General\Controllers\BaseController.cs" />
+    <Compile Include="Areas\General\Controllers\ChartController.cs" />
+    <Compile Include="Areas\General\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\General\Controllers\ProgramPlansReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionContractAmendmentDateReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionContractAmendmentReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionContractAndCostsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionProjectProgressReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionMadeh46sReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionMadeh48sReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionRecoupmentsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionStatementPayReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionStatementReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionSupervisorVisitsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionContractsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionDeliveryFixdesReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionDeliveryTemproriesReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectAllocatesReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectPlansReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionFinalParticipantsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\ProjectSectionDepositeLiberalizationsReportController.cs" />
+    <Compile Include="Areas\General\Controllers\HomeController.cs" />
+    <Compile Include="Areas\General\Controllers\MemberController.cs" />
+    <Compile Include="Areas\General\Controllers\ReportController.cs" />
+    <Compile Include="Areas\General\Controllers\RolePermissionController.cs" />
+    <Compile Include="Areas\General\GeneralAreaRegistration.cs" />
+    <Compile Include="Areas\General\Controllers\ContractorReportController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProgramPlanController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectProgrammingController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectAllocateController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectAgreementController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectAllocateDetailController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectQuantityGoalController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectAverageController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectInvestmentChapterController.cs" />
+    <Compile Include="Areas\ProjectDefine\Controllers\ProjectFundingController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionGovermentWorthyDocumentsPaidPriceController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionOperationTitleController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionPrintDraftController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionRecoupmentController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionRecoupmentListController.cs" />
+    <Compile Include="Areas\ProjectDefine\ProjectDefineAreaRegistration.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSection48Controller.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionCorrespondenceController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionPaidPriceController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionPaidPriceListController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionStatementConfirmListController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionStatementConfirmController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionDraftController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionStatementController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionLetterController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionMadeh48Controller.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionMadeh46Controller.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionDepositeLiberalizationController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionDeliveryFixdController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionDeliveryTemproryController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionComplementarityPriceController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionComplementarityDateController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionContractController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionAdvisorVisitController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionAdvisorMemberController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSection46Controller.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionLiberalizationController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionFixedController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionDraftListController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionTemproryController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionSupervisorMemberController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionSupervisorVisitController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionScheduleController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionWinner4648Controller.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionWinnerDegreeController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionWinnerController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionOpenDateController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionFinanceEvaluationController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionParticipantController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionFinalParticipantController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionTenderController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionCeremonialController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionInquiryController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionFinanceController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionOperationController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionAssignmentController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionController.cs" />
+    <Compile Include="Areas\ProjectDevision\Controllers\ProjectSectionProductController.cs" />
+    <Compile Include="Areas\ProjectDevision\ProjectDevisionAreaRegistration.cs" />
+    <Compile Include="DependencyResolver\StructureMapControllerFactory.cs" />
+    <Compile Include="DependencyResolver\StructureMapObjectFactory.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\NotificationHub.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule\ScheduledTasksRegistry.cs" />
+    <Compile Include="Schedule\Tasks\NotificationTask.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\AppCode\DropdownTree.cs" />
+    <Compile Include="Utilities\AppCode\FileUploadChecker.cs" />
+    <Compile Include="Utilities\AppCode\ImageResizer.cs" />
+    <Compile Include="Utilities\AppCode\ListView.cs" />
+    <Compile Include="Utilities\AppCode\Message.cs" />
+    <Compile Include="Utilities\AppCode\Messages.cs" />
+    <Compile Include="Utilities\AppCode\SendMail.cs" />
+    <Compile Include="Utilities\AppCode\Upload.cs" />
+    <Compile Include="Utilities\CustomFilters\AuthenticationActionFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Areas\BaseInformation\Views\web.config" />
+    <Content Include="Areas\General\Views\web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\version.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\BaseInformation\Views\Shared\" />
+    <Folder Include="Uploads\ProjectDefines\" />
+    <Folder Include="Uploads\ProjectFunding\" />
+    <Folder Include="Uploads\ProjectSectionAdvisorVisit\" />
+    <Folder Include="Uploads\ProjectSectionCeremonial\" />
+    <Folder Include="Uploads\ProjectSectionComplementarityDate\" />
+    <Folder Include="Uploads\ProjectSectionComplementarityPrice\" />
+    <Folder Include="Uploads\ProjectSectionContract\" />
+    <Folder Include="Uploads\ProjectSectionCorrespondence\" />
+    <Folder Include="Uploads\ProjectSectionDeliveryFixd\" />
+    <Folder Include="Uploads\ProjectSectionDeliveryTemprory\" />
+    <Folder Include="Uploads\ProjectSectionDepositeLiberalization\" />
+    <Folder Include="Uploads\ProjectSectionDraft\" />
+    <Folder Include="Uploads\ProjectSectionFinalParticipant\" />
+    <Folder Include="Uploads\ProjectSectionInquiry\" />
+    <Folder Include="Uploads\ProjectSectionMadeh46\" />
+    <Folder Include="Uploads\ProjectSectionMadeh48\" />
+    <Folder Include="Uploads\ProjectSectionPaidPrice\" />
+    <Folder Include="Uploads\ProjectSectionProduct\" />
+    <Folder Include="Uploads\ProjectSectionSchedule\" />
+    <Folder Include="Uploads\ProjectSectionStatementConfirm\" />
+    <Folder Include="Uploads\ProjectSectionStatement\" />
+    <Folder Include="Uploads\ProjectSectionSupervisorVisit\" />
+    <Folder Include="Uploads\ProjectSectionTender\" />
+    <Folder Include="Uploads\ProjectSectionWinnerDegree\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseContext\DatabaseContext.csproj">
+      <Project>{36351a9e-ee33-4f83-b251-4d679960d581}</Project>
+      <Name>DatabaseContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainModels\DomainModels.csproj">
+      <Project>{9f0a246c-fbac-4b88-9ab7-907ded9f74b6}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastracture\Infrastracture.csproj">
+      <Project>{af69803c-7dd5-42f5-b369-590335aa6c32}</Project>
+      <Name>Infrastracture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scheduler\Scheduler.csproj">
+      <Project>{5441a969-9966-4826-bd86-672a25e7f3c6}</Project>
+      <Name>Scheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{2c50c9cb-a776-42df-a285-6165f80f3158}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{70149f55-78d0-4e92-863f-e86266e5fafd}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>40265</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:40265/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,51 @@
+﻿using DatabaseContext.Context;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+using Infrastracture.AppCode;
+using DomainModels.Entities.BaseInformation;
+using Services.Interfaces.BaseInformation;
+using DomainModels.Entities.ProjectDefine;
+using ViewModels.Other;
+using DomainModels.Entities.ProjectDevision;
+using Services.Interfaces.ProjectDevision;
+
+namespace Services.EfServices.ProjectDevision
+{
+    public class ProjectSectionScheduleFileService : GenericService<ProjectSectionScheduleFile>, IProjectSectionScheduleFileService
+    {
+        public ProjectSectionScheduleFileService(IUnitOfWork uow)
+            : base(uow)
+        {
+
+        }
+
+        public IEnumerable<UploadFilesResultViewModel> GetByProjectSectionScheduleId(Int64 MemberId, Int64 ProjectSectionScheduleId)
+        {
+            string query = "";
+            query += @"Select GF.Id imageId, GF.Title name, GF.[Address] url , 'POST' delete_type, '/ProjectDevision/ProjectSectionSchedule/DeleteFile' delete_url,
+                              Cast(GF.Size as int) size, GF.[Type] type, Case When GF.[Type] like '%image%' then GF.[Address] else '/Uploads/noimage.png' end thumbnail_url
+                       From General.Files GF
+                                left join ProjectDevision.ProjectSectionScheduleFiles PSIF on GF.Id = PSIF.FileId
+                       Where ((GF.MemberId = " + MemberId + " And FileState = 1) OR PSIF.ProjectSectionScheduleId = " + ProjectSectionScheduleId + ") And GF.FileTypeId = 10 And FileState <> 3";
+
+            IEnumerable<UploadFilesResultViewModel> result = _uow.GetInstance().Database.SqlQuery<UploadFilesResultViewModel>(query)
+                .Select(Result => new UploadFilesResultViewModel()
+                {
+                    imageId = Result.imageId,
+                    name = Result.name,
+                    url = Result.url,
+                    thumbnail_url = Result.thumbnail_url,
+                    delete_type = Result.delete_type,
+                    delete_url = Result.delete_url,
+                    size = Result.size,
+                    type = Result.type
+                });
+
+            return result;
+        }
+    }
+}

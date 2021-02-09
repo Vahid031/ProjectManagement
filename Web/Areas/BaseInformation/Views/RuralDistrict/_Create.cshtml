@@ -1,0 +1,62 @@
+﻿@model ViewModels.BaseInformation.RuralDistrictViewModel.CreateRuralDistrictViewModel
+
+<form id="frm-RuralDistrict" class="operationform" method="post">
+    @{
+        if (ViewBag.error != null)
+        {
+            <div class="col-lg-12">
+                <div id="ErrorAlert" class="alert alert-danger" role="alert">
+                    <button type="button" class="close" id="AlertClose"><span aria-hidden="true">&times;</span></button>
+                    <span>@ViewBag.error</span>
+                </div>
+            </div>
+
+            <script>
+                $('#ErrorAlert').show().delay(4000).slideUp(300);
+            </script>
+        }
+    }
+    @Html.HiddenFor(model => model.RuralDistrict.Id, new { Value = (@ViewBag.Id != null) ? @ViewBag.Id : Model.RuralDistrict.Id, @id = "Id" })
+    
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.StateId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.StateId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.StateId, new SelectList(Model.States, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.CityId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.CityId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.CityId, new SelectList(Model.Cities, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.SectionId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.SectionId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.SectionId, new SelectList(Model.Sections, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.RuralDistrict.VillageId, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.RuralDistrict.VillageId, String.Empty, new { @class = "label-validation" })
+        @Html.DropDownListFor(model => model.RuralDistrict.VillageId, new SelectList(Model.Villages, "Id", "Title"), new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.RuralDistrict.Code, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.RuralDistrict.Code, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.RuralDistrict.Code, new { @class = "form-control txtbox" })
+    </div>
+
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.RuralDistrict.Title, new { @class = "label-txt" })
+        @Html.ValidationMessageFor(model => model.RuralDistrict.Title, String.Empty, new { @class = "label-validation" })
+        @Html.TextBoxFor(model => model.RuralDistrict.Title, new { @class = "form-control txtbox persian" })
+    </div>
+
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSave" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNew" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

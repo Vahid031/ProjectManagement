@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionMemberViewModel.ListProjectSectionMemberViewModel>
+@{ string tableName = "ProjectSectionSupervisorMember";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionMember.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)" style="min-width:900px;">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionMember.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Member.FirstName', '@(tableName)')">@Html.DisplayNameFor(model => model.Member.FirstName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Member.LastName', '@(tableName)')">@Html.DisplayNameFor(model => model.Member.LastName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('MonitoringType.Title', '@(tableName)')">@Html.DisplayNameFor(model => model.MonitoringType.Title) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionMember.StartDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionMember.StartDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionMember.EndDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionMember.EndDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionMember.Description', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionMember.Description) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionMember.IsMainSupervisor', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionMember.IsMainSupervisor) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionMember.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Member.FirstName)">
+                                <input type="text" class="form-control txtbox" name="Member.FirstName">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Member.LastName)">
+                                <input type="text" class="form-control txtbox" name="Member.LastName">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.MonitoringType.Title)">
+                                <input type="text" class="form-control txtbox" name="MonitoringType.Title">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionMember.StartDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionMember.StartDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionMember.EndDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionMember.EndDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionMember.Description)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionMember.Description">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionMember.IsMainSupervisor)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionMember.IsMainSupervisor">
+                            </td>
+                            
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="9">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

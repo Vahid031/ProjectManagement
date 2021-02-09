@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionFinalParticipantViewModel.ListProjectSectionFinalParticipantViewModel>
+@{ string tableName = "ProjectSectionFinalParticipant";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionFinalParticipant.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionFinalParticipant.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('Contractor.CompanyName', '@(tableName)')">@Html.DisplayNameFor(model => model.Contractor.CompanyName) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionFinalParticipant.SuggestPrice', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionFinalParticipant.SuggestPrice) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionFinalParticipant.WarrantyDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionFinalParticipant.WarrantyDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionFinalParticipant.WarrantyNumber', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionFinalParticipant.WarrantyNumber) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionFinalParticipant.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.Contractor.CompanyName)">
+                                <input type="text" class="form-control txtbox" name="Contractor.CompanyName">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionFinalParticipant.SuggestPrice)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionFinalParticipant.SuggestPrice">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionFinalParticipant.WarrantyDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionFinalParticipant.WarrantyDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionFinalParticipant.WarrantyNumber)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionFinalParticipant.WarrantyNumber">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

@@ -1,0 +1,67 @@
+﻿@model ViewModels.ProjectDevision.ProjectSectionGovermentWorthyDocumentsPaidPriceViewModel.CreateProjectSectionGovermentWorthyDocumentsPaidPriceViewModel
+<form method="post" class="operationform" id="frm-ProjectSectionGovermentWorthyDocumentsPaidPrice">
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.Type_MeliOstani,new{@class = "lable-txt"})
+        @Html.ValidationMessageFor(m=>m.ProjectSectionGovermentWorthyDocumentsPaidPrice.Type_MeliOstani,String.Empty,new {@class = "validation-txt"})
+        @Html.DropDownListFor(m=>m.ProjectSectionGovermentWorthyDocumentsPaidPrice.Type_MeliOstani,new List<SelectListItem>{
+                                                                                                       new SelectListItem{Text="ملی", Value="ملی"},
+                                                                                                       new SelectListItem{Text="استانی", Value="استانی"}})
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsType, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsType, String.Empty, new { @class = "validation-txt" })
+        @Html.DropDownListFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsType, new List<SelectListItem>{
+                                                                                                       new SelectListItem{Text="بند ه", Value="بند ه"},
+                                                                                                       new SelectListItem{Text="بند ز", Value="بند ز"}})
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.CertificateAssignmentDate, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.CertificateAssignmentDate, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.CertificateAssignmentDate, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.CertificateAssignmentNumber, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.CertificateAssignmentNumber, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.CertificateAssignmentNumber, new { @class = "form-control txtbox" })
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.NumberOfMilionRialsPapers, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.NumberOfMilionRialsPapers, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.NumberOfMilionRialsPapers, new { @class = "form-control txtbox" })
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsAssignmentDate, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsAssignmentDate, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsAssignmentDate, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.Bank, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.Bank, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.Bank, new { @class = "form-control txtbox"})
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.SHEBA, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.SHEBA, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.SHEBA, new { @class = "form-control txtbox"})
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.WorthyDocumentsOwnerTradingCode, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.WorthyDocumentsOwnerTradingCode, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.WorthyDocumentsOwnerTradingCode, new { @class = "form-control txtbox" })
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsPublishedDate, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsPublishedDate, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsPublishedDate, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+    <div class="col-lg-4 col-md-6 form-group">
+        @Html.LabelFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsDueDate, new { @class = "lable-txt" })
+        @Html.ValidationMessageFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsDueDate, String.Empty, new { @class = "validation-txt" })
+        @Html.TextBoxFor(m => m.ProjectSectionGovermentWorthyDocumentsPaidPrice.DocumentsDueDate, new { @class = "form-control txtbox", @readonly = "readonly", data_val = "true", data_val_required = "الزامی است" })
+    </div>
+
+    <div class="form-group col-lg-12">
+        <button type="submit" id="btnSaveProjectSectionDraft" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>ذخیره</button>
+        <button type="button" id="btnNewProjectSectionDraft" class="btn btn-info btnNew"><span class="glyphicon glyphicon-file" style="float:right;"></span>جدید</button>
+    </div>
+</form>

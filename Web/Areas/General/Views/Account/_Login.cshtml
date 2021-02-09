@@ -1,0 +1,88 @@
+﻿@model ViewModels.Other.LoginViewModel
+
+<!--login modal-->
+@using (Html.BeginForm("_Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login operationform", role = "form", id = "frmLogin" }))
+{
+    <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="text-center">@ViewBag.OrganizationTitle</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form col-md-12 center-block">
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control input-lg", placeholder = "نام کاربری", id = "txtUserName" })
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", placeholder = "کلمه عبور" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                        <div class="forgot-password form-group">
+                            <input type="submit" value="ورود" id="btnEnter" class="btn btn-primary btn-lg btn-block">
+                            <span style="display:none" ><a href="/Account/_Recovery">بازیابی کلمه عبور</a></span>
+                        </div>
+                    </form>
+                    <div class="title">
+                        <h3 style="text-align:center; color:#5bb5f6">سامانه یکپارچه مدیریت پروژه های عمرانی</h3>
+                    </div>
+                    <div class="title" style="margin-top:10px">
+                        <a href="http:\\IteamSoft.ir" style="color:red;text-align:center"><h5>تحلیل، طراحی و تولید : شرکت فنی مهندسی خبره</h5></a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <button id="btnClose" class="btn" data-dismiss="modal" aria-hidden="true">انصراف</button>
+                        <span class="alert-login"></span>
+
+                        <p>@Html.ValidationSummary(true)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $(function () {
+        $('#frmLogin').submit(function (e) {
+            e.preventDefault();
+
+            Ajax('Post', '/Account/_Login', $('#frmLogin').serialize(), function (data, textStatus, xhr) {
+                if (data.state) {
+                    window.location.href = data.redirectToUrl;
+                }
+                else {
+                    $('.alert-login').text(data.message);
+                    $('.alert-login').css('display', 'block');
+                }
+
+            }, 'json');
+        });
+
+        $('.forgot-password a').click(function (event) {
+            var url = $(this).attr('href');
+
+            if (url != '#') {
+                if (url.contains('_')) {
+                    event.preventDefault();
+                    LoadPartialView('GET', url, '', '#Container');
+                    return false;
+                }
+            }
+        });
+
+        $('.close, #btnClose').click(function (event) {
+            event.preventDefault();
+
+            $('#Container div').fadeOut(1000, function () {
+                $(this).remove();
+            });
+
+            return false;
+        });
+
+    });
+</script>

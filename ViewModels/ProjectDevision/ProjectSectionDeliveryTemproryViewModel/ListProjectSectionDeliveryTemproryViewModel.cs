@@ -1,0 +1,17 @@
+﻿using System.Collections.Generic;
+using DomainModels.Entities.ProjectDefine;
+using DomainModels.Entities.BaseInformation;
+using System.ComponentModel.DataAnnotations;
+using System;
+using System.ComponentModel;
+using DomainModels.Entities.ProjectDevision;
+
+namespace ViewModels.ProjectDevision.ProjectSectionDeliveryTemproryViewModel
+{
+    public class ListProjectSectionDeliveryTemproryViewModel
+	{
+        public ProjectSectionDeliveryTemprory ProjectSectionDeliveryTemprory { get; set; }
+        public Opinion Opinion { get; set; }
+        public Defect Defect { get; set; }
+	}
+}

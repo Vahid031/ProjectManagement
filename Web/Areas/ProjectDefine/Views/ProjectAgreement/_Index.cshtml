@@ -1,0 +1,35 @@
+﻿<script src="~/Areas/ProjectDefine/Business/ProjectAgreementBusiness.js"></script>
+
+<input type="hidden" id="permission-ProjectAgreement" value='@ViewBag.Permission' />
+
+<div id="FormSearch-ProjectAgreement" class="row">
+
+</div>
+
+<div id="FormList-ProjectAgreement" class="row">
+
+</div>
+
+<div id="FormTabs-ProjectAgreement">
+    <ul class="nav nav-pills" style="margin-top:10px;">
+        <li id="lprojectFunding"><a data-toggle="pill" href="#projectFunding">عملکرد تامین اعتبار</a></li>
+        <li id="lprojectInvestmentChapter"><a data-toggle="pill" href="#projectInvestmentChapter">عملکرد تامین هزینه</a></li>
+        <li id="lprojectQuantityGoal"><a data-toggle="pill" href="#projectQuantityGoal">اهداف کمی طرح</a></li>
+        <li id="lprojectAverage"><a data-toggle="pill" href="#projectAverage">میانگین وزنی پیشرفت</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="projectFunding" class="tab-pane fade">
+            <div id="ProjectFunding-ProjectAgreement"></div>
+        </div>
+        <div id="projectInvestmentChapter" class="tab-pane fade">
+            <div id="ProjectInvestmentChapter-ProjectAgreement"></div>
+        </div>
+        <div id="projectQuantityGoal" class="tab-pane fade">
+            <div id="ProjectQuantityGoal-ProjectAgreement"></div>
+        </div>
+        <div id="projectAverage" class="tab-pane fade">
+            <div id="ProjectAverage-ProjectAgreement"></div>
+        </div>
+    </div>
+</div>

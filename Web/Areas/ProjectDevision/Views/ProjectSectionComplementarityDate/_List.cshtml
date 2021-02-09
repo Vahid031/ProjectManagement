@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ViewModels.ProjectDevision.ProjectSectionComplementarityDateViewModel.ListProjectSectionComplementarityDateViewModel>
+@{ string tableName = "ProjectSectionComplementarityDate";}
+
+<div class="col-lg-12">
+    <input type="hidden" id="sort-@(tableName)" value="ProjectSectionComplementarityDate.Id descending" />
+
+    <!------------- Start Table ----------------------->
+    <div class="row">
+        <div class="col-lg-12 content-grid">
+            <form id="frm-tbl-@(tableName)">
+                <table class="tbl-grid" id="tbl-@(tableName)">
+                    <thead>
+                        <tr>
+                            <th style="width:80px;"><a onmousedown="Sort('ProjectSectionComplementarityDate.Id', '@(tableName)')">ردیف <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityDate.Date', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityDate.Date) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityDate.NewDate', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityDate.NewDate) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th><a onmousedown="Sort('ProjectSectionComplementarityDate.Number', '@(tableName)')">@Html.DisplayNameFor(model => model.ProjectSectionComplementarityDate.Number) <span class="sort-arrow arrow-sortable"></span></a></th>
+                            <th data-th='ویرایش/حذف'>ویرایش/حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-th='ردیف'>
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityDate.Id">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityDate.Date)">
+                                <input type="text" class="form-control txtbox" name="Program.ProjectSectionComplementarityDate.Date">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityDate.NewDate)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityDate.NewDate">
+                            </td>
+
+                            <td data-th="@Html.DisplayNameFor(model => model.ProjectSectionComplementarityDate.Number)">
+                                <input type="text" class="form-control txtbox" name="ProjectSectionComplementarityDate.Number">
+                            </td>
+
+                            <td data-th='ویرایش/حذف'></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!------------- End Table ----------------------->

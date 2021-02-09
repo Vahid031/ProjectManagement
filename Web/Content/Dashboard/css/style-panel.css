@@ -1,0 +1,30 @@
+﻿@font-face {
+    font-family: 'wYekan';
+    font-weight: normal;
+    src: url('../fonts/wYekan.eot');
+    src: url('../fonts/wYekan.eot?#iefix') format('embedded-opentype'), url('../fonts/wYekan.woff2') format('woff2'), url('../fonts/wYekan.woff') format('woff'), url('../fonts/wYekan.ttf') format('truetype');
+}
+
+body {
+    background-color: #F9F9F9;
+    font: "wYekan",Tahoma;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.header{
+    height:60px;
+    background-color:#eeeeee;
+}
+
+.header-text{
+    text-align:center;
+    font-size:20px;
+    color:#515151;
+    padding-top:20px;
+}
+
+
+

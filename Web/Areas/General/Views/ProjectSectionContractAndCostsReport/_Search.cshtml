@@ -1,0 +1,53 @@
+﻿@model ViewModels.ProjectDefine.ProjectSectionContractAndCostsReportViewModel.ReportParameterProjectSectionContractAndCostsViewModel
+<form id="frm-ReportParameterProjectSectionContractAndCosts" class="operationform" method="post">
+    <style>
+        .ui-datepicker{
+            z-index:9999 !important;
+        }
+    </style>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.CityId, new { @class = "label-txt" })
+        @Html.DropDownListFor(model => model.CityId, new SelectList(Model.Citeies, "Id", "Title"), new {@data_val = "false", @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+
+        @Html.LabelFor(model => model.FileCode, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.FileCode, new { @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectTitle, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.ProjectTitle, new { @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ProjectSectionTitle, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.ProjectSectionTitle, new { @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.Contractors, new { @class = "label-txt" })
+        @Html.DropDownListFor(model => model.ContractorId, new SelectList(Model.Contractors, "Id", "CompanyName"), new {@class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.ContractTypes, new { @class = "label-txt" })
+        @Html.DropDownListFor(model => model.ContractorTypeId, new SelectList(Model.ContractTypes, "Id", "Title"), "انتخاب کنید...", new { @data_val = "false", @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.CreditProvidePlaces, new { @class = "label-txt" })
+        @Html.DropDownListFor(model => model.CreditProviderPlaceId, new SelectList(Model.CreditProvidePlaces, "Id", "Title"), new { @data_val = "false", @class = "form-control txtbox" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.FromDate, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.FromDate, new { @class = "form-control txtbox persianDatePicker" })
+    </div>
+    <div class="form-group col-lg-4 col-md-6">
+        @Html.LabelFor(model => model.TillDate, new { @class = "label-txt" })
+        @Html.TextBoxFor(model => model.TillDate, new { @class = "form-control txtbox persianDatePicker" })
+    </div>
+    <div class="clear"></div>
+    <div class="form-group col-lg-4 col-md-6">
+        <button type="submit" id="btnSearchProjectSectionContractAndCosts" class="btn btn-success"><span class="glyphicon glyphicon-ok" style="float:right;"></span>جستجو</button>
+    </div>
+</form>
+<script>
+    $('.persianDatePicker').datepicker();
+</script>
+

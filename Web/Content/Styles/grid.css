@@ -1,0 +1,232 @@
+﻿.content-grid {
+    overflow: auto;
+    padding:0px;
+    border:1px #ccc solid;
+}
+
+.tbl-grid {
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-weight: 100;
+    /*background: #00C0EF;*/
+    color: #fff;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+    border-right: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+}
+
+
+    .tbl-grid tbody tr {
+        background-color: #fff;
+    }
+
+        .tbl-grid tbody tr:nth-child(2n+1) {
+            background-color: #f8f8f8;
+        }
+
+    .tbl-grid thead tr:first-child {
+        background: #49c0f0; /* Old browsers */
+        background: -moz-linear-gradient(top, #49c0f0 0%, #2cafe3 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#49c0f0), color-stop(100%,#2cafe3)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #49c0f0 0%,#2cafe3 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #49c0f0 0%,#2cafe3 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #49c0f0 0%,#2cafe3 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #49c0f0 0%,#2cafe3 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', endColorstr='#2cafe3',GradientType=0 ); /* IE6-9 */
+    }
+
+    .tbl-grid tbody tr:first-child {
+        background-color: #fff !important;
+    }
+
+    .tbl-grid tbody tr:hover {
+        background-color: #f1fcff ;
+    }
+
+    .tbl-grid thead a {
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .tbl-grid thead a:hover {
+            color: #ddd;
+        }
+
+.sort-arrow {
+    width: 16px;
+    height: 18px;
+    display: block;
+    background-image: url('../Images/sort-arrow.png');
+    float: right;
+    margin-left: 5px;
+    margin-top: 1px;
+}
+
+.arrow-none {
+    background-position: 0px 0px;
+}
+
+.arrow-sortable {
+    background-position: -16px 0px;
+}
+
+.arrow-ascending {
+    background-position: -32px 0px;
+}
+
+.arrow-descending {
+    background-position: -48px 0px;
+}
+
+
+
+
+.tbl-grid caption {
+    font-size: 2rem;
+    color: #444;
+    margin: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left, center right;
+}
+
+.tbl-grid thead th {
+    font-weight: 600;
+    padding-top: 12px !important;
+    padding: .8rem;
+    font-weight: normal !important;
+    font-size: 16px;
+}
+
+/*.tbl-grid thead th {
+    padding: .8rem;
+    font-weight: normal !important;
+    font-size: 16px;
+}*/
+
+table tbody td {
+    padding: .8rem;
+    /*font-weight: normal !important;*/
+    font-size: 16px;
+}
+
+.tbl-grid tbody td {
+    padding: .8rem;
+    font-size: 1.4rem;
+    color: #444;
+}
+
+.tbl-grid tbody tr:not(:last-child) {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 700px) {
+    table caption {
+        background-image: none;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody td {
+        display: block;
+        padding: .6rem;
+    }
+
+    .tbl-grid tbody tr td:first-child {
+        background: #00C0EF;
+        color: #fff;
+    }
+
+    .tbl-grid tbody td:before {
+        content: attr(data-th);
+        font-weight: bold;
+        display: inline-block;
+        width: 105px;
+        font-weight: normal !important;
+        font-size: 16px;
+    }
+}
+
+.paging {
+    float: right;
+    margin: 10px 10px 0px 0px;
+}
+
+.record-count {
+    float: right;
+    color: #428BCA;
+    width: 170px;
+    margin: 12px 25px 0px 0px;
+}
+
+.record-count-text {
+    float: right;
+    padding-top: 5px;
+}
+
+.grid-ddl {
+    float: right;
+    width: 80px;
+    margin-right: 5px;
+}
+
+
+.page-count {
+    float: right;
+    color: #428BCA;
+    width: 170px;
+    margin: 12px 25px 0px 0px;
+}
+
+
+.page-count-text {
+    float: right;
+    padding-top: 5px;
+}
+
+
+
+.tbl-grid tfoot {
+    background-color: #F0F0F0;
+}
+
+.pagination > .active > a {
+    z-index: 1;
+}
+
+.pager-text {
+    float: left;
+    margin: 18px 0px 0px 10px;
+    color: #428BCA;
+}
+
+
+
+a {
+    cursor: pointer;
+    color: #0094ff;
+}
+
+    a:hover {
+        color: #ff6a00;
+    }
+
+.icon {
+    font-size: 20px;
+    color: #808080;
+    margin: 0px 5px;
+}
+
+    .icon:hover {
+        color: #ff6a00;
+    }
